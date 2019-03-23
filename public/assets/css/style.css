@@ -274,6 +274,13 @@ p{
   background-color: #1f2431 !important;
 }
 
+.btn-secondary-dark:not(:disabled):not(.disabled).active, .btn-secondary-dark.dropdown-toggle {
+  background-color: #ff7d39;
+  color: #000;
+}
+
+
+
 /* ======
 02. Bootstrap-custom
    ====== */

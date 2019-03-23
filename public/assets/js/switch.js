@@ -49,6 +49,7 @@ function switchfunction() {
         $('.input-trade').toggleClass('input-trade-dark');
         $('.call-menu-color').toggleClass('call-menu-color-dark');
         $('.padding-watchlist').toggleClass('table-dark');
+        $('.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle').toggleClass('btn-secondary-dark');
 
 
         if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
@@ -56,13 +57,7 @@ function switchfunction() {
         else 
             $('#imagelogo').attr('src', '/assets/images/logo.png')
 
-        
-        cols = document.querySelectorAll('.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle');
-        for (i = 0; i < cols.length; i++) {
-            cols[i].style.backgroundColor = '#ff7d39';
-            cols[i].style.color = '#000';
-        }
-
+       
         
 
         
