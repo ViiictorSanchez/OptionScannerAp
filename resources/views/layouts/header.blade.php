@@ -34,9 +34,10 @@
                                 </form> 
                             </li>
 
-                            <li class="float-right list-unstyled mb-0 ">
+                            <li class="float-right list-unstyled mb-0 has-submenu ">
                                 <div class="margin-menu-top" >
-                                        <a class="menu-color" id="list-header-menu" href="#"><strong>Entity</strong></a>
+                                        <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong></a>
+
                                 </div>
                             </li>
 
@@ -86,7 +87,7 @@
                 <hr id="line-separate">
                 <!-- Page-Title -->
                 <div class="row" class="align-menu-graph">
-                    <div class="col-sm-12">
+                    <div class="col-md-12">
                         <div class="page-title-box">
                         	<br><br><br><br>
                             <div class="state-information" >

@@ -1,25 +1,3 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
-    var x = document.getElementById('test');
-
-    console.log(x);
-
-
-
-    //console.log(d);
-   // d.appendChild(x);
-    let a = document.createElement('div');
-    a.text="hello";
-
-    //console.log(d[0]);
-    //$('.btn-toolbar').on('change', function () {
-
-        var d = $('<div class="btn-toolbar"/>');
-        d.innerHTML = "";
-        d[0].appendChild(a);
-        console.log(d);
-    //});
-});
 
 function switchfunction() {
 

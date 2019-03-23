@@ -959,7 +959,39 @@ body {
 /*
   Responsive Menu
 */
+@media (min-width: 1200px){
+  .area-graph{
+    height: 106px !important;
+    width: 212px !important;
+  }
+
+  .form-distance{
+    margin-right: 300px;
+  }
+  .line-separate-graph{
+    border-right: 1px solid;
+    margin-right: 10px;
+    color: #e0e0e0;
+  }
+  .margin-graph{
+    float: right;
+    display: block;
+    padding-right: 15px;
+    padding-left: 50px;
+  }
+  .margin-first-graph{
+    float: right;
+    display: block;
+    padding-right: 10px;
+    padding-left: 15px;
+  }
+}
+
 @media (min-width: 992px) {
+  .area-graph{
+    height: 106px !important;
+    width: 190px !important;
+  }
   .input-width {
     width: 241px;
     padding-left: 18px;
@@ -967,6 +999,25 @@ body {
     border: 1px solid;
     border-color: #e0e0e0;
     background-color: #f6f7f9;
+  }
+  .margin-first-graph{
+    float: right;
+    display: block;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .margin-graph{
+    float: right;
+    display: block;
+    padding-right: 15px;
+    padding-left: 20px;
+  }
+
+  .line-separate-graph{
+    margin-right: 5px;
+  }
+  .form-distance{
+    margin-right: 70px;
   }
 
   .margin-menu-call{
@@ -1142,21 +1193,10 @@ body {
     color: #bec1c6;
 }
 
-.margin-graph{
-    float: right;
-    display: block;
-    padding-right: 15px;
-    padding-left: 50px;
-}
 .menu-my-portfolio-color{
   color: #6d757d;
 }
-.margin-first-graph{
-    float: right;
-    display: block;
-    padding-right: 10px;
-    padding-left: 15px;
-}
+
 .button-my-portfolio{
     color: #102a55;
     background-color: #fff;
@@ -1232,11 +1272,7 @@ body {
 .line-separate {
   margin-bottom: -15px;
 }
-.line-separate-graph{
-  border-right: 1px solid;
-  margin-right: 10px;
-  color: #e0e0e0;
-}
+
 .padding-watchlist{
   padding-right: 10px;
   padding-left: 10px;
@@ -2020,10 +2056,7 @@ button:focus {
     display: flex;
     justify-content: center;
 }
-.area-graph{
-    height: 106px !important;
-    width: 212px !important;
-}
+
 
 /* ======
 11. Demo Only
@@ -2270,9 +2303,7 @@ label {
 .form-control {
   font-size: 13px;
 }
-.form-distance{
-    margin-right: 300px;
-}
+
 
 .form-control:focus {
   border-color: #7a6fbe;
