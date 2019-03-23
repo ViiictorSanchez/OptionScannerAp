@@ -27,7 +27,6 @@ function switchfunction() {
         $('.input-trade').toggleClass('input-trade-dark');
         $('.call-menu-color').toggleClass('call-menu-color-dark');
         $('.padding-watchlist').toggleClass('table-dark');
-        $('.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle').toggleClass('btn-secondary-dark');
 
 
         if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 

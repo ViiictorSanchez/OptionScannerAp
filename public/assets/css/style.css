@@ -233,6 +233,13 @@ p{
   border: 1px solid #ff7d39 !important;
 }
 
+.button-trade-with-dark.active {
+  background-color: #ff7d39 !important;
+  color: #000 !important;
+}
+
+.button
+
 .nav-link-dark {
   background-color: #ff7d39 !important;
   color: #fff !important;
@@ -274,10 +281,7 @@ p{
   background-color: #1f2431 !important;
 }
 
-.btn-secondary-dark:not(:disabled):not(.disabled).active, .btn-secondary-dark.dropdown-toggle {
-  background-color: #ff7d39;
-  color: #000;
-}
+
 
 
 
