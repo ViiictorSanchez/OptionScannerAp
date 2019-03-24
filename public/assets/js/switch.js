@@ -11,7 +11,7 @@ function switchfunction() {
         $('.menu-my-portfolio-color').toggleClass('menu-my-portfolio-color-dark');
         $('.color-watchlist').toggleClass('color-watchlist-dark');
         $('.line-separate-graph').toggleClass('line-separate-graph-dark');
-        $('.app-search .form-control, .app-search .form-control:focus').toggleClass('form-control-dark');
+        $('.app-search .form-control, .app-search .form-control:focus, .input-width').toggleClass('form-control-dark');
         $('.menu-color').toggleClass('menu-color-dark');
         $('.title-graph').toggleClass('title-graph-dark');
         $('.color-principal-menu').toggleClass('color-principal-menu-dark');
@@ -21,13 +21,14 @@ function switchfunction() {
         $('.sub-menu-trade-color').toggleClass('sub-menu-trade-color-dark');
         $('.button-trade-with').toggleClass('button-trade-with-dark');
         $('.nav-link').toggleClass('nav-link-dark');
+        $('.nav-tabs-custom').toggleClass('nav-tabs-custom-dark');
         $('.button-trade-order-blue').toggleClass('button-trade-order-blue-dark');
         $('.label-text').toggleClass('label-text-dark');
         $('.button-order-trade').toggleClass('button-order-trade-dark');
         $('.input-trade').toggleClass('input-trade-dark');
         $('.call-menu-color').toggleClass('call-menu-color-dark');
         $('.padding-watchlist').toggleClass('table-dark');
-
+        $("#tech-companies-1").toggleClass('table-dark');
 
         if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
             $('#imagelogo').attr('src', '/assets/images/logo-light.png')
