@@ -188,100 +188,119 @@
                         <div class="card m-b-20">
                             <div class="card-body">
                                 <div>
-                                    <ul>
-                                        <li class="sub-menu-portfolio margin-menu-call" >
-                                            <a  href="#"> <strong class="call-menu-color">Covered Call</strong></a>
+                                    <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#coveredcall" role="tab">Covered Call</a>
                                         </li>
-                                        <li class="sub-menu-portfolio margin-menu-call" >
-                                            <a  href="#"> <strong class="call-menu-color">Call Option</strong></a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#calloption" role="tab">Call Option</a>
                                         </li>
-                                        <li class="sub-menu-portfolio margin-menu-call" >
-                                            <a  href="#"> <strong class="call-menu-color">Put Option</strong></a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#putoption" role="tab">Put Option</a>
                                         </li>
-                                        <li class="sub-menu-portfolio">
-                                            <a  href="#"> <strong class="call-menu-color">Call Spread</strong></a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#callspread" role="tab">Call Spread</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <hr>
+                                <div class="tab-content">
+                                    <div class="tab-pane active p-3" id="coveredcall" role="tabpanel">
+                                        <div class="row" id="test" style="position: absolute; margin-left: 70px;">
 
-                                <div class="row" id="test" style="position: absolute; margin-left: 70px;">
-
-                                    <div class="dropdown margin-dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle button-trade-order-blue margin-call-components" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Expiration
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">LoremIpsum</a>
-                                            <a class="dropdown-item" href="#">LoremIpsum</a>
-                                            <a class="dropdown-item" href="#">LoremIpsum</a>
-                                        </div>
-                                    </div>
-
-                                    <input class="input-width" placeholder="Enter your purchase price">
-
-                                    <button class="margin-call-components button-display-color">Run</button>
-
-                                    <input class="input-width" placeholder="Enter your target price">
-
-                                    <button class="margin-call-components button-display-color">Run</button>
-
-                                </div>
-                                <!-- row -->
-
-                                <!-- Data Table-->
-                                            <div class="table-rep-plugin" id="test1">
-                                                <div class="table-responsive b-0" data-pattern="priority-columns">
-                                                    <table id="tech-companies-1" class="table  table-striped">
-                                                        <thead>
-                                                        <tr>
-                                                            <th data-priority="1">Strike</th>
-                                                            <th data-priority="3">Expiration</th>
-                                                            <th data-priority="1">Intrinsic Val</th>
-                                                            <th data-priority="3">Bid Prem</th>
-                                                            <th data-priority="3">Bid Price</th>
-                                                            <th data-priority="6">Break Even</th>
-                                                            <th data-priority="6">Stock Loss</th>
-                                                            <th data-priority="6">Max % Yield</th>
-                                                            <th data-priority="6">Price Target</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>$140</td>
-                                                            <td>MAR-22-18</td>
-                                                            <td>$110.50</td>
-                                                            <td class="red">($5.50)</td>
-                                                            <td>$10.50</td>
-                                                            <td>$155.50</td>
-                                                            <td class="green">44.50%</td>
-                                                            <td class="green">10.50 %</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>$141</td>
-                                                            <td>MAR-22-18</td>
-                                                            <td>$110.50</td>
-                                                            <td class="red">($5.50)</td>
-                                                            <td>$10.50</td>
-                                                            <td>$155.50</td>
-                                                            <td class="green">44.50%</td>
-                                                            <td class="green">10.50 %</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>$142</td>
-                                                            <td>MAR-22-18</td>
-                                                            <td>$110.50</td>
-                                                            <td class="red">($5.50)</td>
-                                                            <td>$10.50</td>
-                                                            <td>$155.50</td>
-                                                            <td class="green">44.50%</td>
-                                                            <td class="green">10.50 %</td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                            <div class="dropdown margin-dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle button-trade-order-blue margin-call-components" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Expiration
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
                                                 </div>
                                             </div>
+
+                                            <input class="input-width" placeholder="Enter your purchase price">
+
+                                            <button class="margin-call-components button-display-color">Run</button>
+
+                                            <input class="input-width" placeholder="Enter your target price">
+
+                                            <button class="margin-call-components button-display-color">Run</button>
+
+                                        </div>
+                                        <!-- row -->
+                                        <!-- Data Table-->
+                                        <div class="table-rep-plugin">
+                                            <div class="table-responsive b-0" data-pattern="priority-columns">
+                                                <table id="tech-companies-1" class="table  table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th data-priority="1">Strike</th>
+                                                        <th data-priority="3">Expiration</th>
+                                                        <th data-priority="1">Intrinsic Val</th>
+                                                        <th data-priority="3">Bid Prem</th>
+                                                        <th data-priority="3">Bid Price</th>
+                                                        <th data-priority="6">Break Even</th>
+                                                        <th data-priority="6">Stock Loss</th>
+                                                        <th data-priority="6">Max % Yield</th>
+                                                        <th data-priority="6">Price Target</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>$140</td>
+                                                        <td>MAR-22-18</td>
+                                                        <td>$110.50</td>
+                                                        <td class="red">($5.50)</td>
+                                                        <td>$10.50</td>
+                                                        <td>$155.50</td>
+                                                        <td class="green">44.50%</td>
+                                                        <td class="green">10.50 %</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$141</td>
+                                                        <td>MAR-22-18</td>
+                                                        <td>$110.50</td>
+                                                        <td class="red">($5.50)</td>
+                                                        <td>$10.50</td>
+                                                        <td>$155.50</td>
+                                                        <td class="green">44.50%</td>
+                                                        <td class="green">10.50 %</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$142</td>
+                                                        <td>MAR-22-18</td>
+                                                        <td>$110.50</td>
+                                                        <td class="red">($5.50)</td>
+                                                        <td>$10.50</td>
+                                                        <td>$155.50</td>
+                                                        <td class="green">44.50%</td>
+                                                        <td class="green">10.50 %</td>
+                                                    </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane p-3" id="calloption" role="tabpanel">
+                                        <p class="font-14 mb-0">
+                                            LoremIpsum
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="putoption" role="tabpanel">
+                                        <p class="font-14 mb-0">
+                                            LoremIpsum
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="callspread" role="tabpanel">
+                                        <p class="font-14 mb-0">
+                                            LoremIpsum
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
