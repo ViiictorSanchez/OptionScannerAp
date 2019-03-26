@@ -1217,7 +1217,7 @@ body {
     color: #7a6fbe;
   }
   #topnav .navigation-menu > li:hover a i {
-    color: #7a6fbe;
+    color: #000;
   }
   #topnav .navigation-menu > li .submenu {
     position: absolute;
