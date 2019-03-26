@@ -22,8 +22,7 @@
 
                     <div class="menu-extras topbar-custom">
 
-                        <ul class="float-right list-unstyled mb-0 ">
-                            
+                        <ul class="float-right list-unstyled mb-0 navigation-menu ">
                             <li class="dropdown notification-list d-none d-sm-block form-distance" >
                                 <form role="search" class="app-search">
                                     <div class="form-group mb-0 ">
@@ -35,10 +34,13 @@
                             </li>
 
                             <li class="float-right list-unstyled mb-0 has-submenu ">
-                                <div class="margin-menu-top" >
-                                        <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong></a>
+                              <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong><i class="fas fa-sort-down"></i></a>
+                                  <ul class="submenu">
+                                      <li><a href="#" > <i class="fas fa-question-circle"></i> Help <br></a></li>
+                                      <li><a href="#"> <i class="fas fa-wrench"></i>Report Bug</a></li>
+                                      <li><a href="#"> <i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                                  </ul>
 
-                                </div>
                             </li>
 
                             <li class="float-right list-unstyled mb-0 ">

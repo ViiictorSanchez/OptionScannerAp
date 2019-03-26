@@ -145,7 +145,7 @@ tspan{
 }
 
 .line-separate-graph-dark {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .top-nav-dark {
@@ -1353,6 +1353,9 @@ body {
   width: 100%;
   height: 30px;
   border-radius: 2.66px;
+}
+#topnav .navigation-menu > li > a i{
+    display: inline;
 }
 
 .trade .form-group.row{
