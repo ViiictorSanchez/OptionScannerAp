@@ -185,9 +185,10 @@ p{
   width: 30px;
 }
 
-.form-control-dark {
+.form-control-dark{
   background-color: #242b3c !important;
   border: 1px solid #000 !important;
+  color: #e6edff !important;
 }
 
 .form-control-dark:focus {
@@ -211,6 +212,12 @@ p{
 
 .card-body-dark p {
   color: #fff !important;
+}
+
+.card-body-dark button {
+  color : #ff7d39 !important;
+  background-color: #1f2431 !important;
+  border: 1px solid #ff7d39 !important;
 }
 
 .button-my-portfolio-dark {
@@ -238,12 +245,31 @@ p{
   color: #000 !important;
 }
 
-.button
 
-.nav-link-dark {
+.nav-tabs-custom-dark {
+  background-color: #1f2431 !important;
+}
+
+.table-dark {
+  background-color: #1f2431 !important;
+}
+
+
+.nav-tabs-custom-dark > li {
+  border-color: #ff7d39 !important;
+}
+
+.nav-tabs-custom-dark > li > a {
+  color: #ff7d39 !important;
+}
+
+.nav-tabs-custom-dark > li > a.active {
   background-color: #ff7d39 !important;
   color: #fff !important;
 }
+
+
+
 
 .nav-link-dark::after {
   background-color: #ff7d39 !important;
@@ -277,9 +303,7 @@ p{
   color: #fff !important;
 }
 
-.table-dark {
-  background-color: #1f2431 !important;
-}
+
 
 
 
