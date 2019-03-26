@@ -25,7 +25,8 @@
             hideHover: 'auto',
             lineColors: lineColors,
             fillOpacity: .6,
-            behaveLikeLine: true
+            behaveLikeLine: true,
+
         });
     },
 
@@ -68,54 +69,54 @@
         
         //creating area chart IWM
         var $areaData = [
-            {y: '2011', c:400},
-            {y: '2012', c:350},
-            {y: '2013', c:195},
-            {y: '2014', c:21},
-            {y: '2015', c:360},
-            {y: '2016', c:120},
-            {y: '2017', c:30}
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
         ];
-        this.createAreaChart('morris-area-example', 0, 0, $areaData, 'y', [ 'c'], ['Value'], [ '#ffa1a9']);
+        this.createAreaChart('morris-area-example', 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
 
         //creating area chart QQQ
         var $areaData2 = [
-            {y: '2011',  c:400},
-            {y: '2012',  c:350},
-            {y: '2013',  c:195},
-            {y: '2014',  c:21},
-            {y: '2015',  c:360},
-            {y: '2016',  c:120},
-            {y: '2017',  c:30}
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
         ];
 
-        this.createAreaChart('morris-area-example2', 0, 0, $areaData2, 'y', ['c'], ['Value'], ['#1fa764']);
+        this.createAreaChart('morris-area-example2', 0, 0, $areaData2, 'y', ['a'], ['Value'], ['#1fa764']);
 
         //creating area chart SPY
         var $areaData3 = [
-            {y: '2011',  c:400},
-            {y: '2012',  c:350},
-            {y: '2013',  c:195},
-            {y: '2014',  c:21},
-            {y: '2015',  c:360},
-            {y: '2016',  c:120},
-            {y: '2017',  c:30}
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
         ];
 
-        this.createAreaChart('morris-area-example3', 0, 0, $areaData3, 'y', ['c'], ['Value'], ['#1fa764']);
+        this.createAreaChart('morris-area-example3', 0, 0, $areaData3, 'y', ['a'], ['Value'], ['#1fa764']);
 
         //creating area chart DIA
         var $areaData4 = [
-            {y: '2011', c:400},
-            {y: '2012', c:350},
-            {y: '2013', c:195},
-            {y: '2014', c:21},
-            {y: '2015', c:360},
-            {y: '2016', c:120},
-            {y: '2017', c:30}
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
         ];
 
-        this.createAreaChart('morris-area-example4', 0, 0, $areaData4, 'y', ['c'], ['Value'], ['#ffa1a9']);
+        this.createAreaChart('morris-area-example4', 0, 0, $areaData4, 'y', ['a'], ['Value'], ['#ffa1a9']);
 
 
         //creating donut chart

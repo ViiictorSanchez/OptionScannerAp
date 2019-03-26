@@ -96,6 +96,9 @@ a:focus {
 p{
     color: black;
 }
+tspan{
+    display: none;
+}
 
 .container-alt {
   margin-left: auto;

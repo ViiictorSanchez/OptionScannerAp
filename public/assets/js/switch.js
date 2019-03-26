@@ -35,13 +35,5 @@ function switchfunction() {
         else 
             $('#imagelogo').attr('src', '/assets/images/logo.png')
 
-       
-        
-
-        
-
-
-
-
 
 }

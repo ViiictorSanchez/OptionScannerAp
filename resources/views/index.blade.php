@@ -17,8 +17,8 @@
             <br>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-7">
-                        <div class="card m-b-0">
+                    <div class="col-md-7" >
+                        <div class="card m-b-0" >
                             <div class="card-body">
                                     <ul>
                                         <li class="float-left list-unstyled my-portfolio-menu">
