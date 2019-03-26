@@ -29,7 +29,9 @@ function switchfunction() {
         $('.call-menu-color').toggleClass('call-menu-color-dark');
         $('.padding-watchlist').toggleClass('table-dark');
         $("#tech-companies-1").toggleClass('table-dark');
-
+        if ($('#demo-dark')){
+            $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
+        }
         if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
             $('#imagelogo').attr('src', '/assets/images/logo-light.png')
         else 

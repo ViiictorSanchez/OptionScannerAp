@@ -87,7 +87,8 @@
                 <hr id="line-separate">
                 <!-- Page-Title -->
                 <div class="row" class="align-menu-graph">
-                    <div class="col-md-12">
+                    <!-- problemas al centrar las graficas 1270 px a 1500px -->
+                    <div class="col-md-11">
                         <div class="page-title-box">
                         	<br><br><br><br>
                             <div class="state-information" >
