@@ -15,7 +15,7 @@
 @endsection
 
 @section('content')
-    <br>
+    <br><br><br><br>
     <div class="container-fluid">
         <!-- row -->
         <div class="row">

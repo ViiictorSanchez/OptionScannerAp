@@ -1128,6 +1128,9 @@ body {
   margin-top: 5px;
   color: #353942;
 }
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: black;
+}
 
 /*
   Responsive Menu
@@ -4023,6 +4026,7 @@ Invoice
     top: 160px !important;
   }
 }
+
 /*# sourceMappingURL=style.css.map */
 
 @media (min-width: 1280px) {
@@ -4147,8 +4151,7 @@ Invoice
   /* right or prev direction */
   .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
   .carousel-item-prev.carousel-item-right + .carousel-item,
-  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
     position: relative;
     transform: translate3d(100%, 0, 0);
     visibility: visible;
@@ -4160,7 +4163,6 @@ Invoice
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (max-width:750px){
-
 
   /* show 3 items */
   .carousel-inner .active {
