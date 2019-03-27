@@ -66,7 +66,8 @@
   
     
     Dashboard.prototype.init = function() {
-        
+        //-------------------------------------------------------
+
         //creating area chart IWM
         var $areaData = [
             {y: '2011', a:400},
@@ -118,6 +119,265 @@
 
         this.createAreaChart('morris-area-example4', 0, 0, $areaData4, 'y', ['a'], ['Value'], ['#ffa1a9']);
 
+
+        //creating area chart TEST 5
+        var $areaData5 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+        this.createAreaChart('morris-area-example5', 0, 0, $areaData5, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+        //creating area chart  TEST6
+        var $areaData6 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example6', 0, 0, $areaData6, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST7
+        var $areaData7 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example7', 0, 0, $areaData7, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST8
+        var $areaData8 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+
+        this.createAreaChart('morris-area-example8', 0, 0, $areaData8, 'y', ['a'], ['Value'], ['#ffa1a9']);
+
+        //creating area chart TEST 9
+        var $areaData9 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+        this.createAreaChart('morris-area-example9', 0, 0, $areaData9, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+        //creating area chart  TEST10
+        var $areaData10 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example10', 0, 0, $areaData10, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST11
+        var $areaData11 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example11', 0, 0, $areaData11, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST12
+        var $areaData12 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+
+        this.createAreaChart('morris-area-example12', 0, 0, $areaData12, 'y', ['a'], ['Value'], ['#ffa1a9']);
+
+
+        //creating area chart test13
+        var $areaData13 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+        this.createAreaChart('morris-area-example13', 0, 0, $areaData13, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+        //creating area chart TEST14
+        var $areaData14 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example14', 0, 0, $areaData14, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST15
+        var $areaData15 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example15', 0, 0, $areaData15, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST16
+        var $areaData16 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+
+        this.createAreaChart('morris-area-example16', 0, 0, $areaData16, 'y', ['a'], ['Value'], ['#ffa1a9']);
+
+
+        //creating area chart TEST 17
+        var $areaData17 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+        this.createAreaChart('morris-area-example17', 0, 0, $areaData17, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+        //creating area chart  TEST18
+        var $areaData18 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example18', 0, 0, $areaData18, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST19
+        var $areaData19 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example19', 0, 0, $areaData19, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST20
+        var $areaData20 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+
+        this.createAreaChart('morris-area-example20', 0, 0, $areaData20, 'y', ['a'], ['Value'], ['#ffa1a9']);
+
+        //creating area chart TEST 21
+        var $areaData21 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+        this.createAreaChart('morris-area-example21', 0, 0, $areaData21, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+        //creating area chart  TEST22
+        var $areaData22 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example22', 0, 0, $areaData22, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST23
+        var $areaData23 = [
+            {y: '2011',  a:400},
+            {y: '2012',  a:350},
+            {y: '2013',  a:195},
+            {y: '2014',  a:21},
+            {y: '2015',  a:360},
+            {y: '2016',  a:120},
+            {y: '2017',  a:30}
+        ];
+
+        this.createAreaChart('morris-area-example23', 0, 0, $areaData23, 'y', ['a'], ['Value'], ['#1fa764']);
+
+        //creating area chart TEST24
+        var $areaData24 = [
+            {y: '2011', a:400},
+            {y: '2012', a:350},
+            {y: '2013', a:195},
+            {y: '2014', a:21},
+            {y: '2015', a:360},
+            {y: '2016', a:120},
+            {y: '2017', a:30}
+        ];
+
+        this.createAreaChart('morris-area-example24', 0, 0, $areaData24, 'y', ['a'], ['Value'], ['#ffa1a9']);
+
+//-------------------------------------------------------------------------------------------------------
 
         //creating donut chart
         var $donutData = [
