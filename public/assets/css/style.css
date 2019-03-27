@@ -761,15 +761,12 @@ body {
 }
 
 .wrapper {
-  padding-top: 275px;
+  padding-top: 50px;
 }
 
-.container-fluid {
-  width: 90%;
-}
+
 
 #topnav {
-  position: fixed;
   right: 0;
   left: 0;
   top: 0;
@@ -1131,10 +1128,31 @@ body {
 .carousel-control-next-icon, .carousel-control-prev-icon{
   background-color: black;
 }
+.carousel-control-next, .carousel-control-prev{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5% !important;
+  color: #fff;
+  text-align: center;
+  opacity: .5;
+}
 
 /*
   Responsive Menu
 */
+@media  (min-width: 1450px) {
+  .container-fluid {
+    width: 90%;
+  }
+
+}
 @media (min-width: 1200px){
   .area-graph{
     height: 106px !important;
@@ -1161,6 +1179,7 @@ body {
     padding-right: 10px;
     padding-left: 15px;
   }
+
 }
 
 @media (min-width: 992px) {
@@ -4031,7 +4050,7 @@ Invoice
 
 @media (min-width: 1280px) {
 
-  /* show 3 items */
+  /* show 4 items */
   .carousel-inner .active,
   .carousel-inner .active + .carousel-item,
   .carousel-inner .active + .carousel-item + .carousel-item,

@@ -1,9 +1,8 @@
 
 function switchfunction() {
-
+        $(document.body).toggleClass('body-dark');
         $('#demo').toggleClass('demo-dark');
         $('#line-separate').toggleClass('line-separate-dark');
-        $(document.body).toggleClass('body-dark');
         $('#topnav').toggleClass('top-nav-dark');
         $('#topnavlogo').toggleClass('top-nav-logo-dark');
         $('#navigation').toggleClass('navigation-dark');

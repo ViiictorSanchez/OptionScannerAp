@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-            <br><br><br><br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-7" >
@@ -224,9 +223,7 @@
                         <div class="card m-b-0">
                             <div class="card-body">
                                 <div id="linea">
-
                                     <ul>
-
                                         <li class="float-right list-unstyled ">
                                             <a><strong>Falling Knife Screener</strong></a>
                                         </li>

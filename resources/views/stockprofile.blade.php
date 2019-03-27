@@ -15,13 +15,11 @@
 @endsection
 
 @section('content')
-    <br><br><br><br>
     <div class="container-fluid">
         <!-- row -->
         <div class="row">
             <!-- left side -->
             <div class="col-xl-9">
-
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="card m-b-30">

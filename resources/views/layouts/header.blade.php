@@ -18,8 +18,6 @@
 
                     </div>
                     <!-- End Logo container-->
-
-
                     <div class="menu-extras topbar-custom">
 
                         <ul class="float-right list-unstyled mb-0 navigation-menu ">
@@ -92,8 +90,7 @@
                     <!-- problemas al centrar las graficas 1270 px a 1500px -->
                     <div class="col-md-12">
                         <div class="page-title-box">
-                        	<br>
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="1500">
+                            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="2000" >
                                 <div class="carousel-inner row w-100 mx-auto" role="listbox" >
 
                                     <div class="carousel-item col-md-3  active">
@@ -455,6 +452,7 @@
                                     </div>
 
                             </div><!-- carousel graph symbols -->
+
                                 <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only" style="color: black;">Previous</span>
@@ -473,7 +471,6 @@
 
             <!-- MENU Start -->
             <div class="navbar-custom">
-                <br>
                 <div class="container-fluid">
                     <div id="navigation">
                         <!-- Navigation Menu-->
