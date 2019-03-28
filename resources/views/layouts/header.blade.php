@@ -90,7 +90,8 @@
                     <!-- problemas al centrar las graficas 1270 px a 1500px -->
                     <div class="col-md-12">
                         <div class="page-title-box">
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="2000" >
+                            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="2000"  >
+
                                 <div class="carousel-inner row w-100 mx-auto" role="listbox" >
 
                                     <div class="carousel-item col-md-3  active">
@@ -451,7 +452,7 @@
                                         </div>
                                     </div>
 
-                            </div><!-- carousel graph symbols -->
+                            </div><!-- carousel graph symbols-->
 
                                 <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -1,4 +1,3 @@
-
 function switchfunction() {
 
 
@@ -6,8 +5,7 @@ function switchfunction() {
             localStorage.setItem('dark', 'off')
         else
             localStorage.setItem('dark', 'on')
-            
-        
+
 
         $(document.body).toggleClass('body-dark');
         $('#demo').toggleClass('demo-dark');

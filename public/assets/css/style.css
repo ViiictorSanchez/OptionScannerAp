@@ -1179,6 +1179,9 @@ body {
   .container-fluid {
     width: 90%;
   }
+  .form-distance{
+    margin-right: 200px !important;
+  }
 
 }
 @media (min-width: 1200px){
@@ -1207,6 +1210,9 @@ body {
     padding-right: 10px;
     padding-left: 15px;
   }
+  .form-distance{
+    margin-right: 70px;
+  }
 
 }
 
@@ -1214,6 +1220,7 @@ body {
   .area-graph{
     height: 106px !important;
     width: 190px !important;
+    margin-right: 28px;
   }
   .input-width {
     width: 241px;
@@ -1233,14 +1240,10 @@ body {
     float: right;
     display: block;
     padding-right: 15px;
-    padding-left: 20px;
   }
 
   .line-separate-graph{
     margin-right: 5px;
-  }
-  .form-distance{
-    margin-right: 70px;
   }
 
   .margin-menu-call{
@@ -4093,8 +4096,8 @@ Invoice
     transition: none;
   }
 
-  .carousel-inner .carousel-item-next,
-  .carousel-inner .carousel-item-prev {
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
     position: relative;
     transform: translate3d(0, 0, 0);
   }
@@ -4108,7 +4111,7 @@ Invoice
     visibility: visible;
   }
 
-  /* left or forward direction */
+  /* left or forward direction*/
   .active.carousel-item-left + .carousel-item-next.carousel-item-left,
   .carousel-item-next.carousel-item-left + .carousel-item,
   .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
@@ -4119,7 +4122,7 @@ Invoice
     visibility: visible;
   }
 
-  /* farthest right hidden item must be abso position for animations */
+  /* farthest right hidden item must be abso position for animations*/
   .carousel-inner .carousel-item-prev.carousel-item-right {
     position: absolute;
     top: 0;
@@ -4129,7 +4132,7 @@ Invoice
     visibility: visible;
   }
 
-  /* right or prev direction */
+  /* right or prev direction*/
   .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
   .carousel-item-prev.carousel-item-right + .carousel-item,
   .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
