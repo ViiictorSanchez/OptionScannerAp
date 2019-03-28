@@ -30,6 +30,8 @@ function switchfunction() {
         $("#tech-companies-1").toggleClass('table-dark');
         if ($('#demo-dark')){
             $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
+            $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');
+            $('.fa, .fas').toggleClass('fas-dark');
         }
         if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
             $('#imagelogo').attr('src', '/assets/images/logo-light.png')
