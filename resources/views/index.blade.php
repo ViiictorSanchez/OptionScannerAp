@@ -779,7 +779,7 @@
          <script>
             $(document).ready(function(){
                 $('.charts-slide').slick({
-                    slidesToShow: 6,
+                    slidesToShow: 4,
                     slidesToScroll: 1,
                     autoplay: true,
                     autoplaySpeed: 1500,
@@ -789,12 +789,12 @@
                     responsive: [{
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 4
+                            slidesToShow: 2
                         }
                     }, {
                         breakpoint: 520,
                         settings: {
-                            slidesToShow: 3
+                            slidesToShow: 1
                         }
                     }]
                 });
