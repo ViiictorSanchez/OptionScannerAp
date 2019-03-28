@@ -1,3 +1,26 @@
+$(document).ready(function(){
+    $('.charts-slide').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1200,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
+    });
+});
+
 function switchfunction() {
 
 
@@ -35,6 +58,8 @@ function switchfunction() {
         $('.call-menu-color').toggleClass('call-menu-color-dark');
         $('.padding-watchlist').toggleClass('table-dark');
         $("#tech-companies-1").toggleClass('table-dark');
+        $('.button-expiration').toggleClass('button-expiration-dark');
+        $('.button-display-color').toggleClass('button-display-color-dark');
         if ($('#demo-dark')){
             $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
             $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');

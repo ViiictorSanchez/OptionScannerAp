@@ -777,27 +777,5 @@
          <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
          <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
          <script>
-            $(document).ready(function(){
-                $('.charts-slide').slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 1500,
-                    arrows: false,
-                    dots: false,
-                    pauseOnHover: true,
-                    responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    }, {
-                        breakpoint: 520,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }]
-                });
-            });
-         </script>
+
 @endsection

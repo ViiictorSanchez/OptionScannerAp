@@ -54,21 +54,21 @@
                                 <div class="menu-portfolio">
                                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#home2" role="tab">Stock</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#stock" role="tab">Stock</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#profile2" role="tab">Option</a>
+                                            <a class="nav-link" data-toggle="tab" href="#option" role="tab">Option</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#messages2" role="tab">Spread</a>
+                                            <a class="nav-link" data-toggle="tab" href="#spread" role="tab">Spread</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#settings2" role="tab">Combo</a>
+                                            <a class="nav-link" data-toggle="tab" href="#combo" role="tab">Combo</a>
                                         </li>
                                     </ul>
                                     <!-- tab content-->
                                     <div class="tab-content">
-                                        <div class="tab-pane active p-3" id="home2" role="tabpanel">
+                                        <div class="tab-pane active p-3" id="stock" role="tabpanel">
                                             <div class="float-left">
                                                 <ul>
                                                     <li class="sub-menu-trade" >
@@ -158,17 +158,22 @@
                                                 FINRA & SIPC</p>
 
                                         </div>
-                                        <div class="tab-pane p-3" id="profile2" role="tabpanel">
+                                        <div class="tab-pane p-3" id="option" role="tabpanel">
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
                                         </div>
-                                        <div class="tab-pane p-3" id="messages2" role="tabpanel">
+
+
+                                        <div class="tab-pane p-3" id="spread" role="tabpanel">
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
                                         </div>
-                                        <div class="tab-pane p-3" id="settings2" role="tabpanel">
+
+
+                                        <div class="tab-pane p-3" id="combo" role="tabpanel">
+
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
@@ -206,7 +211,7 @@
                                             <div class="row row-filters">
 
                                                 <div class="dropdown margin-dropdown">
-                                                    <button class="btn btn-secondary dropdown-toggle button-trade-order-blue margin-call-components" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn btn-secondary dropdown-toggle button-expiration margin-call-components" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Expiration
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -623,30 +628,6 @@
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
     <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
     <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
-         <script>
-            $(document).ready(function(){
-                $('.charts-slide').slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 1500,
-                    arrows: false,
-                    dots: false,
-                    pauseOnHover: true,
-                    responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    }, {
-                        breakpoint: 520,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }]
-                });
-            });
-         </script>
    
 @endsection
 
