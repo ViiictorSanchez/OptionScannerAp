@@ -94,7 +94,7 @@
 
                                 <div class="row w-100 mx-auto charts-slide">
 
-                                    <div class="slide col-md-3">
+                                    <div class="slide">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -107,7 +107,7 @@
                                       </div>
                                   </div>
 
-                                    <div class="slide col-md-3 ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -122,7 +122,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide col-md-3 ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -152,7 +152,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide ">
+                                    <div class="slide  ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -197,7 +197,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -212,7 +212,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide col-md-3 ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -227,7 +227,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide col-lg-3 ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -242,7 +242,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -272,7 +272,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -287,7 +287,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -302,7 +302,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -317,7 +317,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -332,7 +332,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -347,7 +347,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -362,7 +362,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -377,7 +377,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
@@ -407,7 +407,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="slide  ">
+                                    <div class="slide ">
                                         <div class="panel panel-default">
                                             <div class="panel-thumbnail">
                                                 <div class="state-graph">
