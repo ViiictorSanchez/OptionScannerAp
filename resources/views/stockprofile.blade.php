@@ -621,6 +621,8 @@
 
     <!-- switch color Theme -->
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
+   
 @endsection
 
 @section('script-bottom')

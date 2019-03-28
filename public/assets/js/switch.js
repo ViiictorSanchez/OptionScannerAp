@@ -1,5 +1,14 @@
 
 function switchfunction() {
+
+
+        if(localStorage.getItem('dark') === 'on')
+            localStorage.setItem('dark', 'off')
+        else
+            localStorage.setItem('dark', 'on')
+            
+        
+
         $(document.body).toggleClass('body-dark');
         $('#demo').toggleClass('demo-dark');
         $('#line-separate').toggleClass('line-separate-dark');
@@ -38,3 +47,4 @@ function switchfunction() {
 
 
 }
+
