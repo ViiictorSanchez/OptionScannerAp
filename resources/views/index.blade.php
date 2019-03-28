@@ -763,7 +763,7 @@
                             </div>
 
                 </div>  <!-- end row -->
-
+            </div>
 @endsection
 
 @section('script')
