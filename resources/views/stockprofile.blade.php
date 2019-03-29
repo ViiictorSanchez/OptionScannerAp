@@ -220,9 +220,9 @@
                                                     Expiration
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
-                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
-                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
+                                                    <button class="dropdown-item"  id="MAR" onclick="searchExpiration()">MAR-22-18</button>
+                                                    <a class="dropdown-item"  id="MAR1" >MAR-23-18</a>
+                                                    <a class="dropdown-item"  id="MAR2">MAR-24-18</a>
                                                 </div>
                                             </div>
 
@@ -267,7 +267,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>$141</td>
-                                                        <td>MAR-22-18</td>
+                                                        <td>MAR-23-18</td>
                                                         <td>$110.50</td>
                                                         <td class="red">($5.50)</td>
                                                         <td>$10.50</td>
@@ -278,7 +278,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>$142</td>
-                                                        <td>MAR-22-18</td>
+                                                        <td>MAR-24-18</td>
                                                         <td>$110.50</td>
                                                         <td class="red">($5.50)</td>
                                                         <td>$10.50</td>

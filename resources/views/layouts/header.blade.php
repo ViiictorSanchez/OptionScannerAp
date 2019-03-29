@@ -636,11 +636,6 @@
             </div>
 
 
-
-            <div class="navbar-custom">
-
-            </div> <!-- end navbar-custom -->
-
         </header>
         <!-- End Navigation Bar-->
 @section('script')

@@ -80,7 +80,6 @@
                                                     <th>Cost Basis</th>
                                                     <th>Market Value</th>
                                                     <th>Total Gain</th>
-                                                    <th></th>
                                                 </tr>
                                                 </thead>
 
