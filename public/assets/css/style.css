@@ -1301,6 +1301,11 @@ body {
   .form-distance{
     margin-right: 200px !important;
   }
+  .area-graph{
+    height: 106px !important;
+    width: 170px;
+  }
+
 
 }
 @media (min-width: 1200px){
@@ -3522,7 +3527,7 @@ table.focus-on tbody tr.focused td {
 
 /* Flot chart */
 .flot-chart-height {
-  height: 320px;
+  height: 391px;
 }
 
 #flotTip {
