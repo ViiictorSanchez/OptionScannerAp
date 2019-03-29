@@ -211,7 +211,6 @@
                                     </ul>
 
                                 </div>
-                                <hr>
                                 <div class="tab-content">
                                     <div class="tab-pane active p-3" id="coveredcall" role="tabpanel">
                                         <div class="row" id="test" style="position: absolute; margin-left: 70px;">
@@ -221,9 +220,9 @@
                                                     Expiration
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
-                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
-                                                    <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
+                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
+                                                    <a class="dropdown-item" href="#">MAR-22-18</a>
                                                 </div>
                                             </div>
 

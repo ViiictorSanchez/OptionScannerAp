@@ -35,6 +35,7 @@ function switchfunction() {
         $('#topnav').toggleClass('top-nav-dark');
         $('#topnavlogo').toggleClass('top-nav-logo-dark');
         $('#navigation').toggleClass('navigation-dark');
+        $('.line-bottom').toggleClass('line-bottom-dark');
         $('.font-size-portfolio').toggleClass('font-size-portfolio-dark');
         $('.menu-my-portfolio-color').toggleClass('menu-my-portfolio-color-dark');
         $('.color-watchlist').toggleClass('color-watchlist-dark');
@@ -59,6 +60,7 @@ function switchfunction() {
         $("#tech-companies-1").toggleClass('table-dark');
         $('.button-expiration').toggleClass('button-expiration-dark');
         $('.button-display-color').toggleClass('button-display-color-dark');
+        $('#topnav .has-submenu.active a ').toggleClass('#topnav .has-submenu-dark.active a')
         if ($('#demo-dark')){
             $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
             $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');
