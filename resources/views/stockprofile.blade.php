@@ -227,13 +227,13 @@
                                                 </div>
                                             </div>
 
-                                            <input class="input-width" placeholder="Enter your purchase price">
+                                            <input id="bidPrice" class="input-width" placeholder="Enter your purchase price">
 
-                                            <button class="margin-call-components button-display-color">Run</button>
+                                            <button class="margin-call-components button-display-color" onClick="searchBid()">Run</button>
 
-                                            <input class="input-width" placeholder="Enter your target price">
+                                            <input id="targetPrice" class="input-width" placeholder="Enter your target price">
 
-                                            <button class="margin-call-components button-display-color">Run</button>
+                                            <button class="margin-call-components button-display-color" onClick="searchTarget()">Run</button>
 
                                         </div>
                                         <!-- row -->
@@ -260,10 +260,11 @@
                                                         <td>MAR-22-18</td>
                                                         <td>$110.50</td>
                                                         <td class="red">($5.50)</td>
-                                                        <td>$10.50</td>
+                                                        <td>$11.50</td>
                                                         <td>$155.50</td>
                                                         <td class="green">44.50%</td>
                                                         <td class="green">10.50 %</td>
+                                                        <td>$10.50</td>
                                                     </tr>
                                                     <tr>
                                                         <td>$141</td>
@@ -274,6 +275,7 @@
                                                         <td>$155.50</td>
                                                         <td class="green">44.50%</td>
                                                         <td class="green">10.50 %</td>
+                                                        <td>$11.50</td>
                                                     </tr>
                                                     <tr>
                                                         <td>$142</td>
@@ -284,6 +286,7 @@
                                                         <td>$155.50</td>
                                                         <td class="green">44.50%</td>
                                                         <td class="green">10.50 %</td>
+                                                        <td>$10.50</td>
                                                     </tr>
 
                                                     </tbody>
@@ -630,6 +633,7 @@
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
     <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
     <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/filters.js') }}"></script>
    
 @endsection
 
