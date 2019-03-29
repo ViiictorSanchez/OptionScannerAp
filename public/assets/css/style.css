@@ -1306,7 +1306,7 @@ body {
 @media (min-width: 1200px){
   .area-graph{
     height: 106px !important;
-    width: 212px !important;
+    width: 170px;
   }
 
   .form-distance{
@@ -1335,12 +1335,14 @@ body {
 
 }
 
-@media (min-width: 992px) {
-  .area-graph{
+@media (min-width: 992px and max-width:1199px)  {
+  .area-graph {
     height: 106px !important;
-    width: 180px !important;
-    margin-right: 28px;
+    width: 130px !important;
+    margin-right: 10px;
   }
+}
+@media (min-width: 992px){
   .input-width {
     width: 235px;
     padding-left: 18px;
