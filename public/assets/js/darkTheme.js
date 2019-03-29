@@ -4,6 +4,7 @@ function ApplyDark() {
     $('#demo').toggleClass('demo-dark');
     $('#line-separate').toggleClass('line-separate-dark');
     $('#topnav').toggleClass('top-nav-dark');
+    $('.line-bottom').toggleClass('line-bottom-dark');
     $('#topnavlogo').toggleClass('top-nav-logo-dark');
     $('#navigation').toggleClass('navigation-dark');
     $('.font-size-portfolio').toggleClass('font-size-portfolio-dark');

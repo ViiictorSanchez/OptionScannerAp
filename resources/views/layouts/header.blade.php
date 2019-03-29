@@ -7,7 +7,6 @@
         <header id="topnav">
             <div class="topbar-main" id="topnavlogo">
                 <div class="container-fluid" >
-
                     <!-- Logo container-->
                     <div class="logo" >
                         
@@ -83,15 +82,13 @@
             </div>
             <!-- end topbar-main -->
 
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <hr id="line-separate">
                 <!-- Page-Title -->
                 <div class="row" class="align-menu-graph">
                     <!-- problemas al centrar las graficas 1270 px a 1500px -->
                     <div class="col-md-12">
                         <div class="page-title-box">
-                            
-
                                 <div class="row w-100 mx-auto charts-slide">
 
                                     <div class="slide">
@@ -454,192 +451,190 @@
 
                           </div>
                         </div>
+
+                        <!-- MENU Start -->
+
+                            <div id="navigation">
+                                <!-- Navigation Menu-->
+                                <ul class="navigation-menu line-bottom">
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a class="color-principal-menu" href="index" >
+                                            <strong>Saved Screeners</strong>
+                                        </a>
+                                        <ul class="submenu">
+                                            <li><a href="stockprofile">StockProfile</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Stock Screeners</strong></a>
+                                        <ul class="submenu">
+                                            <li><a href="email-inbox">Inbox</a></li>
+                                            <li><a href="email-read">Email Read</a></li>
+                                            <li><a href="email-compose">Email Compose</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Option Screeners</strong></a>
+                                        <ul class="submenu megamenu">
+                                            <li>
+                                                <ul>
+                                                    <li><a href="ui-alerts">Alerts</a></li>
+                                                    <li><a href="ui-buttons">Buttons</a></li>
+                                                    <li><a href="ui-badge">Badge</a></li>
+                                                    <li><a href="ui-cards">Cards</a></li>
+                                                    <li><a href="ui-carousel">Carousel</a></li>
+                                                    <li><a href="ui-dropdowns">Dropdowns</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li><a href="ui-grid">Grid</a></li>
+                                                    <li><a href="ui-images">Images</a></li>
+                                                    <li><a href="ui-lightbox">Lightbox</a></li>
+                                                    <li><a href="ui-modals">Modals</a></li>
+                                                    <li><a href="ui-pagination">Pagination</a></li>
+                                                    <li><a href="ui-popover-tooltips">Popover & Tooltips</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li><a href="ui-progressbars">Progress Bars</a></li>
+                                                    <li><a href="ui-sweet-alert">Sweet-Alert</a></li>
+                                                    <li><a href="ui-tabs-accordions">Tabs &amp; Accordions</a></li>
+                                                    <li><a href="ui-typography">Typography</a></li>
+                                                    <li><a href="ui-video">Video</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Index Screeners</strong></a>
+                                        <ul class="submenu">
+                                            <li><a href="form-elements">Elements</a></li>
+                                            <li><a href="form-validation">Validation</a></li>
+                                            <li><a href="form-advanced">Advanced</a></li>
+                                            <li><a href="form-editors">Editors</a></li>
+                                            <li><a href="form-uploads">File Upload</a></li>
+                                            <li><a href="form-xeditable">Xeditable</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Stock Scans</strong></a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="calendar">Calendar</a>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#">Icons</a>
+                                                <ul class="submenu">
+                                                    <li><a href="icons-material">Material Design</a></li>
+                                                    <li><a href="icons-ion">Ion Icons</a></li>
+                                                    <li><a href="icons-fontawesome">Font Awesome</a></li>
+                                                    <li><a href="icons-themify">Themify Icons</a></li>
+                                                    <li><a href="icons-dripicons">Dripicons</a></li>
+                                                    <li><a href="icons-typicons">Typicons Icons</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#">Tables </a>
+                                                <ul class="submenu">
+                                                    <li><a href="tables-basic">Basic Tables</a></li>
+                                                    <li><a href="tables-datatable">Data Table</a></li>
+                                                    <li><a href="tables-responsive">Responsive Table</a></li>
+                                                    <li><a href="tables-editable">Editable Table</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#">Maps</a>
+                                                <ul class="submenu">
+                                                    <li><a href="maps-google"> Google Map</a></li>
+                                                    <li><a href="maps-vector"> Vector Map</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="rangeslider">Range Slider</a>
+                                            </li>
+                                            <li>
+                                                <a href="session-timeout">Session Timeout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Option Scans</strong></a>
+                                        <ul class="submenu">
+                                            <li><a href="charts-morris">Morris Chart</a></li>
+                                            <li><a href="charts-chartist">Chartist Chart</a></li>
+                                            <li><a href="charts-chartjs">Chartjs Chart</a></li>
+                                            <li><a href="charts-flot">Flot Chart</a></li>
+                                            <li><a href="charts-c3">C3 Chart</a></li>
+                                            <li><a href="charts-other">Jquery Knob Chart</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>LEAPS</strong></a>
+                                        <ul class="submenu megamenu">
+                                            <li>
+                                                <ul>
+                                                    <li><a href="pages-timeline">Timeline</a></li>
+                                                    <li><a href="pages-invoice">Invoice</a></li>
+                                                    <li><a href="pages-directory">Directory</a></li>
+                                                    <li><a href="pages-login">Login</a></li>
+                                                    <li><a href="pages-register">Register</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li><a href="pages-recoverpw">Recover Password</a></li>
+                                                    <li><a href="pages-lock-screen">Lock Screen</a></li>
+                                                    <li><a href="pages-blank">Blank Page</a></li>
+                                                    <li><a href="pages-404">Error 404</a></li>
+                                                    <li><a href="pages-500">Error 500</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!--  Sectors Agregate-->
+                                    <li class="has-submenu principal-menu-distance">
+                                        <a href="#" class="color-principal-menu"><strong>Sectors</strong></a>
+                                        <ul class="submenu megamenu">
+                                            <li>
+                                                <ul>
+                                                    <li><a href="pages-timeline">Timeline</a></li>
+                                                    <li><a href="pages-invoice">Invoice</a></li>
+                                                    <li><a href="pages-directory">Directory</a></li>
+                                                    <li><a href="pages-login">Login</a></li>
+                                                    <li><a href="pages-register">Register</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li><a href="pages-recoverpw">Recover Password</a></li>
+                                                    <li><a href="pages-lock-screen">Lock Screen</a></li>
+                                                    <li><a href="pages-blank">Blank Page</a></li>
+                                                    <li><a href="pages-404">Error 404</a></li>
+                                                    <li><a href="pages-500">Error 500</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                <!-- End navigation menu -->
+                            </div> <!-- end navigation -->
+
                     </div>
                 </div>
 
             </div>
 
-
-            <!-- MENU Start -->
-            <div class="navbar-custom">
-                <div class="container-fluid">
-                    <div id="navigation">
-                        <!-- Navigation Menu-->
-                        <ul class="navigation-menu float-center">
-
-                            <li class="has-submenu">
-                                <a class="color-principal-menu" href="index" >
-                                    <strong>Saved Screeners</strong>
-                                </a>
-                                <ul class="submenu">
-                                    <li><a href="stockprofile">StockProfile</a></li>
-
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Stock Screeners</strong></a>
-                                <ul class="submenu">
-                                    <li><a href="email-inbox">Inbox</a></li>
-                                    <li><a href="email-read">Email Read</a></li>
-                                    <li><a href="email-compose">Email Compose</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Option Screeners</strong></a>
-                                <ul class="submenu megamenu">
-                                    <li>
-                                        <ul>
-                                            <li><a href="ui-alerts">Alerts</a></li>
-                                            <li><a href="ui-buttons">Buttons</a></li>
-                                            <li><a href="ui-badge">Badge</a></li>
-                                            <li><a href="ui-cards">Cards</a></li>
-                                            <li><a href="ui-carousel">Carousel</a></li>
-                                            <li><a href="ui-dropdowns">Dropdowns</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="ui-grid">Grid</a></li>
-                                            <li><a href="ui-images">Images</a></li>
-                                            <li><a href="ui-lightbox">Lightbox</a></li>
-                                            <li><a href="ui-modals">Modals</a></li>
-                                            <li><a href="ui-pagination">Pagination</a></li>
-                                            <li><a href="ui-popover-tooltips">Popover & Tooltips</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="ui-progressbars">Progress Bars</a></li>
-                                            <li><a href="ui-sweet-alert">Sweet-Alert</a></li>
-                                            <li><a href="ui-tabs-accordions">Tabs &amp; Accordions</a></li>
-                                            <li><a href="ui-typography">Typography</a></li>
-                                            <li><a href="ui-video">Video</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Index Screeners</strong></a>
-                                <ul class="submenu">
-                                    <li><a href="form-elements">Elements</a></li>
-                                    <li><a href="form-validation">Validation</a></li>
-                                    <li><a href="form-advanced">Advanced</a></li>
-                                    <li><a href="form-editors">Editors</a></li>
-                                    <li><a href="form-uploads">File Upload</a></li>
-                                    <li><a href="form-xeditable">Xeditable</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Stock Scans</strong></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="calendar">Calendar</a>
-                                    </li>
-                                    <li class="has-submenu">
-                                        <a href="#">Icons</a>
-                                        <ul class="submenu">
-                                            <li><a href="icons-material">Material Design</a></li>
-                                            <li><a href="icons-ion">Ion Icons</a></li>
-                                            <li><a href="icons-fontawesome">Font Awesome</a></li>
-                                            <li><a href="icons-themify">Themify Icons</a></li>
-                                            <li><a href="icons-dripicons">Dripicons</a></li>
-                                            <li><a href="icons-typicons">Typicons Icons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-submenu">
-                                        <a href="#">Tables </a>
-                                        <ul class="submenu">
-                                            <li><a href="tables-basic">Basic Tables</a></li>
-                                            <li><a href="tables-datatable">Data Table</a></li>
-                                            <li><a href="tables-responsive">Responsive Table</a></li>
-                                            <li><a href="tables-editable">Editable Table</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-submenu">
-                                        <a href="#">Maps</a>
-                                        <ul class="submenu">
-                                            <li><a href="maps-google"> Google Map</a></li>
-                                            <li><a href="maps-vector"> Vector Map</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="rangeslider">Range Slider</a>
-                                    </li>
-                                    <li>
-                                        <a href="session-timeout">Session Timeout</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Option Scans</strong></a>
-                                <ul class="submenu">
-                                    <li><a href="charts-morris">Morris Chart</a></li>
-                                    <li><a href="charts-chartist">Chartist Chart</a></li>
-                                    <li><a href="charts-chartjs">Chartjs Chart</a></li>
-                                    <li><a href="charts-flot">Flot Chart</a></li>
-                                    <li><a href="charts-c3">C3 Chart</a></li>
-                                    <li><a href="charts-other">Jquery Knob Chart</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>LEAPS</strong></a>
-                                <ul class="submenu megamenu">
-                                    <li>
-                                        <ul>
-                                            <li><a href="pages-timeline">Timeline</a></li>
-                                            <li><a href="pages-invoice">Invoice</a></li>
-                                            <li><a href="pages-directory">Directory</a></li>
-                                            <li><a href="pages-login">Login</a></li>
-                                            <li><a href="pages-register">Register</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="pages-recoverpw">Recover Password</a></li>
-                                            <li><a href="pages-lock-screen">Lock Screen</a></li>
-                                            <li><a href="pages-blank">Blank Page</a></li>
-                                            <li><a href="pages-404">Error 404</a></li>
-                                            <li><a href="pages-500">Error 500</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--  Sectors Agregate-->
-                            <li class="has-submenu">
-                                <a href="#" class="color-principal-menu"><strong>Sectors</strong></a>
-                                <ul class="submenu megamenu">
-                                    <li>
-                                        <ul>
-                                            <li><a href="pages-timeline">Timeline</a></li>
-                                            <li><a href="pages-invoice">Invoice</a></li>
-                                            <li><a href="pages-directory">Directory</a></li>
-                                            <li><a href="pages-login">Login</a></li>
-                                            <li><a href="pages-register">Register</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="pages-recoverpw">Recover Password</a></li>
-                                            <li><a href="pages-lock-screen">Lock Screen</a></li>
-                                            <li><a href="pages-blank">Blank Page</a></li>
-                                            <li><a href="pages-404">Error 404</a></li>
-                                            <li><a href="pages-500">Error 500</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                        <!-- End navigation menu -->
-                    </div> <!-- end navigation -->
-                </div> <!-- end container-fluid -->
-            </div> <!-- end navbar-custom -->
 
         </header>
         <!-- End Navigation Bar-->

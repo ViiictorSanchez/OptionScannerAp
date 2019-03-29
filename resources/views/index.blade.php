@@ -80,7 +80,6 @@
                                                     <th>Cost Basis</th>
                                                     <th>Market Value</th>
                                                     <th>Total Gain</th>
-                                                    <th></th>
                                                 </tr>
                                                 </thead>
 
@@ -739,6 +738,5 @@
          <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
          <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
          <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
-         <script>
 
 @endsection
