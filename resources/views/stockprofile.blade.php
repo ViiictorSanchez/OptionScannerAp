@@ -15,13 +15,11 @@
 @endsection
 
 @section('content')
-    <br>
     <div class="container-fluid">
         <!-- row -->
         <div class="row">
             <!-- left side -->
             <div class="col-xl-9">
-
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="card m-b-30">
@@ -56,21 +54,21 @@
                                 <div class="menu-portfolio">
                                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#home2" role="tab">Stock</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#stock" role="tab">Stock</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#profile2" role="tab">Option</a>
+                                            <a class="nav-link" data-toggle="tab" href="#option" role="tab">Option</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#messages2" role="tab">Spread</a>
+                                            <a class="nav-link" data-toggle="tab" href="#spread" role="tab">Spread</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#settings2" role="tab">Combo</a>
+                                            <a class="nav-link" data-toggle="tab" href="#combo" role="tab">Combo</a>
                                         </li>
                                     </ul>
                                     <!-- tab content-->
                                     <div class="tab-content">
-                                        <div class="tab-pane active p-3" id="home2" role="tabpanel">
+                                        <div class="tab-pane active p-3" id="stock" role="tabpanel">
                                             <div class="float-left">
                                                 <ul>
                                                     <li class="sub-menu-trade" >
@@ -160,17 +158,22 @@
                                                 FINRA & SIPC</p>
 
                                         </div>
-                                        <div class="tab-pane p-3" id="profile2" role="tabpanel">
+                                        <div class="tab-pane p-3" id="option" role="tabpanel">
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
                                         </div>
-                                        <div class="tab-pane p-3" id="messages2" role="tabpanel">
+
+
+                                        <div class="tab-pane p-3" id="spread" role="tabpanel">
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
                                         </div>
-                                        <div class="tab-pane p-3" id="settings2" role="tabpanel">
+
+
+                                        <div class="tab-pane p-3" id="combo" role="tabpanel">
+
                                             <p class="font-14 mb-0">
                                                 LoremIpsum
                                             </p>
@@ -187,7 +190,11 @@
                     <div class="col-xl-12">
                         <div class="card m-b-20">
                             <div class="card-body">
+<<<<<<< HEAD
                                 <div>
+=======
+                                <div class="menu-portfolio">
+>>>>>>> 00ce4bf10dc5533c2ed17ce5310ce35fb3677c72
                                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#coveredcall" role="tab">Covered Call</a>
@@ -202,6 +209,7 @@
                                             <a class="nav-link" data-toggle="tab" href="#callspread" role="tab">Call Spread</a>
                                         </li>
                                     </ul>
+<<<<<<< HEAD
                                 </div>
                                 <hr>
                                 <div class="tab-content">
@@ -300,8 +308,111 @@
                                         </p>
                                     </div>
 
+=======
+                                    <!-- tab content-->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active p-3" id="coveredcall" role="tabpanel">
+                                            <div class="row row-filters">
+
+                                                <div class="dropdown margin-dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle button-expiration margin-call-components" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Expiration
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                        <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                        <a class="dropdown-item" href="#">LoremIpsum</a>
+                                                    </div>
+                                                </div>
+
+                                                <input class="input-width" placeholder="Enter your purchase price">
+
+                                                <button class="margin-call-components button-display-color">Run</button>
+
+                                                <input class="input-width" placeholder="Enter your target price">
+
+                                                <button class="margin-call-components button-display-color">Run</button>
+
+                                            </div> <!-- row -->
+
+                                            
+                                            <!-- Data Table-->
+                                            <div class="table-rep-plugin" id="test1">
+                                                <div class="table-responsive b-0" data-pattern="priority-columns">
+                                                    <table id="tech-companies-1" class="table  table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                            <th data-priority="1">Strike</th>
+                                                            <th data-priority="3">Expiration</th>
+                                                            <th data-priority="1">Intrinsic Val</th>
+                                                            <th data-priority="3">Bid Prem</th>
+                                                            <th data-priority="3">Bid Price</th>
+                                                            <th data-priority="6">Break Even</th>
+                                                            <th data-priority="6">Stock Loss</th>
+                                                            <th data-priority="6">Max % Yield</th>
+                                                            <th data-priority="6">Price Target</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>$140</td>
+                                                            <td>MAR-22-18</td>
+                                                            <td>$110.50</td>
+                                                            <td class="red">($5.50)</td>
+                                                            <td>$10.50</td>
+                                                            <td>$155.50</td>
+                                                            <td class="green">44.50%</td>
+                                                            <td class="green">10.50 %</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>$141</td>
+                                                            <td>MAR-22-18</td>
+                                                            <td>$110.50</td>
+                                                            <td class="red">($5.50)</td>
+                                                            <td>$10.50</td>
+                                                            <td>$155.50</td>
+                                                            <td class="green">44.50%</td>
+                                                            <td class="green">10.50 %</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>$142</td>
+                                                            <td>MAR-22-18</td>
+                                                            <td>$110.50</td>
+                                                            <td class="red">($5.50)</td>
+                                                            <td>$10.50</td>
+                                                            <td>$155.50</td>
+                                                            <td class="green">44.50%</td>
+                                                            <td class="green">10.50 %</td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="tab-pane p-3" id="calloption" role="tabpanel">
+                                            <p class="font-14 mb-0">
+                                                LoremIpsum
+                                            </p>
+                                        </div>
+                                        <div class="tab-pane p-3" id="putoption" role="tabpanel">
+                                            <p class="font-14 mb-0">
+                                                LoremIpsum
+                                            </p>
+                                        </div>
+                                        <div class="tab-pane p-3" id="callspread" role="tabpanel">
+                                            <p class="font-14 mb-0">
+                                                LoremIpsum
+                                            </p>
+                                        </div>
+
+                                    </div>
+>>>>>>> 00ce4bf10dc5533c2ed17ce5310ce35fb3677c72
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -620,6 +731,9 @@
 
     <!-- switch color Theme -->
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
+   
 @endsection
 
 @section('script-bottom')

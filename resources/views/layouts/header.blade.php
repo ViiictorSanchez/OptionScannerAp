@@ -18,12 +18,9 @@
 
                     </div>
                     <!-- End Logo container-->
-
-
                     <div class="menu-extras topbar-custom">
 
-                        <ul class="float-right list-unstyled mb-0 ">
-                            
+                        <ul class="float-right list-unstyled mb-0 navigation-menu ">
                             <li class="dropdown notification-list d-none d-sm-block form-distance" >
                                 <form role="search" class="app-search">
                                     <div class="form-group mb-0 ">
@@ -35,10 +32,13 @@
                             </li>
 
                             <li class="float-right list-unstyled mb-0 has-submenu ">
-                                <div class="margin-menu-top" >
-                                        <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong></a>
+                              <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong><i class="fas fa-sort-down"></i></a>
+                                  <ul class="submenu">
+                                      <li><a href="#" > <i class="fas fa-question-circle"></i> Help <br></a></li>
+                                      <li><a href="#"> <i class="fas fa-wrench"></i>Report Bug</a></li>
+                                      <li><a href="#"> <i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                                  </ul>
 
-                                </div>
                             </li>
 
                             <li class="float-right list-unstyled mb-0 ">
@@ -87,45 +87,372 @@
                 <hr id="line-separate">
                 <!-- Page-Title -->
                 <div class="row" class="align-menu-graph">
+                    <!-- problemas al centrar las graficas 1270 px a 1500px -->
                     <div class="col-md-12">
                         <div class="page-title-box">
-                        	<br><br><br><br>
-                            <div class="state-information" >
-                                <div class="state-graph">
+                            
 
-                                        <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
-                                        <label class="title-graph">IWM <p class="red">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                <div class="row w-100 mx-auto charts-slide">
 
-                                </div>
-                                <div class="state-graph">
-                                    <div class="line-separate-graph">
-                                        <div id="morris-area-example2" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                    <div class="slide">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">IWM <p class="red">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      </div>
+                                  </div>
 
-                                        <label class="title-graph">QQQ <p class="green">$239.88 <br> 1.14 (2.24%)</p></label>
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example2" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
+                                                        <label class="title-graph">QQQ <p class="green">$239.88 <br> 1.14 (2.24%)</p></label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="state-graph">
-                                    <div class="line-separate-graph">
-                                      <div id="morris-area-example3" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example3" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                      <label class="title-graph">SPY <p class="green">$239.88 <br> 1.14 (2.24%)</p></label>
+                                                        <label class="title-graph">SPY <p class="green">$239.88 <br> 1.14 (2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                </div>
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example4" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                <div class="state-graph">
-                                    <div class="line-separate-graph">
-                                        <div id="morris-area-example4" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">DIA <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
 
-                                         <label class="title-graph">DIA <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                </div>
+                                    <div class="slide  ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example5" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                            </div>
+                                                        <label class="title-graph">LULU <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example6" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+
+                                                        <label class="title-graph">HY <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example7" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+
+                                                        <label class="title-graph">CRMD <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example8" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">CARV <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example9" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST9 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example10" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST10 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example11" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST11 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example12" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST12 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example13" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST13 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example14" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST14 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example15" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST15 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example16" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST16 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example17" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST17 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example18" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST18 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example19" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST19 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example20" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST20 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide  ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example21" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST21 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example22" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST22 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide  ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example23" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST23 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="slide  ">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+                                                <div class="state-graph">
+                                                    <div class="line-separate-graph">
+                                                        <div id="morris-area-example24" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                        <label class="title-graph">TEST24 <p class="red ">$239.88 <br> -1.14 (-2.24%)</p></label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +462,6 @@
 
             <!-- MENU Start -->
             <div class="navbar-custom">
-                <br>
                 <div class="container-fluid">
                     <div id="navigation">
                         <!-- Navigation Menu-->

@@ -14,11 +14,10 @@
 @endsection
 
 @section('content')
-            <br>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-7">
-                        <div class="card m-b-0">
+                    <div class="col-md-7" >
+                        <div class="card m-b-0" >
                             <div class="card-body">
                                     <ul>
                                         <li class="float-left list-unstyled my-portfolio-menu">
@@ -221,14 +220,10 @@
                             </div>
                         </div>
 
-
-
                         <div class="card m-b-0">
                             <div class="card-body">
                                 <div id="linea">
-
                                     <ul>
-
                                         <li class="float-right list-unstyled ">
                                             <a><strong>Falling Knife Screener</strong></a>
                                         </li>
@@ -362,7 +357,7 @@
                              <div class="col-md-3">
                                   <div class="card m-b-20">
                                         <div class="card-body">
-                                <h4 class="mt-0 header-title float-right">Trending Sectors</h4>
+                                            <a class="mt-0 header-title float-right" style="font-size: 13px; color: #6d757d;"> <strong>Trending Sectors</strong></a>
                                 <div class="table-responsive">
                                     <table class="table table-vertical">
                                         <tr>
@@ -448,7 +443,7 @@
 
                                  <div class="card m-b-20">
                                      <div class="card-body">
-                                         <h4 class="mt-0 header-title float-right">Top Gainers</h4>
+                                         <a class="mt-0 header-title float-right" style="font-size: 13px; color: #6d757d;"> <strong>Top Gainers</strong></a>
 
                                          <div class="table-responsive">
                                              <table class="table table-vertical">
@@ -519,7 +514,7 @@
 
                                  <div class="card m-b-20">
                                      <div class="card-body">
-                                         <h5 class="mt-0 header-title float-right">Volumen Movers</h5>
+                                         <a class="mt-0 header-title float-right" style="font-size: 13px; color: #6d757d;"><strong> Volumen Movers </strong></a>
 
                                          <div class="table-responsive">
                                              <table class="table table-vertical">
@@ -593,7 +588,7 @@
                             <div class="col-md-2 ">
                                 <div class="card m-b-20 color-watchlist">
                                     <div class="padding-watchlist">
-                                        <h4 class="mt-0 header-title float-right">WATCHLIST</h4>
+                                        <a class="mt-0 header-title float-right" style="font-size: 13px; color: #6d757d;"> <strong>Watchlist</strong></a>
 
                                         <div class="table-responsive">
                                             <table class="table table-vertical">
@@ -768,7 +763,7 @@
                             </div>
 
                 </div>  <!-- end row -->
-
+            </div>
 @endsection
 
 @section('script')
@@ -779,4 +774,8 @@
 
          <!-- switch color Theme -->
          <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
+         <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
+         <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
+         <script>
+
 @endsection
