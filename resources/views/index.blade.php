@@ -56,10 +56,10 @@
                                 <div class="table-responsive col-xl-12" >
                                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                                         <li class="nav-item float-left">
-                                            <a class="nav-link active" data-toggle="tab" href="#positions" role="tab">Positions</a>
+                                            <a class="nav-link active" data-toggle="tab" href="#home2" role="tab">Positions</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#orders" role="tab">Orders</a>
+                                            <a class="nav-link" data-toggle="tab" href="#profile2" role="tab">Orders</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -67,7 +67,7 @@
                                 <!-- tab content-->
                                 <div class="tab-content">
 
-                                    <div class="tab-pane active p-3" id="positions" role="tabpanel">
+                                    <div class="tab-pane active p-3" id="home2" role="tabpanel">
 
                                         <div class="table-responsive">
                                             <table class="table table-vertical">
@@ -175,7 +175,7 @@
 
                                     </div>
 
-                                    <div class="tab-pane p-3" id="orders" role="tabpanel">
+                                    <div class="tab-pane p-3" id="profile2" role="tabpanel">
                                         <p class="font-14 mb-0">
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
