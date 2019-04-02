@@ -92,6 +92,7 @@
                                                 </ul>
                                             </div>
                                             <hr>
+                                            <div class="position-button-trade">
                                             <div class="btn-group btn-group-toggle float-left" data-toggle="buttons">
                                                 <label  class="btn btn-secondary active button-trade-with">
                                                     <input  type="checkbox" checked> Buy
@@ -108,6 +109,7 @@
                                                 <label class="btn btn-secondary button-trade-with">
                                                     <input  type="checkbox"> Close
                                                 </label>
+                                            </div>
                                             </div>
                                             <br><br><br>
 
