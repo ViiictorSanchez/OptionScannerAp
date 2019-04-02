@@ -1304,6 +1304,26 @@ body {
 /*
   Responsive Menu
 */
+@media (min-width: 1675px){
+  .area-graph{
+    height: 106px !important;
+    width: 170px !important;
+  }
+  .line-separate-graph{
+    display: inline-block;
+    margin-right: 30px;
+  }
+  .margin-graph{
+    margin-right: 10px;
+  }
+  .container-fluid {
+    width: 90%;
+  }
+  .form-distance{
+    margin-right: 200px !important;
+  }
+
+}
 @media  (min-width: 1450px) and (max-width: 1674px) {
   .container-fluid {
     width: 90%;
@@ -1325,7 +1345,7 @@ body {
   .sub-menu-trade{
     display: inline-block;
     padding-bottom: 13px;
-   /* margin-right: 25px;*/
+    margin-right: 25px;
     margin-left: -17px;
   }
 
