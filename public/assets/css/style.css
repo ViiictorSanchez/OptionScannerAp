@@ -1310,8 +1310,9 @@ body {
     width: 170px !important;
   }
   .line-separate-graph{
-    display: inline-block;
-    margin-right: 30px;
+    border-right: 1px solid #e0e0e0;
+    display: inline-block !important;
+    margin-right: 30px !important;
   }
   .margin-graph{
     margin-right: 10px;
@@ -1321,6 +1322,15 @@ body {
   }
   .form-distance{
     margin-right: 200px !important;
+  }
+  .margin-graph{
+    margin-right: 70px;
+  }
+  .sub-menu-trade{
+    display: inline-block;
+    padding-bottom: 13px;
+    margin-right: 40px;
+    margin-left: -17px;
   }
 
 }
@@ -1350,17 +1360,6 @@ body {
   }
 
 
-}
-@media (min-width: 1675px ){
-  .margin-graph{
-    margin-right: 70px;
-  }
-  .sub-menu-trade{
-    display: inline-block;
-    padding-bottom: 13px;
-    margin-right: 40px;
-    margin-left: -17px;
-  }
 }
 
 @media (min-width: 1200px) and (max-width: 1449px){
