@@ -60,7 +60,8 @@ function switchfunction() {
         $("#tech-companies-1").toggleClass('table-dark');
         $('.button-expiration').toggleClass('button-expiration-dark');
         $('.button-display-color').toggleClass('button-display-color-dark');
-        $('#topnav .has-submenu.active a ').toggleClass('#topnav .has-submenu-dark.active a')
+        $('#topnav .has-submenu.active a ').toggleClass('#topnav .has-submenu-dark.active a');
+        $('.title-card').toggleClass('title-card-dark');
         if ($('#demo-dark')){
             $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
             $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');

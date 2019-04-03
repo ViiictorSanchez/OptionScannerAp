@@ -1308,7 +1308,14 @@ body {
 .submenu-myportfolio{
   margin-right: 90px;
 }
-
+.title-card{
+  font-size: 20px;
+  color: #6d757d;
+}
+.title-card-dark{
+  font-size: 20px;
+  color: #fff;
+}
 
 
 
