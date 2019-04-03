@@ -602,7 +602,7 @@
                                         </ul>
                                     </li>
                                     <!--  Sectors Agregate-->
-                                    <li class="has-submenu principal-menu-distance">
+                                    <li class="has-submenu">
                                         <a href="#" class="color-principal-menu"><strong>Sectors</strong></a>
                                         <ul class="submenu megamenu">
                                             <li>

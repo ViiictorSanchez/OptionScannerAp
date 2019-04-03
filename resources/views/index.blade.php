@@ -19,7 +19,7 @@
                     <div class="col-md-7" >
                         <div class="card m-b-0" >
                             <div class="card-body">
-                                    <ul>
+                                    <ul class="menu-my-portfolio">
                                         <li class="float-left list-unstyled my-portfolio-menu">
                                             <a class="font-size-portfolio">$124,010.50</a>
                                         </li >
@@ -32,22 +32,22 @@
                                             <p class="red">-$500.34</p>
                                         </li>
 
-                                        <li class="float-right list-unstyled ">
+                                        <li class="float-right list-unstyled portfolio-title">
                                            <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
                                         </li>
                                     </ul>
 
 
-                                     <ul class="float-left line-separate">
-                                        <li class="float-left list-unstyled my-portfolio-menu">
+                                     <ul class="float-left line-separate" >
+                                        <li class="float-left list-unstyled submenu-myportfolio" >
                                            <a class="menu-my-portfolio-color">  Cash </a>
                                             <p> <strong>$100,050.25 </strong></p>
                                         </li >
-                                        <li class="float-left list-unstyled my-portfolio-menu">
+                                        <li class="float-left list-unstyled submenu-myportfolio">
                                             <a class="menu-my-portfolio-color"> Stocks </a>
                                             <p><strong>$15,030.50</strong></p>
                                         </li>
-                                        <li class="float-left list-unstyled my-portfolio-menu">
+                                        <li class="float-left list-unstyled ">
                                             <a class="menu-my-portfolio-color"> Options</a>
                                             <p><strong> $9,895.10</strong></p>
                                         </li>

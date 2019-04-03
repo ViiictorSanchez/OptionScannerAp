@@ -1274,9 +1274,7 @@ body {
   margin-top: 5px;
   color: #353942;
 }
-.principal-menu-distance{
-    margin-right: 1.5%;
-}
+
 .carousel-control-next-icon, .carousel-control-prev-icon{
   background-color: black;
 }
@@ -1300,22 +1298,63 @@ body {
   width: 100%;
   position: relative;
 }
+.menu-my-portfolio{
+  display: flex;
+}
+.portfolio-title{
+  right: 25px;
+  position: absolute;
+}
+.submenu-myportfolio{
+  margin-right: 90px;
+}
+
+
+
 
 /*
   Responsive Menu
 */
-@media (min-width: 1675px){
+@media (min-width: 1896px) {
+    .area-graph{
+        height: 95px !important;
+        width: 170px !important;
+    }
+    .line-separate-graph{
+        border-right: 1px solid #e0e0e0;
+        display: inline-block !important;
+        margin-right: 30px !important;
+    }
+    .container-fluid {
+        width: 90%;
+    }
+    .form-distance{
+        margin-right: 200px !important;
+    }
+    .margin-graph{
+        margin-right: 40px;
+        margin-top: -15px;
+    }
+    .sub-menu-trade{
+        display: inline-block;
+        padding-bottom: 13px;
+        margin-right: 35px;
+        margin-left: -17px;
+    }
+    .principal-menu-distance{
+        margin-right: 4%;
+    }
+
+}
+@media (min-width: 1675px) and (max-width: 1895px){
   .area-graph{
-    height: 106px !important;
+    height: 95px !important;
     width: 170px !important;
   }
   .line-separate-graph{
     border-right: 1px solid #e0e0e0;
     display: inline-block !important;
     margin-right: 30px !important;
-  }
-  .margin-graph{
-    margin-right: 10px;
   }
   .container-fluid {
     width: 90%;
@@ -1324,14 +1363,19 @@ body {
     margin-right: 200px !important;
   }
   .margin-graph{
-    margin-right: 70px;
+    margin-right: 40px;
+    margin-top: -15px;
   }
   .sub-menu-trade{
     display: inline-block;
     padding-bottom: 13px;
-    margin-right: 40px;
+    margin-right: 35px;
     margin-left: -17px;
   }
+
+   .principal-menu-distance{
+        margin-right: 3%;
+   }
 
 }
 @media  (min-width: 1450px) and (max-width: 1674px) {
@@ -1351,6 +1395,7 @@ body {
   }
   .margin-graph{
     margin-right: 10px;
+    margin-top: -15px;
   }
   .sub-menu-trade{
     display: inline-block;
@@ -1358,6 +1403,9 @@ body {
     margin-right: 25px;
     margin-left: -17px;
   }
+    .principal-menu-distance{
+        margin-right: 1.8%;
+    }
 
 
 }
@@ -1387,6 +1435,7 @@ body {
     display: block;
     padding-right: 15px;
     padding-left: 50px;
+    margin-top: -15px;
   }
   .margin-first-graph{
     float: right;
@@ -1397,6 +1446,10 @@ body {
   .form-distance{
     margin-right: 70px;
   }
+
+   .principal-menu-distance{
+       margin-right: 1.5%;
+   }
 
 }
 
@@ -3591,7 +3644,7 @@ table.focus-on tbody tr.focused td {
 
 /* Flot chart */
 .flot-chart-height {
-  height: 391px;
+  height: 423px;
 }
 
 #flotTip {
