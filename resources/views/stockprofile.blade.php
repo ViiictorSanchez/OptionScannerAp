@@ -193,8 +193,6 @@
                         <div class="card m-b-20">
                             <div class="card-body">
 
-                                <div>
-
                                 <div class="menu-portfolio">
 
                                     <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
@@ -312,7 +310,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+
 
                         </div>
                     </div>

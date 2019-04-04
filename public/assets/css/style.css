@@ -729,7 +729,8 @@ dt {
 }
 
 .header-title {
-  font-size: 16px;
+  font-size: 20px;
+    font-weight: bold;
 }
 
 /* ======
@@ -1309,7 +1310,7 @@ body {
   margin-right: 90px;
 }
 .title-card{
-  font-size: 20px;
+  font-size: 20px !important;
   color: #6d757d;
 }
 .title-card-dark{
@@ -1327,10 +1328,23 @@ body {
         height: 95px !important;
         width: 170px !important;
     }
+    .input-width {
+        width: 19.2vw;
+        padding-left: 18px;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: #e0e0e0;
+        background-color: #f6f7f9;
+
+    }
     .line-separate-graph{
-        border-right: 1px solid #e0e0e0;
+        border-right: 1px solid;
         display: inline-block !important;
         margin-right: 30px !important;
+        color: #e0e0e0;
+    }
+    .line-separate-graph-dark {
+      color: #000 !important;
     }
     .container-fluid {
         width: 90%;
@@ -1358,10 +1372,23 @@ body {
     height: 95px !important;
     width: 170px !important;
   }
+    .input-width {
+        width: 17vw;
+        padding-left: 18px;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: #e0e0e0;
+        background-color: #f6f7f9;
+
+    }
   .line-separate-graph{
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid;
     display: inline-block !important;
     margin-right: 30px !important;
+    color: #e0e0e0;
+  }
+  .line-separate-graph-dark {
+    color: #000 !important;
   }
   .container-fluid {
     width: 90%;
@@ -1389,6 +1416,16 @@ body {
   .container-fluid {
     width: 90%;
   }
+  .input-width {
+        width: 15vw;
+        padding-left: 18px;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: #e0e0e0;
+        background-color: #f6f7f9;
+
+  }
+
   .form-distance{
     margin-right: 200px !important;
   }
@@ -1397,8 +1434,13 @@ body {
     width: 170px !important;
   }
   .line-separate-graph{
+    border-right: 1px solid;
     display: inline-block;
     margin-right: 30px;
+    color: #e0e0e0;
+  }
+  .line-separate-graph-dark {
+    color: #000 !important;
   }
   .margin-graph{
     margin-right: 10px;
@@ -1410,9 +1452,9 @@ body {
     margin-right: 25px;
     margin-left: -17px;
   }
-    .principal-menu-distance{
+  .principal-menu-distance{
         margin-right: 1.8%;
-    }
+  }
 
 
 }
@@ -1428,6 +1470,14 @@ body {
     margin-right: 25px;
     margin-left: -17px;
   }
+    .input-width {
+        width: 15vw;
+        padding-left: 18px;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: #e0e0e0;
+        background-color: #f6f7f9;
+    }
 
   .form-distance{
     margin-right: 300px;
@@ -1461,21 +1511,22 @@ body {
 }
 
 @media (min-width: 992px) and (max-width:1199px)  {
-  .area-graph {
-    height: 106px !important;
-    width: 130px !important;
-    margin-right: 10px;
-  }
+      .area-graph {
+        height: 106px !important;
+        width: 130px !important;
+        margin-right: 10px;
+      }
+        .input-width {
+            width: 19vw;
+            padding-left: 18px;
+            border-radius: 5px;
+            border: 1px solid;
+            border-color: #e0e0e0;
+            background-color: #f6f7f9;
+        }
 }
 @media (min-width: 992px){
-  .input-width {
-    width: 235px;
-    padding-left: 18px;
-    border-radius: 5px;
-    border: 1px solid;
-    border-color: #e0e0e0;
-    background-color: #f6f7f9;
-  }
+
   .margin-first-graph{
     float: right;
     display: block;
