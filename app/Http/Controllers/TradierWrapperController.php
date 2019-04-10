@@ -25,7 +25,9 @@ class TradierWrapperController extends Controller
      * Call index.blade.php
      * */
     public static function index(){
-        return view ('index');
+        $data = TradierWrapperController::getQuotes('AAPL');
+
+        return view::make ('index')->with($data);
     }
 
 
@@ -141,7 +143,7 @@ class TradierWrapperController extends Controller
      */
     public static function getUsersBalances(){
         $url = self::apiUrl . "/v1/user/balances";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -161,7 +163,7 @@ class TradierWrapperController extends Controller
      */
     public static function getUsersPositions(){
         $url = self::apiUrl . "/v1/user/positions";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -181,7 +183,7 @@ class TradierWrapperController extends Controller
      */
     public static function getUserHistory(){
         $url = self::apiUrl . "/v1/user/history";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -200,7 +202,7 @@ class TradierWrapperController extends Controller
      */
     public static function getUserCostBasis(){
         $url = self::apiUrl . "/v1/user/gainloss";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -219,7 +221,7 @@ class TradierWrapperController extends Controller
      */
     public static function getUserOrders(){
         $url = self::apiUrl . "/v1/user/orders";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
@@ -242,7 +244,7 @@ class TradierWrapperController extends Controller
      */
     public static function getQuotes($symbols){
         $url = self::apiUrl . "/v1/markets/quotes?symbols=" . $symbols;
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -278,7 +280,7 @@ class TradierWrapperController extends Controller
         }else{
             $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol;
         }
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -300,7 +302,7 @@ class TradierWrapperController extends Controller
      * @return array
      */
     public static function getOptionChain($symbol, $date){
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
         $time = strtotime($date);
         $expiration = date('Y-m-d', $time);
 
@@ -324,7 +326,7 @@ class TradierWrapperController extends Controller
      * @return array
      */
     public static function getOptionStrikePrices($symbol, $date){
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
         $time = strtotime($date);
         $expiration = date('Y-m-d', $time);
 
@@ -349,7 +351,7 @@ class TradierWrapperController extends Controller
      * @return array
      */
     public static function getExpirationDates($symbol, $includeAllRoots = true){
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
         $time = strtotime($date);
         $expiration = date('Y-m-d', $time);
 
@@ -386,7 +388,7 @@ class TradierWrapperController extends Controller
         }else{
             $url = self::apiUrl . "/v1/markets/history?symbol=" . $symbol;
         }
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -407,7 +409,7 @@ class TradierWrapperController extends Controller
      */
     public static function getIntraStatus(){
         $url = self::apiUrl . "/v1/markets/clock";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -426,7 +428,7 @@ class TradierWrapperController extends Controller
      */
     public static function getMarketCalendar(){
         $url = self::apiUrl . "/v1/markets/calendar";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -449,7 +451,7 @@ class TradierWrapperController extends Controller
      */
     public static function companySearch($q, $indexes = false){
         $url = self::apiUrl . "/v1/markets/search?q=" . $q . "&indexes=" . $indexes;
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -476,7 +478,7 @@ class TradierWrapperController extends Controller
         }else{
             $url = self::apiUrl . "/v1/markets/lookup?q=" . $q;
         }
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
@@ -495,7 +497,7 @@ class TradierWrapperController extends Controller
      */
     public static function createStreamingSession(){
         $url = self::apiUrl . "/v1/markets/events/session";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
@@ -516,7 +518,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAccountBalances($accountId){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/balances";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -537,7 +539,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAccountPositions($accountId){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/positions";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -558,7 +560,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAccountHistory($accountId){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/history";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -580,7 +582,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAccountCB($accountId){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/gainloss";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -601,7 +603,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAcccountOrders($accountId){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/orders";
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -623,7 +625,7 @@ class TradierWrapperController extends Controller
      */
     public static function getAcccountIndOrder($accountId, $id){
         $url = self::apiUrl . "/v1/accounts/" . $accountId . "/orders/" . $id;
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -680,7 +682,7 @@ class TradierWrapperController extends Controller
         }else{
             $url = $urlMid;
         }
-        $reqHeaders = TradierWrapper::requestHeaders();
+        $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
