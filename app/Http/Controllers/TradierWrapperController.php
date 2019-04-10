@@ -21,6 +21,12 @@ class TradierWrapperController extends Controller
     public function __construct(){
 
     }
+    /*
+     * Call index.blade.php
+     * */
+    public static function index(){
+        return view ('index');
+    }
 
 
     /*
@@ -246,7 +252,8 @@ class TradierWrapperController extends Controller
         $quote = json_decode($success, true);
         curl_close($curl);
 
-        return $quote;
+        //return $quote;
+        return view ('welcome');
     }
 
     /**Makes and enpoint to the API to obtain the timesales data from a given symbol
@@ -692,4 +699,5 @@ class TradierWrapperController extends Controller
     public static function multiLegOrder(){
 
     }
+
 }

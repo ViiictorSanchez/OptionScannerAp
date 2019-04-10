@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('auth.php','TradierWrapperController@index');
+
 Route::get('{any}', 'LexaController@index');
