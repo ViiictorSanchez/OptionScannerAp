@@ -24,10 +24,27 @@ class TradierWrapperController extends Controller
     /*
      * Call index.blade.php
      * */
-    public static function index(){
-        $data = TradierWrapperController::getQuotes('AAPL');
+    public static function index(Request $request){
 
-        return view::make ('index')->with($data);
+        $authCode = $_GET['code'];
+        //echo $authCode;
+        //echo "Authorization Code: ".$authCode."<br/>"; echo "State: ".$authState; die();
+        if(empty($authCode)){
+            $loginPage = TradierWrapperController::getAuthCode();
+            header("Location: $loginPage");
+        }else{
+            //if(!$request->session()->has('token_tradier')) {
+                 TradierWrapperController::getTokenAPI($authCode,$request);
+               /// $request->session()->put('token_tradier', $token);
+            //}
+
+            //echo $token;
+        }
+         $test = TradierWrapperController::getQuotes("SPY");
+
+        //echo "<pre>"; $test['quotes']['quote']['last']; echo "</pre>";
+
+        return view ("index", ['spy_price'=>$test]);
     }
 
 
@@ -56,10 +73,12 @@ class TradierWrapperController extends Controller
 
         @return string token
     */
-    public static function getTokenAPI($code){
+    public static function getTokenAPI($code, Request $request){
         if(empty($code)){
             echo "Authorization Code Invalid"."<br/>"."Code is empty";
         }else {
+            if(!session()->has('ACCESSTOKEN')){
+
             $url = self::apiUrl . "/v1/oauth/accesstoken";
 
             $postParam = [
@@ -77,10 +96,12 @@ class TradierWrapperController extends Controller
             curl_close($curl);
 
             $json = json_decode($success, true);
-            if(!isset($_SESSION['ACCESSTOKEN'])){
-                $_SESSION['ACCESSTOKEN'] = $json["access_token"];
+            var_dump($json);
+
+               session()->put('ACCESSTOKEN', $json["access_token"]);
+                //$_SESSION['ACCESSTOKEN'] = $json["access_token"];
             }
-            return $_SESSION['ACCESSTOKEN'];
+            //var_dump(session()->get('ACCESSTOKEN'));
         }
     }
 
@@ -92,7 +113,8 @@ class TradierWrapperController extends Controller
      @return array
      */
     public static function requestHeaders(){
-        $token = $_SESSION['ACCESSTOKEN'];
+
+        $token = session()->get('ACCESSTOKEN');
         $headers = [
             "Accept: application/json",
             "Authorization: Bearer $token"
@@ -243,6 +265,7 @@ class TradierWrapperController extends Controller
      * @return array
      */
     public static function getQuotes($symbols){
+
         $url = self::apiUrl . "/v1/markets/quotes?symbols=" . $symbols;
         $reqHeaders = TradierWrapperController::requestHeaders();
 
@@ -254,8 +277,8 @@ class TradierWrapperController extends Controller
         $quote = json_decode($success, true);
         curl_close($curl);
 
-        //return $quote;
-        return view ('welcome');
+        return $quote;
+
     }
 
     /**Makes and enpoint to the API to obtain the timesales data from a given symbol
