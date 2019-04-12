@@ -44,19 +44,20 @@ class TradierWrapperController extends Controller
         $symbols = $watchlistId['watchlist']['items']['item'];
         $symdata = [];
 
-        foreach($symbols as $item){
+
+       foreach($symbols as $item){
             //$sym = TradierWrapperController::getQuotes($item['symbol']);
             array_push($symdata, $item['symbol']);
         }
        echo "<br>";
 
         echo "<pre>";var_dump($symdata); echo "</pre>";
-        $symquotes = [];
+       /* $symquotes = [];
         foreach($symdata as $band){
             array_push($symquotes,TradierWrapperController::getQuotes($band));
 
         }
-        echo "<pre>";var_dump($symquotes); echo "</pre>";
+        echo "<pre>";var_dump($symquotes); echo "</pre>";*/
 
 
         return view ("index", ['spy_price'=>$symdata]);
