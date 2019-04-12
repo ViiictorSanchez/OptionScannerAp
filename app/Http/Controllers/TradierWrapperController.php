@@ -52,14 +52,14 @@ class TradierWrapperController extends Controller
        echo "<br>";
 
         echo "<pre>";var_dump($symdata); echo "</pre>";
-       /* $symquotes = [];
+
+        /* $symquotes = [];
         foreach($symdata as $band){
             array_push($symquotes,TradierWrapperController::getQuotes($band));
 
         }
         echo "<pre>";var_dump($symquotes); echo "</pre>";*/
-
-
+        
         return view ("index", ['spy_price'=>$symdata]);
     }
 
