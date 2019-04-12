@@ -91,20 +91,23 @@
                 <div class="page-title-box">
                     <div class="row w-100 mx-auto charts-slide">
 
-                        <div class="slide">
-                            <div class="panel panel-default">
-                                <div class="panel-thumbnail">
-                                    <div class="state-graph">
-                                        <div class="line-separate-graph">
-                                            <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
-                                            <label class="title-graph">IWM <p class="red">$239.88 <br> -1.14 (-2.24%)</p></label>
+                        @for($i=0;$i<37;$i++)
+                            <div class="slide">
+                                <div class="panel panel-default">
+                                    <div class="panel-thumbnail">
+                                        <div class="state-graph">
+                                            <div class="line-separate-graph">
+                                                <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+
+                                                <label class="title-graph">SPY <p class="green">{{$spy_price['quotes']['quote']['last']}}<br> {{$spy_price['quotes']['quote']['change']}} ({{$spy_price['quotes']['quote']['change_percentage']}}%)</p></label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="slide ">
+                    @endfor
+                    <!-- <div class="slide ">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
                                     <div class="state-graph">
@@ -126,7 +129,7 @@
                                         <div class="line-separate-graph">
                                             <div id="morris-area-example3" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                            <label class="title-graph">SPY <p class="green">{{$spy_price['quotes']['quote']['last']}}<br> {{$spy_price['quotes']['quote']['change']}} ({{$spy_price['quotes']['quote']['change_percentage']}}%)</p></label>
+                                            <label class="title-graph">SPY <p class="green">%)</p></label>
                                         </div>
 
                                     </div>
@@ -448,7 +451,7 @@
 
                             </div>
                         </div>
-
+                                    -->
                     </div>
                 </div>
 

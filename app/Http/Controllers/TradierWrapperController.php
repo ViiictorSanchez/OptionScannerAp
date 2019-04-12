@@ -725,4 +725,44 @@ class TradierWrapperController extends Controller
 
     }
 
+    /**Obtains the watchlists from a specific user
+     *
+     * @return array
+     */
+    public static function getWatchlists(){
+        $url = self::apiUrl . "/v1/watchlists/";
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $getWat = json_decode($success, true);
+        curl_close($curl);
+
+        return $getWat;
+    }
+
+    /**Obtains an specific watchlist that a user has from an Id
+     *
+     * @param string id
+     * @return array
+     *
+     */
+    public static function getWatchlistId($id = "default"){
+        $url = self::apiUrl . "/v1/watchlists/" . $id;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $getWatId = json_decode($success, true);
+        curl_close($curl);
+
+        return $getWatId;
+    }
+
 }
