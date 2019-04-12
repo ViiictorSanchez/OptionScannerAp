@@ -33,18 +33,33 @@ class TradierWrapperController extends Controller
             $loginPage = TradierWrapperController::getAuthCode();
             header("Location: $loginPage");
         }else{
-            //if(!$request->session()->has('token_tradier')) {
                  TradierWrapperController::getTokenAPI($authCode,$request);
-               /// $request->session()->put('token_tradier', $token);
-            //}
 
-            //echo $token;
         }
          $test = TradierWrapperController::getQuotes("SPY");
+        $watchlistId = TradierWrapperController::getWatchlistId();
 
-        //echo "<pre>"; $test['quotes']['quote']['last']; echo "</pre>";
 
-        return view ("index", ['spy_price'=>$test]);
+       // echo "<pre>";var_dump($watchlistId); echo "</pre>";
+        $symbols = $watchlistId['watchlist']['items']['item'];
+        $symdata = [];
+
+        foreach($symbols as $item){
+            //$sym = TradierWrapperController::getQuotes($item['symbol']);
+            array_push($symdata, $item['symbol']);
+        }
+       echo "<br>";
+
+        echo "<pre>";var_dump($symdata); echo "</pre>";
+        $symquotes = [];
+        foreach($symdata as $band){
+            array_push($symquotes,TradierWrapperController::getQuotes($band));
+
+        }
+        echo "<pre>";var_dump($symquotes); echo "</pre>";
+
+
+        return view ("index", ['spy_price'=>$symdata]);
     }
 
 

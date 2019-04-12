@@ -91,7 +91,7 @@
                 <div class="page-title-box">
                     <div class="row w-100 mx-auto charts-slide">
 
-                        @for($i=0;$i<37;$i++)
+                        @foreach($spy_price as $test)
                             <div class="slide">
                                 <div class="panel panel-default">
                                     <div class="panel-thumbnail">
@@ -99,14 +99,14 @@
                                             <div class="line-separate-graph">
                                                 <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                                <label class="title-graph">SPY <p class="green">{{$spy_price['quotes']['quote']['last']}}<br> {{$spy_price['quotes']['quote']['change']}} ({{$spy_price['quotes']['quote']['change_percentage']}}%)</p></label>
+                                                <label class="title-graph">{{$test}} <p class="green">1234<br> 1234 (123456%)</p></label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                    @endfor
+                    @endforeach
                     <!-- <div class="slide ">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
