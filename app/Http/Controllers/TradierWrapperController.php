@@ -36,8 +36,7 @@ class TradierWrapperController extends Controller
                  TradierWrapperController::getTokenAPI($authCode,$request);
 
         }
-         $test = TradierWrapperController::getQuotes("SPY");
-        $watchlistId = TradierWrapperController::getWatchlistId();
+         $watchlistId = TradierWrapperController::getWatchlistId();
 
 
        // echo "<pre>";var_dump($watchlistId); echo "</pre>";
@@ -53,13 +52,12 @@ class TradierWrapperController extends Controller
 
         echo "<pre>";var_dump($symdata); echo "</pre>";
 
-        /* $symquotes = [];
-        foreach($symdata as $band){
-            array_push($symquotes,TradierWrapperController::getQuotes($band));
+        $test = TradierWrapperController::getQuotes($symdata[0]);
 
-        }
-        echo "<pre>";var_dump($symquotes); echo "</pre>";*/
-        
+
+            var_dump($test);
+
+
         return view ("index", ['spy_price'=>$symdata]);
     }
 
