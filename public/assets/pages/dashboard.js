@@ -79,7 +79,10 @@
                                         {y: '2015', a:360},
                                         {y: '2016', a:120},
                                         {y: '2017', a:30});
-            self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+
+            var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
+
+            self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
         })
         
 
