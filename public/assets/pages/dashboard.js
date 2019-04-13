@@ -5,6 +5,8 @@
  File: Dashboard init js
  */
 
+
+
 !function($) {
     "use strict";
 
@@ -67,20 +69,21 @@
     
     Dashboard.prototype.init = function() {
         //-------------------------------------------------------
-
+        var self = this;
         //creating area chart IWM
-        var $areaData = [
-            {y: '2011', a:400},
-            {y: '2012', a:350},
-            {y: '2013', a:195},
-            {y: '2014', a:150},
-            {y: '2015', a:360},
-            {y: '2016', a:120},
-            {y: '2017', a:30}
-        ];
-        this.createAreaChart('morris-area-example', 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+        $('.area-graph').each(function(index) {
+            var $areaData = new Array(  {y: '2011', a:400},
+                                        {y: '2012', a:350},
+                                        {y: '2013', a:195},
+                                        {y: '2014', a:150},
+                                        {y: '2015', a:360},
+                                        {y: '2016', a:120},
+                                        {y: '2017', a:30});
+            self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ '#ffa1a9']);
+        })
+        
 
-        //creating area chart QQQ
+        /*//creating area chart QQQ
         var $areaData2 = [
             {y: '2011',  a:400},
             {y: '2012',  a:350},
@@ -376,7 +379,7 @@
         ];
 
         this.createAreaChart('morris-area-example24', 0, 0, $areaData24, 'y', ['a'], ['Value'], ['#ffa1a9']);
-
+*/
 //-------------------------------------------------------------------------------------------------------
 
         //creating donut chart

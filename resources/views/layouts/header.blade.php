@@ -97,7 +97,7 @@
                                     <div class="panel-thumbnail">
                                         <div class="state-graph">
                                             <div class="line-separate-graph">
-                                                <div id="morris-area-example" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
+                                                <div id="morris-area-example-{{$loop->index}}" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
                                                 <label class="title-graph">{{$test}} <p class="green">1234<br> 1234 (123456%)</p></label>
                                             </div>
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
 
-                    @endforeach
+                        @endforeach
                     <!-- <div class="slide ">
                             <div class="panel panel-default">
                                 <div class="panel-thumbnail">
