@@ -71,6 +71,9 @@ class TradierWrapperController extends Controller
         $sym = TradierWrapperController::getWatchlistData($request);
 
 
+        echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
+
+        die();
         return view ("index", ['spy_price'=>$sym]);
     }
 
@@ -335,22 +338,22 @@ class TradierWrapperController extends Controller
      *
      * @return array
      * */
-    public static function getTimeSales($symbol, $start = "", $end = "", $interval = "tick", $sessionFilter = "all"){
+    public static function getTimeSales($symbol){
         #Investigate the usage of the start and end params
         /*checks if the start and ed params aren't empty to send them to the endpoint
         if empty the endpoint is send only with the symbol param as default*/
-        if(!empty($start) || !empty($end)){
-            $beg = strtotime($start); $fin = strtotime($end);
-            $startDate = date('Y-m-d h:i', $beg);    $endDate = date('Y-m-d h:i', $fin);
-            $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=" . $interval . "&start=" . $startDate . "&end=" . $endDate;
+        $date = "-10 Minutes"; $fin = strtotime($date);
+        $endDate = date('Y-m-dTh:i',$fin);
+        $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-10 minutes'));
+        $startDate = date_format($beg, 'Y-m-dTh:i');
+        $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&start=" . $startDate . "&end=" . $endDate;
 
-        }else{
-            $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol;
-        }
+        //echo $url; die();
+
         $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        //curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
         curl_setopt($curl, CURLOPT_HTTPGET, 1);
         $success = curl_exec($curl);
