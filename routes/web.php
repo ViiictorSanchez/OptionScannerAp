@@ -15,16 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('index', function () {
-    return view('index');
-});
+Route::get('index','TradierWrapperController@dashboard');
 
+
+Route::get('stockprofile', 'TradierWrapperController@stock')->name('stockprofile');
 
 
 Route::name('data')->get('auth.php','TradierWrapperController@index');
 
-Route::get('{any}', 'LexaController@index');
 
-Route::get('stockprofile', function () {
-    return view('stockprofile');
-})->name('stockprofile');

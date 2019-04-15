@@ -409,11 +409,11 @@
 
                         <div class="table-responsive">
                             <table class="table table-vertical">
-                                @foreach($spy_price as $symbol)
+                                @foreach($spy_price['quotes']['quote'] as $symbol)
                                     <tr>
                                         <td>
                                             <strong>
-                                                {{$symbol}}
+                                                {{$symbol['symbol']}}
                                             </strong>
                                         </td>
                                         <td>
@@ -438,11 +438,11 @@
 
                         <div class="table-responsive">
                             <table class="table table-vertical">
-                                @foreach($spy_price as $symbol)
+                                @foreach($spy_price['quotes']['quote'] as $symbol)
                                     <tr>
                                         <td>
                                             <strong>
-                                                {{$symbol}}
+                                                {{$symbol['symbol']}}
                                             </strong>
                                         </td>
                                         <td>
@@ -470,18 +470,26 @@
 
                         <div class="table-responsive">
                             <table class="table table-vertical">
-                                @foreach($spy_price as $symbol)
+                                @foreach($spy_price['quotes']['quote'] as $symbol)
                                 <tr>
                                     <td>
                                         <strong>
-                                            {{$symbol}}
+                                            {{$symbol['symbol']}}
                                         </strong>
                                     </td>
                                     <td>
-                                        2.12%
+                                        @if(!$symbol['change_percentage'])
+                                            -
+                                        @elseif($symbol['change_percentage'])
+                                             {{$symbol['change_percentage']}}%
+                                        @endif
                                     </td>
                                     <td>
-                                        178.25
+                                        @if(!$symbol['last'])
+                                            -
+                                        @elseif($symbol['last'])
+                                            ${{$symbol['last']}}
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach

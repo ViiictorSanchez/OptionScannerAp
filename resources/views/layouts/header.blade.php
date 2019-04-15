@@ -91,7 +91,7 @@
                 <div class="page-title-box">
                     <div class="row w-100 mx-auto charts-slide">
 
-                        @foreach($spy_price as $test)
+                        @foreach($spy_price['quotes']['quote'] as $test)
                             <div class="slide">
                                 <div class="panel panel-default">
                                     <div class="panel-thumbnail">
@@ -99,7 +99,29 @@
                                             <div class="line-separate-graph">
                                                 <div id="morris-area-example-{{$loop->index}}" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                                <label class="title-graph">{{$test}} <p class="green">1234<br> 1234 (123%)</p></label>
+                                                <label class="title-graph">{{$test['symbol']}}
+
+                                                    <p class="green">
+                                                        @if(!$test['last'])
+                                                            -
+                                                        @elseif($test['last'])
+                                                                ${{$test['last']}}
+                                                         @endif
+
+                                                        <br>
+                                                            @if(!$test['change'])
+                                                                -
+                                                            @elseif($test['change'])
+                                                                ${{$test['change']}}
+                                                            @endif
+
+                                                            @if(!$test['change_percentage'])
+                                                                -
+                                                            @elseif($test['change_percentage'])
+                                                               ( {{$test['change_percentage']}}% )
+                                                            @endif
+                                                    </p>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +143,7 @@
                                 <strong>Saved Screeners</strong>
                             </a>
                             <ul class="submenu">
-                                <li><a href={{route('stockprofile',['spy_price'=>$spy_price])}}>StockProfile</a></li>
+                                <li><a href={{route('stockprofile')}}>StockProfile</a></li>
 
                             </ul>
                         </li>

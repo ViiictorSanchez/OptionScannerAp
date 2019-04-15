@@ -21,44 +21,76 @@ class TradierWrapperController extends Controller
     public function __construct(){
 
     }
+
+    public static function getWatchlistData(Request $request){
+
+        $watchlistId = TradierWrapperController::getWatchlistId();
+
+
+        $symbols = $watchlistId['watchlist']['items']['item'];
+        $symbolCall="";
+        $j = 0;
+
+        if($symbols){
+            foreach($symbols as $item){
+                if($j == 0){
+                    $symbolCall .= $item['symbol'];
+                }else{
+                    $symbolCall .= "," . $item['symbol'];
+                }
+                $j++;
+            }
+        }else{
+            $symbols = $watchlistId['watchlist']['items']['item'];
+            foreach($symbols as $item){
+                if($j == 0){
+                    $symbolCall .= $item['symbol'];
+                }else{
+                    $symbolCall .= "," . $item['symbol'];
+                }
+                $j++;
+            }
+        }
+
+       return $sym = TradierWrapperController::getQuotes($symbolCall);
+
+
+    }
     /*
      * Call index.blade.php
      * */
-    public static function index(Request $request){
 
+    public function index(Request $request){
         $authCode = $_GET['code'];
-        //echo $authCode;
-        //echo "Authorization Code: ".$authCode."<br/>"; echo "State: ".$authState; die();
         if(empty($authCode)){
             $loginPage = TradierWrapperController::getAuthCode();
             header("Location: $loginPage");
         }else{
-                 TradierWrapperController::getTokenAPI($authCode,$request);
-
+            TradierWrapperController::getTokenAPI($authCode,$request);
         }
-         $watchlistId = TradierWrapperController::getWatchlistId();
+        $sym = TradierWrapperController::getWatchlistData($request);
 
 
-       // echo "<pre>";var_dump($watchlistId); echo "</pre>";
-        $symbols = $watchlistId['watchlist']['items']['item'];
-        $symdata = [];
-
-
-       foreach($symbols as $item){
-            //$sym = TradierWrapperController::getQuotes($item['symbol']);
-            array_push($symdata, $item['symbol']);
-        }
-        
-        // echo "<br>";
-
-        // echo "<pre>";var_dump($symdata); echo "</pre>";
-
-        $test = TradierWrapperController::getQuotes($symdata[0]);
-
-
-        return view ("index", ['spy_price'=>$symdata]);
+        return view ("index", ['spy_price'=>$sym]);
     }
 
+    /*
+     * Call stockprofile.blade.php
+     * */
+    public  function stock(Request $request){
+        $sym = TradierWrapperController::getWatchlistData($request);
+
+
+        return view ("stockprofile", ['spy_price'=>$sym]);
+    }
+
+
+    public function dashboard(Request $request){
+        $sym = TradierWrapperController::getWatchlistData($request);
+
+
+        return view ("index", ['spy_price'=>$sym]);
+    }
 
     /*
         makes an Endpoint to the Tradier Developer API to ask for an authorization code to obtain an access token
@@ -736,6 +768,7 @@ class TradierWrapperController extends Controller
     public static function multiLegOrder(){
 
     }
+#---------------------------WATCHLISTS FUNCTIONS-----------------------------------
 
     /**Obtains the watchlists from a specific user
      *

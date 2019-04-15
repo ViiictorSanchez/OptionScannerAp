@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['spy_price'=>$spy_price])
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/morris/morris.css')}}">
@@ -324,20 +324,27 @@
                 <div class="card m-b-20">
                     <div class="card-body">
                         <h4 class="mt-0 header-title float-right">WATCHLIST</h4>
-
                                 <table class="table table-vertical">
-                                    @foreach($spy_price as $symbol)
+                                    @foreach($spy_price['quotes']['quote'] as $symbol)
                                         <tr>
                                             <td>
                                                 <strong>
-                                                    {{$symbol}}
+                                                    {{$symbol['symbol']}}
                                                 </strong>
                                             </td>
                                             <td>
-                                                2.12%
+                                                @if(!$symbol['change_percentage'])
+                                                    -
+                                                @elseif($symbol['change_percentage'])
+                                                    {{$symbol['change_percentage']}}%
+                                                @endif
                                             </td>
                                             <td>
-                                                178.25
+                                                @if(!$symbol['last'])
+                                                    -
+                                                @elseif($symbol['last'])
+                                                    ${{$symbol['last']}}
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
