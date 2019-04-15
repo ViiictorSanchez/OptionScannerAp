@@ -48,9 +48,10 @@ class TradierWrapperController extends Controller
             //$sym = TradierWrapperController::getQuotes($item['symbol']);
             array_push($symdata, $item['symbol']);
         }
-       echo "<br>";
+        
+        // echo "<br>";
 
-        echo "<pre>";var_dump($symdata); echo "</pre>";
+        // echo "<pre>";var_dump($symdata); echo "</pre>";
 
         $test = TradierWrapperController::getQuotes($symdata[0]);
 
