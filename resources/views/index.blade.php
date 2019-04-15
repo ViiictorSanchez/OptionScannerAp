@@ -409,63 +409,21 @@
 
                         <div class="table-responsive">
                             <table class="table table-vertical">
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-
+                                @foreach($spy_price as $symbol)
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                {{$symbol}}
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            2.12%
+                                        </td>
+                                        <td>
+                                            178.25
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </table>
                         </div>
@@ -480,63 +438,21 @@
 
                         <div class="table-responsive">
                             <table class="table table-vertical">
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <strong>
-                                            AAPL
-                                        </strong>
-                                    </td>
-                                    <td>
-                                        2.12%
-                                    </td>
-                                    <td>
-                                        178.25
-                                    </td>
-                                </tr>
-
-
+                                @foreach($spy_price as $symbol)
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                {{$symbol}}
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            2.12%
+                                        </td>
+                                        <td>
+                                            178.25
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </table>
                         </div>

@@ -56,9 +56,6 @@ class TradierWrapperController extends Controller
         $test = TradierWrapperController::getQuotes($symdata[0]);
 
 
-            var_dump($test);
-
-
         return view ("index", ['spy_price'=>$symdata]);
     }
 

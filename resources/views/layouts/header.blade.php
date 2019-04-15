@@ -121,7 +121,7 @@
                                 <strong>Saved Screeners</strong>
                             </a>
                             <ul class="submenu">
-                                <li><a href="stockprofile">StockProfile</a></li>
+                                <li><a href={{route('stockprofile',['spy_price'=>$spy_price])}}>StockProfile</a></li>
 
                             </ul>
                         </li>

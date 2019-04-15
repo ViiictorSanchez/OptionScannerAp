@@ -24,3 +24,7 @@ Route::get('index', function () {
 Route::name('data')->get('auth.php','TradierWrapperController@index');
 
 Route::get('{any}', 'LexaController@index');
+
+Route::get('stockprofile', function () {
+    return view('stockprofile');
+})->name('stockprofile');
