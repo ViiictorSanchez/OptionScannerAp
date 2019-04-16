@@ -70,10 +70,49 @@ class TradierWrapperController extends Controller
         }
         $sym = TradierWrapperController::getWatchlistData($request);
 
+        //---------------------------------------------------------
+        $watchlistId = TradierWrapperController::getWatchlistId();
 
-        echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
+
+        $symbols = $watchlistId['watchlist']['items']['item'];
+        $symbolCall="";
+        $j = 0;
+
+        if($symbols){
+            foreach($symbols as $item){
+                if($j == 0){
+
+                    $symbolCall .= $item['symbol'];
+                }else{
+                    $symbolCall .= "," . $item['symbol'];
+                }
+                $j++;
+            }
+        }else{
+            $symbols = $watchlistId['watchlist']['items']['item'];
+            foreach($symbols as $item){
+                if($j == 0){
+                    $symbolCall .= $item['symbol'];
+                }else{
+                    $symbolCall .= "," . $item['symbol'];
+                }
+                $j++;
+            }
+        }
+
+        //--------------------------------------------------------
+        //echo $symbolCall;
+
+        $array = explode(',', $symbolCall); //split string into array seperated by ', '
+        foreach($array as $value) //loop over values
+        {
+            echo "<pre>"; var_dump(TradierWrapperController::getTimeSales($value)); echo "</pre>";
+        }
 
         die();
+        echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
+
+
         return view ("index", ['spy_price'=>$sym]);
     }
 
@@ -339,10 +378,11 @@ class TradierWrapperController extends Controller
      * @return array
      * */
     public static function getTimeSales($symbol){
+        echo $symbol;
         #Investigate the usage of the start and end params
         /*checks if the start and ed params aren't empty to send them to the endpoint
         if empty the endpoint is send only with the symbol param as default*/
-        $date = "-5 hours"; $fin = strtotime($date);
+        $date = "-20 hours"; $fin = strtotime($date);
         $endDate = date('Y-m-dTh:i',$fin);
         $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-1 minutes'));
         $startDate = date_format($beg, 'Y-m-dTh:i');
