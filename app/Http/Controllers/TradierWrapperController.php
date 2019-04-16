@@ -96,12 +96,15 @@ class TradierWrapperController extends Controller
         var_dump($allSymbols);
         echo "</pre>";
 
-       // echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
+
 
 
         return view ("index", ['spy_price'=>$sym,'allsymbols'=>$allSymbols]);
     }
 
+    public function index_data(){
+        return 'holi';
+    }
     /*
      * Call stockprofile.blade.php
      * */
@@ -364,11 +367,8 @@ class TradierWrapperController extends Controller
      * @return array
      * */
     public static function getTimeSales($symbol){
-        //echo $symbol;
-        $date = "-10 minutes"; $fin = strtotime($date);
-        $endDate = date('Y-m-d',$fin);
-        $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-1 minutes'));
-        $startDate = date_format($beg, 'Y-m-d');
+
+        $startDate = date('Y-m-d');
         $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=5min&session_filter=open&start=" . $startDate;
         $reqHeaders = TradierWrapperController::requestHeaders();
 

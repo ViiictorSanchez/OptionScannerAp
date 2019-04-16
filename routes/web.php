@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('index','TradierWrapperController@dashboard');
+Route::get('index_data','TradierWrapperController@index_data');
+
 
 
 Route::get('stockprofile', 'TradierWrapperController@stock')->name('stockprofile');
