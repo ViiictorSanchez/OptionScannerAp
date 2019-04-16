@@ -77,12 +77,21 @@ class TradierWrapperController extends Controller
         }
         $sym = TradierWrapperController::getWatchlistData($request);
 
+
+
+
+
+
+        return view ("index", ['spy_price'=>$sym]);
+    }
+
+    public function index_data(){
         //---------------------------------------------------------
 
         $symbolCall= TradierWrapperController::getSymbolCall();
 
         //--------------------------------------------------------
-       // die();
+        // die();
         $array = explode(',', $symbolCall); //split string into array seperated by ', '
         $allSymbols = array();
         foreach($array as $value) //loop over values
@@ -92,18 +101,7 @@ class TradierWrapperController extends Controller
             array_push( $allSymbols, $symbol);
         }
 
-        echo "<pre>";
-        var_dump($allSymbols);
-        echo "</pre>";
-
-
-
-
-        return view ("index", ['spy_price'=>$sym,'allsymbols'=>$allSymbols]);
-    }
-
-    public function index_data(){
-        return 'holi';
+        return $allSymbols;
     }
     /*
      * Call stockprofile.blade.php

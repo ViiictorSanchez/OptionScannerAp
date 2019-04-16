@@ -65,8 +65,21 @@
         barSpacing: '7',
         barColor: '#7A6FBE'
     });
-  
-    
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        method: 'GET',
+        url: '/index_data',
+        success: function(data){
+           console.log(data);
+        },
+        error:{
+
+        }
+    });
+
     Dashboard.prototype.init = async function() {
         // {"2014-04-03T09:45": 400, "2014-04-03T09:45": 200, "2014-04-03T09:45": 400,"2014-04-03T09:45": 400....}
         /*  try {
@@ -80,16 +93,6 @@
              console.log(err.message)
       }*/
         //-------------------------------------------------------
-        $.ajax({
-            method: 'POST',
-            url: '/index_data',
-            success: function(data){
-                console.log(data);
-            },
-            error:{
-
-            }
-        });
         var self = this;
          //creating area chart IWM
          $('.area-graph').each(function(index) {
