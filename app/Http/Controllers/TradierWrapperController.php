@@ -82,7 +82,6 @@ class TradierWrapperController extends Controller
         $symbolCall= TradierWrapperController::getSymbolCall();
 
         //--------------------------------------------------------
-        echo $symbolCall;
        // die();
         $array = explode(',', $symbolCall); //split string into array seperated by ', '
         $allSymbols = array();
@@ -365,16 +364,12 @@ class TradierWrapperController extends Controller
      * @return array
      * */
     public static function getTimeSales($symbol){
-        echo $symbol;
-        #Investigate the usage of the start and end params
-        /*checks if the start and ed params aren't empty to send them to the endpoint
-        if empty the endpoint is send only with the symbol param as default*/
-        $date = "-20 hours"; $fin = strtotime($date);
-        $endDate = date('Y-m-dTh:i',$fin);
+        //echo $symbol;
+        $date = "-10 minutes"; $fin = strtotime($date);
+        $endDate = date('Y-m-d',$fin);
         $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-1 minutes'));
-        $startDate = date_format($beg, 'Y-m-dTh:i');
-        $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&start=" . $startDate . "&end=" . $endDate;
-       // echo $url; die();
+        $startDate = date_format($beg, 'Y-m-d');
+        $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=5min&session_filter=open&start=" . $startDate;
         $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
