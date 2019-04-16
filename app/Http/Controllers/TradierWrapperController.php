@@ -21,9 +21,7 @@ class TradierWrapperController extends Controller
     public function __construct(){
 
     }
-
-    public static function getWatchlistData(Request $request){
-
+    public static function  getSymbolCall(){
         $watchlistId = TradierWrapperController::getWatchlistId();
 
 
@@ -41,6 +39,7 @@ class TradierWrapperController extends Controller
                 $j++;
             }
         }else{
+            $watchlistId = TradierWrapperController::getWatchlistId();
             $symbols = $watchlistId['watchlist']['items']['item'];
             foreach($symbols as $item){
                 if($j == 0){
@@ -51,6 +50,14 @@ class TradierWrapperController extends Controller
                 $j++;
             }
         }
+
+        return $symbolCall;
+
+    }
+
+    public static function getWatchlistData(Request $request){
+
+        $symbolCall = TradierWrapperController::getSymbolCall();
 
        return $sym = TradierWrapperController::getQuotes($symbolCall);
 
@@ -71,49 +78,29 @@ class TradierWrapperController extends Controller
         $sym = TradierWrapperController::getWatchlistData($request);
 
         //---------------------------------------------------------
-        $watchlistId = TradierWrapperController::getWatchlistId();
 
-
-        $symbols = $watchlistId['watchlist']['items']['item'];
-        $symbolCall="";
-        $j = 0;
-
-        if($symbols){
-            foreach($symbols as $item){
-                if($j == 0){
-
-                    $symbolCall .= $item['symbol'];
-                }else{
-                    $symbolCall .= "," . $item['symbol'];
-                }
-                $j++;
-            }
-        }else{
-            $symbols = $watchlistId['watchlist']['items']['item'];
-            foreach($symbols as $item){
-                if($j == 0){
-                    $symbolCall .= $item['symbol'];
-                }else{
-                    $symbolCall .= "," . $item['symbol'];
-                }
-                $j++;
-            }
-        }
+        $symbolCall= TradierWrapperController::getSymbolCall();
 
         //--------------------------------------------------------
-        //echo $symbolCall;
-
+        echo $symbolCall;
+       // die();
         $array = explode(',', $symbolCall); //split string into array seperated by ', '
+        $allSymbols = array();
         foreach($array as $value) //loop over values
         {
-            echo "<pre>"; var_dump(TradierWrapperController::getTimeSales($value)); echo "</pre>";
+            //echo "<pre>"; var_dump(TradierWrapperController::getTimeSales($value)); echo "</pre>";
+            $symbol = [$value => TradierWrapperController::getTimeSales($value)];
+            array_push( $allSymbols, $symbol);
         }
 
-        die();
-        echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
+        echo "<pre>";
+        var_dump($allSymbols);
+        echo "</pre>";
+
+       // echo "<pre>"; var_dump(TradierWrapperController::getTimeSales("AAPL")); echo "</pre>";
 
 
-        return view ("index", ['spy_price'=>$sym]);
+        return view ("index", ['spy_price'=>$sym,'allsymbols'=>$allSymbols]);
     }
 
     /*
@@ -182,7 +169,7 @@ class TradierWrapperController extends Controller
             curl_close($curl);
 
             $json = json_decode($success, true);
-            var_dump($json);
+           // var_dump($json);
 
                session()->put('ACCESSTOKEN', $json["access_token"]);
                 //$_SESSION['ACCESSTOKEN'] = $json["access_token"];
