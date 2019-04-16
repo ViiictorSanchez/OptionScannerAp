@@ -342,18 +342,16 @@ class TradierWrapperController extends Controller
         #Investigate the usage of the start and end params
         /*checks if the start and ed params aren't empty to send them to the endpoint
         if empty the endpoint is send only with the symbol param as default*/
-        $date = "-10 Minutes"; $fin = strtotime($date);
+        $date = "-5 hours"; $fin = strtotime($date);
         $endDate = date('Y-m-dTh:i',$fin);
-        $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-10 minutes'));
+        $beg = date_create($endDate); date_add($beg, date_interval_create_from_date_string('-1 minutes'));
         $startDate = date_format($beg, 'Y-m-dTh:i');
         $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&start=" . $startDate . "&end=" . $endDate;
-
-        //echo $url; die();
-
+       // echo $url; die();
         $reqHeaders = TradierWrapperController::requestHeaders();
 
         $curl = curl_init($url);
-        //curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
         curl_setopt($curl, CURLOPT_HTTPGET, 1);
         $success = curl_exec($curl);
