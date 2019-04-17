@@ -365,8 +365,13 @@ class TradierWrapperController extends Controller
      * @return array
      * */
     public static function getTimeSales($symbol){
-
-        $startDate = date('Y-m-d');
+        $date = date('Y-m-d');
+        if($date = 21:hrs){
+            $date = "-5 hours";
+            $beg = strtotime($date);
+        }
+        $date = "-5 hours";
+        $startDate = date('Y-m-d', $beg);
         $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=5min&session_filter=open&start=" . $startDate;
         $reqHeaders = TradierWrapperController::requestHeaders();
 
