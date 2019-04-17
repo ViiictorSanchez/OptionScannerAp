@@ -332,7 +332,7 @@
                                                     {{$symbol['symbol']}}
                                                 </strong>
                                             </td>
-                                            <td>
+                                            <td @if($symbol['change_percentage'] < 0) class="red" @elseif($symbol['change_percentage'] > 0) class="green" @endif>
                                                 @if(!$symbol['change_percentage'])
                                                     -
                                                 @elseif($symbol['change_percentage'])
