@@ -66,40 +66,60 @@
         barColor: '#7A6FBE'
     });
 
-    
+
+    var self = this;
+
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        method: 'GET',
+        url: '/index_data',
+        success: function(data){
+            console.log(data);
+            data.map(item => {
+                console.log(item)
+            })
+            $('.area-graph').each(function(index) {
+
+                var symbol = $('.title-graph')[index].id;
+
+                temp1.map(item => {
+                    console.log(item.name);
+                    item.all_data.series.data.map((item2) => {
+                        //console.log(item2.close)
+                    });
+                })
+
+                var seriesData = data[symbol].series.data //CAMBIAR EL N0MBRE APIDATA POR DATA (O COMO SE LLAME EL PARAMETRO //DE SUCCESS)
+
+                var $areaData = []
+
+                seriesData.forEach(function(value){
+                    var y = value.time
+                    var a = value.close
+
+                    $areaData.push({y: y, a: a})
+                })
+
+                var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
+
+                self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
+            })
+
+        },
+        error:{
+
+        }
+    });
 
     Dashboard.prototype.init = function() {
-        
-        // $.ajax({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     },
-        //     method: 'GET',
-        //     url: '/index_data',
-        //     success: function(data){
-        //        
 
 
-
-                //-HAY QUE PONER EL CODIGO AQUI
-
-
-
-
-
-        //     },
-        //     error:{
-
-        //     }
-        // });
-
-
-
-        var self = this;
          //creating area chart IWM
 
          //DATA FALSA QUE SIMULA SER LO QUE DEVUELVE LA API ----------------------------
-
+        /*
         var apiData = {
             AAPL: {
                 series: {
@@ -173,19 +193,19 @@
                 series: {
                     data: [
                         {
-                            close: 0.6295,
+                            close: 0.5555,
                             time: "2014-04-03T09:45"
                         },
                         {
-                            close: 0.7295,
+                            close: 0.4445,
                             time: "2014-04-03T09:46"
                         },
                         {
-                            close: 0.9295,
+                            close: 0.3335,
                             time: "2014-04-03T09:47"
                         },
                         {
-                            close: 0.3295,
+                            close: 0.6665,
                             time: "2014-04-03T09:48"
                         },
                         {
@@ -193,11 +213,11 @@
                             time: "2014-04-03T09:49"
                         },
                         {
-                            close: 0.2295,
+                            close: 0.211,
                             time: "2014-04-03T09:50"
                         },
                         {
-                            close: 0.6295,
+                            close: 0.611,
                             time: "2014-04-03T09:51"
                         },
                     ]
@@ -207,19 +227,19 @@
                 series: {
                     data: [
                         {
-                            close: 0.6295,
+                            close: 0.4528,
                             time: "2014-04-03T09:45"
                         },
                         {
-                            close: 0.7295,
+                            close: 0.3339,
                             time: "2014-04-03T09:46"
                         },
                         {
-                            close: 0.9295,
+                            close: 0.222,
                             time: "2014-04-03T09:47"
                         },
                         {
-                            close: 0.3295,
+                            close: 0.012,
                             time: "2014-04-03T09:48"
                         },
                         {
@@ -227,7 +247,7 @@
                             time: "2014-04-03T09:49"
                         },
                         {
-                            close: 0.2295,
+                            close: 0.8885,
                             time: "2014-04-03T09:50"
                         },
                         {
@@ -241,6 +261,108 @@
                 series: {
                     data: [
                         {
+                            close: 0.7852,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.6548,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.54321,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.2589654,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            'BRK/A': {
+                series: {
+                    data: [
+                        {
+                            close: 0.78945,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.45612,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.36987,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.74123,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            CSCO: {
+                series: {
+                    data: [
+                        {
+                            close: 0.3579,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.7931,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3179,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.9317,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            ETSY: {
+                series: {
+                    data: [
+                        {
                             close: 0.6295,
                             time: "2014-04-03T09:45"
                         },
@@ -265,13 +387,47 @@
                             time: "2014-04-03T09:50"
                         },
                         {
-                            close: 0.6295,
+                            close: 0.0147,
                             time: "2014-04-03T09:51"
                         },
                     ]
                 }
             },
-            'BRK/A': {
+            F: {
+                series: {
+                    data: [
+                        {
+                            close: 0.0258,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.0369,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.0852,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            FB: {
                 series: {
                     data: [
                         {
@@ -305,9 +461,213 @@
                     ]
                 }
             },
+            FGP: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.654,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.321654,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            GDX: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.8456,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            GDXJ: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.0258,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            GE: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.1465,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            GM: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.7420,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            GTXI: {
+                series: {
+                    data: [
+                        {
+                            close: 0.2433,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7423,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2433,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.0963,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+
         } 
         //-----------------------------------------------------------------------
-        
 
         //ESTE CODIGO VA DENTRO DE LA FUNCION SUCCESS DEL AJAX>>>>>>>>>>>>>>>>>>>>>>>>>>
          $('.area-graph').each(function(index) {
@@ -330,7 +690,7 @@
 
              self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
          })
-         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
  //-------------------------------------------------------------------------------------------------------
 

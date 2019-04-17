@@ -78,10 +78,6 @@ class TradierWrapperController extends Controller
         $sym = TradierWrapperController::getWatchlistData($request);
 
 
-
-
-
-
         return view ("index", ['spy_price'=>$sym]);
     }
 
@@ -97,7 +93,8 @@ class TradierWrapperController extends Controller
         foreach($array as $value) //loop over values
         {
             //echo "<pre>"; var_dump(TradierWrapperController::getTimeSales($value)); echo "</pre>";
-            $symbol = [$value => TradierWrapperController::getTimeSales($value)];
+            $symbol = ['all_data'=> TradierWrapperController::getTimeSales($value)];
+            array_push($symbol, ['name' => $value]);
             array_push( $allSymbols, $symbol);
         }
 
@@ -367,6 +364,7 @@ class TradierWrapperController extends Controller
     public static function getTimeSales($symbol){
         
         $startDate = date('Y-m-d');
+
         $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=5min&session_filter=open&start=" . $startDate;
         $reqHeaders = TradierWrapperController::requestHeaders();
 

@@ -367,6 +367,7 @@
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.resize.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.pie.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.selection.js')}}"></script>
+    <script src="{{ URL::asset('assets/pages/dashboard.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.stack.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/curvedLines.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.crosshair.js')}}"></script>
