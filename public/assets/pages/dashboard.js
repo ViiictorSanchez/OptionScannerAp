@@ -66,75 +66,271 @@
         barColor: '#7A6FBE'
     });
 
-    $.ajax({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        method: 'GET',
-        url: '/index_data',
-        success: function(data){
-           console.log(data);
-        },
-        error:{
+    
 
-        }
-    });
+    Dashboard.prototype.init = function() {
+        
+        // $.ajax({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     },
+        //     method: 'GET',
+        //     url: '/index_data',
+        //     success: function(data){
+        //        
 
-    Dashboard.prototype.init = async function() {
-        // {"2014-04-03T09:45": 400, "2014-04-03T09:45": 200, "2014-04-03T09:45": 400,"2014-04-03T09:45": 400....}
-        /*  try {
-             const result = await  fetch("/index", {})
-             const data  = result.json()
-             let $areaData= []
-             Object.keys(data).forEach(key => {
-                 $areaData.push({ y: key, a: data[key] })
-             })
-         } catch (err) {
-             console.log(err.message)
-      }*/
-        //-------------------------------------------------------
+
+
+                //-HAY QUE PONER EL CODIGO AQUI
+
+
+
+
+
+        //     },
+        //     error:{
+
+        //     }
+        // });
+
+
+
         var self = this;
          //creating area chart IWM
-         $('.area-graph').each(function(index) {
-             var $areaData = new Array(  {y: '2014-04-03T09:45', a:400},
-                                         {y: '2014-04-03T09:46', a:350},
-                                         {y: '2014-04-03T09:47', a:195},
-                                         {y: '2014-04-03T09:48', a:150},
-                                         {y: '2014-04-03T09:49', a:360},
-                                         {y: '2014-04-03T09:50', a:120},
-                                         {y: '2014-04-03T09:51', a:30},
-                                         {y: '2014-04-03T09:52', a:100},
-                                         {y: '2014-04-03T09:53', a:100},
-                                         {y: '2014-04-03T09:54', a:100},
-                                         {y: '2014-04-03T09:55', a:400},
-                                         {y: '2014-04-03T09:45', a:400},
-                                         {y: '2014-04-03T09:46', a:350},
-                                         {y: '2014-04-03T09:47', a:195},
-                                         {y: '2014-04-03T09:48', a:150},
-                                         {y: '2014-04-03T09:49', a:360},
-                                         {y: '2014-04-03T09:50', a:120},
-                                         {y: '2014-04-03T09:51', a:30},
-                                         {y: '2014-04-03T09:52', a:100},
-                                         {y: '2014-04-03T09:53', a:100},
-                                         {y: '2014-04-03T09:54', a:100},
-                                         {y: '2014-04-03T09:55', a:400},
-                                         {y: '2014-04-03T09:56', a:400},
-                                         {y: '2014-04-03T09:57', a:350},
-                                         {y: '2014-04-03T09:58', a:195},
-                                         {y: '2014-04-03T09:59', a:150},
-                                         {y: '2014-04-03T09:60', a:360},
-                                         {y: '2014-04-03T09:61', a:120},
-                                         {y: '2014-04-03T09:62', a:30},
-                                         {y: '2014-04-03T09:63', a:100},
-                                         {y: '2014-04-03T09:64', a:100},
-                                         {y: '2014-04-03T09:65', a:100},
-                                         {y: '2014-04-03T09:66', a:400},);
 
+         //DATA FALSA QUE SIMULA SER LO QUE DEVUELVE LA API ----------------------------
+
+        var apiData = {
+            AKG: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            AZO: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            AMD: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            AMZN: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            BAC: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+            CHK: {
+                series: {
+                    data: [
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:45"
+                        },
+                        {
+                            close: 0.7295,
+                            time: "2014-04-03T09:46"
+                        },
+                        {
+                            close: 0.9295,
+                            time: "2014-04-03T09:47"
+                        },
+                        {
+                            close: 0.3295,
+                            time: "2014-04-03T09:48"
+                        },
+                        {
+                            close: 0.9495,
+                            time: "2014-04-03T09:49"
+                        },
+                        {
+                            close: 0.2295,
+                            time: "2014-04-03T09:50"
+                        },
+                        {
+                            close: 0.6295,
+                            time: "2014-04-03T09:51"
+                        },
+                    ]
+                }
+            },
+        } 
+        //-----------------------------------------------------------------------
+        
+
+        //ESTE CODIGO VA DENTRO DE LA FUNCION SUCCESS DEL AJAX>>>>>>>>>>>>>>>>>>>>>>>>>>
+         $('.area-graph').each(function(index) {
+
+             var symbol = $('.title-graph')[index].id
+
+             var seriesData = apiData[symbol].series.data //CAMBIAR EL N0MBRE APIDATA POR DATA (O COMO SE LLAME EL PARAMETRO
+                                                          //DE SUCCESS)
+
+             var $areaData = []
+
+             seriesData.forEach(function(value){
+                var y = value.time
+                var a = value.close
+
+                $areaData.push({y: y, a: a})
+             })
 
              var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
 
              self.createAreaChart(this.id, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
          })
+         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
  //-------------------------------------------------------------------------------------------------------
 

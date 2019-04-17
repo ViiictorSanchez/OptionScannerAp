@@ -99,7 +99,7 @@
                                             <div class="line-separate-graph">
                                                 <div id="morris-area-example-{{$loop->index}}" class="morris-chart-height margin-first-graph margin-graph area-graph"></div>
 
-                                                <label class="title-graph">{{$test['symbol']}}
+                                                <label class="title-graph" id="{{$test['symbol']}}">{{$test['symbol']}}
 
                                                     <p class="green">
                                                         @if(!$test['last'])
