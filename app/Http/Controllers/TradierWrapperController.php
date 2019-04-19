@@ -77,8 +77,11 @@ class TradierWrapperController extends Controller
         }
         $sym = TradierWrapperController::getWatchlistData($request);
 
+        $account = TradierWrapperController::getAccountBalances("6YA00005");
 
-        return view ("index", ['spy_price'=>$sym]);
+        var_dump($account);
+
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account]);
     }
 
     public function test(Request $request){
