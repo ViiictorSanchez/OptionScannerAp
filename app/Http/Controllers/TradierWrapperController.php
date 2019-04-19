@@ -81,6 +81,13 @@ class TradierWrapperController extends Controller
         return view ("index", ['spy_price'=>$sym]);
     }
 
+    public function test(Request $request){
+        $sym = TradierWrapperController::getWatchlistData($request);
+
+
+        return view ("account", ['spy_price'=>$sym]);
+    }
+
     public function index_data(){
         //---------------------------------------------------------
 

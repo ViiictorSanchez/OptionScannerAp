@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="float-right list-unstyled mb-0 has-submenu ">
-                        <a class="menu-color" id="list-header-menu" href="#"><strong>Entity 6YA00005</strong><i class="fas fa-sort-down"></i></a>
+                        <a class="menu-color" id="list-header-menu" href="{{route('account')}}"><strong>Entity 6YA00005</strong><i class="fas fa-sort-down"></i></a>
                         <ul class="submenu">
                             <li><a href="#" > <i class="fas fa-question-circle"></i> Help <br></a></li>
                             <li><a href="#"> <i class="fas fa-wrench"></i>Report Bug</a></li>
