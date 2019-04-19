@@ -101,7 +101,7 @@
 
                                                 <label class="title-graph" id="{{$test['symbol']}}">{{$test['symbol']}}
 
-                                                    <p class="green">
+                                                    <p @if($test['change_percentage'] < 0) class="red" @elseif($test['change_percentage'] > 0) class="green" @endif>
                                                         @if(!$test['last'])
                                                             -
                                                         @elseif($test['last'])
