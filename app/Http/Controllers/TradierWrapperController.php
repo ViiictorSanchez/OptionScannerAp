@@ -78,22 +78,31 @@ class TradierWrapperController extends Controller
         $sym = TradierWrapperController::getWatchlistData($request);
 
         $account = TradierWrapperController::accountNumbers();
+        $arrayAccountBalances = array();
+        foreach ($account as $count){
+            $balances = TradierWrapperController::getAccountBalances($count);
+            array_push($arrayAccountBalances,$balances);
+        }
 
-        $balances = TradierWrapperController::getAccountBalances($account[0]);
-        var_dump($balances);
-        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'balances'=>$balances]);
+        var_dump($arrayAccountBalances);
+
+        echo "---------";
+
+        var_dump($account);
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances]);
     }
 
     public function account(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
+        $account = TradierWrapperController::accountNumbers();
 
         $balances = TradierWrapperController::getAccountBalances("6YA00005");
-        $account = TradierWrapperController::accountNumbers();
+
         var_dump($balances);
 
 
 
-        return view ("index", ['spy_price'=>$sym, 'account'=>$account]);
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account, 'balances'=>$balances]);
     }
 
     public function index_data(){

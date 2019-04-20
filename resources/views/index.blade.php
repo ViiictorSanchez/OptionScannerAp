@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <ul class="menu-my-portfolio">
                             <li class="float-left list-unstyled my-portfolio-menu">
-                                <a class="font-size-portfolio">${{$balances['balances']['total_equity']}}</a>
+                                <a class="font-size-portfolio">$</a>
                             </li >
                             <li class="float-left list-unstyled my-portfolio-menu">
                                 <a class="menu-my-portfolio-color">Unrealized P/L</a>
