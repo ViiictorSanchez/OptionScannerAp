@@ -20,9 +20,13 @@
                 <div class="card m-b-0" >
                     <div class="card-body">
                         <ul class="menu-my-portfolio">
-                            <li class="float-left list-unstyled my-portfolio-menu">
-                                <a class="font-size-portfolio">$</a>
-                            </li >
+                            @foreach ($arrayAccountBalances as $accountBalance)
+                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}" 
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="font-size-portfolio">${{ $accountBalance['balances']['total_equity'] }}</a>
+                                </li >
+                            @endforeach
                             <li class="float-left list-unstyled my-portfolio-menu">
                                 <a class="menu-my-portfolio-color">Unrealized P/L</a>
 
@@ -520,5 +524,5 @@
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
     <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
     <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
-
+    <script src="{{ URL::asset('assets/js/changeBalance.js') }}"></script>
 @endsection
