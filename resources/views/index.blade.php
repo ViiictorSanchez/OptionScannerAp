@@ -1,4 +1,4 @@
-@extends('layouts.master', ['spy_price'=>$spy_price])
+@extends('layouts.master', ['spy_price'=>$spy_price, 'account'=>$account])
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/morris/morris.css')}}">
@@ -21,23 +21,16 @@
                     <div class="card-body">
                         <ul class="menu-my-portfolio">
                             <li class="float-left list-unstyled my-portfolio-menu">
-                                <a class="font-size-portfolio">${{$account['balances']['total_equity']}}</a>
+                                <a class="font-size-portfolio">$</a>
                             </li >
                             <li class="float-left list-unstyled my-portfolio-menu">
                                 <a class="menu-my-portfolio-color">Unrealized P/L</a>
 
-                                <p @if($account['balances']['open_pl'] < 0) class="red"
-                                   @elseif($account['balances']['open_pl'] > 0) class="green" @endif>
-                                    ${{$account['balances']['open_pl']}}
-                                </p>
+
                             </li>
                             <li class="float-left list-unstyled my-portfolio-menu">
                                 <a class="menu-my-portfolio-color" >Realized P/L</a>
-                                <p @if($account['balances']['close_pl'] < 0) class="red"
-                                   @elseif($account['balances']['close_pl'] > 0) class="green" @endif>
-                                    ${{$account['balances']['close_pl']}}
 
-                                </p>
                             </li>
 
                             <li class="float-right list-unstyled portfolio-title title-card">
@@ -49,13 +42,13 @@
                         <ul class="float-left line-separate">
                             <li class="float-left list-unstyled submenu-myportfolio">
                                 <a class="menu-my-portfolio-color">  Cash </a>
-                                <p> <strong>${{$account['balances']['total_cash']}} </strong></p>
+
                             </li >
                             <li class="float-left list-unstyled submenu-myportfolio">
                                 <a class="menu-my-portfolio-color"> Stocks </a>
                                     <p><strong>
 
-                                    ${{$account['balances']['stock_long_value'] }}
+
 
                                     </strong></p>
                             </li>

@@ -77,18 +77,21 @@ class TradierWrapperController extends Controller
         }
         $sym = TradierWrapperController::getWatchlistData($request);
 
-        $account = TradierWrapperController::getAccountBalances("6YA00005");
-
-       // var_dump($account);
+        $account = TradierWrapperController::accountNumbers();
 
         return view ("index", ['spy_price'=>$sym, 'account'=>$account]);
     }
 
-    public function test(Request $request){
+    public function account(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
 
+        $balances = TradierWrapperController::getAccountBalances("6YA05991");
+        $account = TradierWrapperController::accountNumbers();
+        var_dump($balances);
 
-        return view ("account", ['spy_price'=>$sym]);
+
+
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account]);
     }
 
     public function index_data(){
@@ -204,6 +207,20 @@ class TradierWrapperController extends Controller
 
 
     #-------------------------------------USER DATA FUNCTIONS--------------------------------#
+    public static function getUsersProfile(){
+        $url = self::apiUrl . "/v1/user/profile";
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $userProf = json_decode($success, true);
+        curl_close($curl);
+
+        return $userProf['profile']['account'];
+    }
     /*
      * Check if the users exists on the api and redirects to the main site if the user exists
      * if not redirects the user to a sign up page
@@ -606,6 +623,22 @@ class TradierWrapperController extends Controller
     }
 
     #------------------------------ACCOUNT DATA FUNCTIONS--------------------------------------#
+    /**obtains the accounts numbers info from an specific user's.
+     *
+     * @param string accountId
+     *
+     * @return array
+     */
+    public static function accountNumbers(){
+        $accounts = TradierWrapperController::getUsersProfile();
+
+        $accNumbers = array();
+        foreach($accounts as $item){
+            array_push($accNumbers, $item['account_number']);
+        }
+        return $accNumbers;
+    }
+
     /**obtains the balances info from an specific user's account.
      *
      * @param string accountId
@@ -734,7 +767,7 @@ class TradierWrapperController extends Controller
         return $accIOrd;
     }
 
-    #-----------------------------TRADING FUNCTIONS-------------------------------------
+#-----------------------------TRADING FUNCTIONS-------------------------------------
     /**Makes an Endpoint to the API to create a preview order, which will be made but not sent to the market
      * also showing info useful to inform the client about the order to be actually placed
      *
@@ -839,4 +872,263 @@ class TradierWrapperController extends Controller
         return $getWatId;
     }
 
+    /**creates a Watchlist with specificated symbol and name
+     *
+     * @param string name
+     * @param string symbols
+     *
+     * @return array
+     */
+    public static function createWatchlist($name, $symbols){
+        $url = self::apiUrl . "/v1/watchlists?name=" . $name . "&symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        $success = curl_exec($curl);
+        $creWat = json_decode($success, true);
+        curl_close($curl);
+        return $creWat;
+    }
+
+    /**updates an existing Watchlist by changing the name and symbol of an id based watchlist
+     *
+     * @param string id
+     * @param string name
+     * @param string symbols
+     *
+     * @return array
+     *
+     */
+    public static function updateWatchlist($id, $name, $symbols){
+        $url = self::apiUrl . "/v1/watchlists/". $id . "?name=" . $name . "&symbols=" .$symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+        $success = curl_exec($curl);
+        $updWat = json_decode($success, true);
+        curl_close($curl);
+
+        return $updWat;
+    }
+
+    /**Deletes an existing watchlist based on a given ID
+     *
+     * @param string ID
+     *
+     * @return array
+     *
+     */
+    public static function deleteWatchlist($id){
+        $url = self::apiUrl . "/v1/watchlists/" . $id;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+        $success = curl_exec($curl);
+        $delWat = json_decode($success, true);
+        curl_close($curl);
+
+        return $delWat;
+    }
+
+    /**Adds a symbol or a list of symbols to an existing watchlist based on an id
+     *
+     * @param string id
+     * @param string symbols
+     *
+     * @return array
+     *
+     */
+    public static function addSymbols($id, $symbols){
+        $url = self::apiUrl. "/v1/watchlists/" . $id . "/symbols?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        $success = curl_exec($curl);
+        $addSym = json_decode($success, true);
+        curl_close($curl);
+        return $addSym;
+    }
+
+    /**Deletes a selection of symbols from an existign watchlist based on an id
+     *
+     * @param string id
+     * @param string symbols
+     *
+     * @return array
+     */
+    public static function removeSymbols($id, $symbols){
+        $url = self::apiUrl . "/v1/watchlists/" . $id . "/symbols/" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+        $success = curl_exec($curl);
+        $remSym = json_decode($success, true);
+        curl_close($curl);
+
+        return $remSym;
+    }
+
+#------------------------------------FUNDAMENTALS FUNCTIONS------------------------------------------------------
+
+    /**Obtains information from a symbol's company
+     *
+     * @param string symbols
+     *
+     * @return array
+     */
+    public static function getCompanyInfo($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/company?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $getComInf = json_decode($success, true);
+        curl_close($curl);
+
+        return $getComInf;
+    }
+
+    /**Obtains information from a symbol's corporate's Calendar
+     *
+     * @param string symbols
+     *
+     * @return array
+     */
+    public static function getCalendar($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/calendars?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $getCal = json_decode($success, true);
+        curl_close($curl);
+
+        return $getCal;
+    }
+
+    /**obtains a company's dividend info based on its symbol
+     *@param string symbols
+     *
+     *@return array
+     *
+     */
+    public static function getDividendInfo($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/dividends?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $getDiv = json_decode($success, true);
+        curl_close($curl);
+
+        return $getDiv;
+    }
+
+    /**obtains a company's actions info based on its symbol
+     *@param string symbols
+     *
+     *@return array
+     *
+     */
+    public static function getActionsInfo($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/corporate_actions?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $actInfo = json_decode($success, true);
+        curl_close($curl);
+
+        return $actInfo;
+    }
+
+    /**obtains a company's operation ratio info based on its symbol
+     *@param string symbols
+     *
+     *@return array
+     *
+     */
+    public static function getRatioInfo($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/ratios?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $opeInfo = json_decode($success, true);
+        curl_close($curl);
+
+        return $opeInfo;
+    }
+
+    /**obtains a corporate's financial info based on its symbol
+     *@param string symbols
+     *
+     *@return array
+     *
+     */
+    public static function getFinancialsInfo($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/financials?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $finInfo = json_decode($success, true);
+        curl_close($curl);
+
+        return $finInfo;
+    }
+
+    /**Obtains price statistics info from a certain symbol or a list of symbols
+     *@param string symbols
+     *
+     *@return array
+     *
+     */
+    public static function getPriceStatistics($symbols){
+        $url = self::apiUrl . "/beta/markets/fundamentals/statistics?symbols=" . $symbols;
+        $reqHeaders = TradierWrapperController::requestHeaders();
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
+        curl_setopt($curl, CURLOPT_HTTPGET, 1);
+        $success = curl_exec($curl);
+        $priSta = json_decode($success, true);
+        curl_close($curl);
+
+        return $priSta;
+    }
 }
