@@ -26,40 +26,48 @@
                                 >
                                     <a class="font-size-portfolio">${{ $accountBalance['balances']['total_equity'] }}</a>
                                 </li >
+                            
+                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}"
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="menu-my-portfolio-color">Unrealized P/L</a>
+                                    <p><strong>${{ $accountBalance['balances']['open_pl'] }}</strong></p>
+                                </li>
+                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}"
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="menu-my-portfolio-color" >Realized P/L</a>
+                                    <p><strong>${{ $accountBalance['balances']['close_pl'] }}</strong></p>
+                                </li>
                             @endforeach
-                            <li class="float-left list-unstyled my-portfolio-menu">
-                                <a class="menu-my-portfolio-color">Unrealized P/L</a>
 
-
-                            </li>
-                            <li class="float-left list-unstyled my-portfolio-menu">
-                                <a class="menu-my-portfolio-color" >Realized P/L</a>
-
-                            </li>
-
-                            <li class="float-right list-unstyled portfolio-title title-card">
-                                <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
-                            </li>
+                                <li class="float-right list-unstyled portfolio-title title-card">
+                                    <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
+                                </li>
                         </ul>
 
 
                         <ul class="float-left line-separate">
-                            <li class="float-left list-unstyled submenu-myportfolio">
-                                <a class="menu-my-portfolio-color">  Cash </a>
-
-                            </li >
-                            <li class="float-left list-unstyled submenu-myportfolio">
-                                <a class="menu-my-portfolio-color"> Stocks </a>
-                                    <p><strong>
-
-
-
-                                    </strong></p>
-                            </li>
-                            <li class="float-left list-unstyled ">
-                                <a class="menu-my-portfolio-color"> Options</a>
-                                <p><strong> $9,895.10</strong></p>
-                            </li>
+                            @foreach ($arrayAccountBalances as $accountBalance)
+                                <li class="float-left list-unstyled submenu-myportfolio" data-account="{{ $accountBalance['balances']['account_number']}}"
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="menu-my-portfolio-color">  Cash </a>
+                                    <p><strong> ${{ $accountBalance['balances']['total_cash']}} </strong></p>
+                                </li >
+                                <li class="float-left list-unstyled submenu-myportfolio" data-account="{{ $accountBalance['balances']['account_number']}}"
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="menu-my-portfolio-color"> Stocks </a>
+                                    <p><strong> ${{ $accountBalance['balances']['stock_long_value'] }}</strong></p>
+                                </li>
+                                <li class="float-left list-unstyled " data-account="{{ $accountBalance['balances']['account_number']}}"
+                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
+                                >
+                                    <a class="menu-my-portfolio-color"> Options</a>
+                                    <p><strong> ${{ $accountBalance['balances']['option_long_value'] + $accountBalance['balances']['option_short_value'] }}</strong></p>
+                                </li>
+                            @endforeach
                         </ul>
 
                         <div class="table-responsive col-xl-12" >
