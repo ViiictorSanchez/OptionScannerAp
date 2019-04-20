@@ -31,13 +31,19 @@
                                     @if ($loop->first) style="display:list-item" @else style="display:none" @endif
                                 >
                                     <a class="menu-my-portfolio-color">Unrealized P/L</a>
-                                    <p><strong>${{ $accountBalance['balances']['open_pl'] }}</strong></p>
+                                    <p 
+                                        @if($accountBalance['balances']['open_pl'] < 0) class="red" @elseif($accountBalance['balances']['open_pl'] > 0) class="green" @endif
+                                    >
+                                        <strong>${{ $accountBalance['balances']['open_pl'] }}</strong>
+                                    </p>
                                 </li>
                                 <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}"
                                     @if ($loop->first) style="display:list-item" @else style="display:none" @endif
                                 >
                                     <a class="menu-my-portfolio-color" >Realized P/L</a>
-                                    <p><strong>${{ $accountBalance['balances']['close_pl'] }}</strong></p>
+                                    <p
+                                        @if($accountBalance['balances']['close_pl'] < 0) class="red" @elseif($accountBalance['balances']['close_pl'] > 0) class="green" @endif
+                                    ><strong>${{ $accountBalance['balances']['close_pl'] }}</strong></p>
                                 </li>
                             @endforeach
 
