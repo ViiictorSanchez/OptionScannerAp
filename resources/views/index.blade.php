@@ -56,7 +56,7 @@
                                     <p><strong>
 
                                     ${{$account['balances']['stock_long_value'] }}
-                                     
+
                                     </strong></p>
                             </li>
                             <li class="float-left list-unstyled ">

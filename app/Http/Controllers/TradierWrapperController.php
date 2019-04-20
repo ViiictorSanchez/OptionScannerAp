@@ -79,7 +79,7 @@ class TradierWrapperController extends Controller
 
         $account = TradierWrapperController::getAccountBalances("6YA00005");
 
-        var_dump($account);
+       // var_dump($account);
 
         return view ("index", ['spy_price'=>$sym, 'account'=>$account]);
     }
