@@ -84,11 +84,11 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
-        var_dump($arrayAccountBalances);
+        // var_dump($arrayAccountBalances);
 
-        echo "---------";
+        // echo "---------";
 
-        var_dump($account);
+        // var_dump($account);
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances]);
     }
 
