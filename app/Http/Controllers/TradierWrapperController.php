@@ -129,17 +129,22 @@ class TradierWrapperController extends Controller
      * */
     public  function stock(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
+        $account = TradierWrapperController::accountNumbers();
 
-
-        return view ("stockprofile", ['spy_price'=>$sym]);
+        return view ("stockprofile", ['spy_price'=>$sym, 'account'=>$account]);
     }
 
 
     public function dashboard(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
+        $account = TradierWrapperController::accountNumbers();
+        $arrayAccountBalances = array();
+        foreach ($account as $count){
+            $balances = TradierWrapperController::getAccountBalances($count);
+            array_push($arrayAccountBalances,$balances);
+        }
 
-
-        return view ("index", ['spy_price'=>$sym]);
+        return view ("index", ['spy_price'=>$sym,'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances]);
     }
 
     /*
