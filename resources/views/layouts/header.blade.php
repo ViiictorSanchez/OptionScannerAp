@@ -31,12 +31,12 @@
                     </li>
 
                     <li class="float-right list-unstyled mb-0 has-submenu ">
-                        <a class="menu-color" id="list-header-menu"><strong>{{$account[0]}}</strong><i class="fas fa-sort-down"></i></a>
+                        <a class="menu-color" id="list-header-menu"><strong>{{$typeAccount[0]['classification']}} {{$account[0]}}</strong><i class="fas fa-sort-down"></i></a>
                         <ul class="submenu">
                             @php $count = sizeof($account) @endphp
                             @for ($i = 0; $i < $count; $i++)
                                 <li><a class="menu-color" id="{{$account[$i]}}"
-                                    onclick="changeBalance(this)"><strong>{{$account[$i]}}</strong></a></li>
+                                    onclick="changeBalance(this)"><strong>{{$typeAccount[$i]['classification']}} {{$account[$i]}}</strong></a></li>
                             @endfor
                             <li><a href="#" > <i class="fas fa-question-circle"></i> Help <br></a></li>
                             <li><a href="#"> <i class="fas fa-wrench"></i>Report Bug</a></li>

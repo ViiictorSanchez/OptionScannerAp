@@ -6,6 +6,5 @@ function changeBalance(element) {
 		}
 		else value.style.display = "none"
 	})
-
 	
 }

@@ -66,11 +66,6 @@
         barColor: '#7A6FBE'
     });
 
-
-    
-
-    
-
     Dashboard.prototype.init = function() {
 
         var self = this;
@@ -137,31 +132,25 @@
                         }
                     })
 
-                    seriesData.forEach(function(value, index){
-                        var y = value.time
-                        var a = value.close
 
-                        if(index < 10) $areaData.push({y: y, a: a})
-                    })
+        seriesData.forEach(function(value, index){
+            var y = value.time
+            var a = value.close
 
-                    var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
+            if(index < 10) $areaData.push({y: y, a: a})
+        })
 
-                    self.createAreaChart('morris-area-example-' + index, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
-                    $areaData = []
-                })
+        var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
 
-            },
-            error:{
+        self.createAreaChart('morris-area-example-' + index, 0, 0, $areaData, 'y', [ 'a'], ['Value'], [ color ]);
+        $areaData = []
+    })
 
-            }
-        });
+},
+error:{
 
-
-
-
-
-
-
+}
+});
  //-------------------------------------------------------------------------------------------------------
 
          //creating donut chart

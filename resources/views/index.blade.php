@@ -1,4 +1,4 @@
-@extends('layouts.master', ['spy_price'=>$spy_price, 'account'=>$account])
+@extends('layouts.master', ['spy_price'=>$spy_price, 'account'=>$account, 'typeAccount'=>$typeAccount])
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/morris/morris.css')}}">

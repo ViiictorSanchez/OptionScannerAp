@@ -76,7 +76,7 @@ class TradierWrapperController extends Controller
             TradierWrapperController::getTokenAPI($authCode,$request);
         }
         $sym = TradierWrapperController::getWatchlistData($request);
-
+        $typeAccount = TradierWrapperController::getUsersProfile();
         $account = TradierWrapperController::accountNumbers();
         $arrayAccountBalances = array();
         foreach ($account as $count){
@@ -84,12 +84,22 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
-        // var_dump($arrayAccountBalances);
+//_---------------------------------------------------------------------------------------
+        //IN PROGRESS
+        $positionAccount = array();
+           foreach ($account as $count){
+                $position = TradierWrapperController::getAccountPositions($count);
+                array_push($positionAccount,$position);
+           }
 
-        // echo "---------";
+         $quotes = TradierWrapperController::getQuotes('AAPL');
 
-        // var_dump($account);
-        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances]);
+           var_dump($positionAccount);
+           die();
+ //------------------------------------------------------------------------------------------------
+        var_dump($positionAccount);
+
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
 
     public function account(Request $request){
@@ -130,21 +140,23 @@ class TradierWrapperController extends Controller
     public  function stock(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
         $account = TradierWrapperController::accountNumbers();
+        $typeAccount = TradierWrapperController::getUsersProfile();
 
-        return view ("stockprofile", ['spy_price'=>$sym, 'account'=>$account]);
+        return view ("stockprofile", ['spy_price'=>$sym, 'account'=>$account, 'typeAccount'=>$typeAccount]);
     }
 
 
     public function dashboard(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
         $account = TradierWrapperController::accountNumbers();
+        $typeAccount = TradierWrapperController::getUsersProfile();
         $arrayAccountBalances = array();
         foreach ($account as $count){
             $balances = TradierWrapperController::getAccountBalances($count);
             array_push($arrayAccountBalances,$balances);
         }
 
-        return view ("index", ['spy_price'=>$sym,'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances]);
+        return view ("index", ['spy_price'=>$sym,'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
 
     /*
