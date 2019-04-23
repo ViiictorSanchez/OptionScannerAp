@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class TradierWrapperController extends Controller
 {
 
-    const apiUrl = "https://api.tradier.com";
+    const apiUrl = "https://sandbox.tradier.com";
     const apiAuth = "Authorization: Bearer ";
     const clientId = "ZA6vGYYgJj0QeDhvNKAwkQAxFAwqR6Hj";
     const consumerKey = "tkg3Ow4WDG9vqCuS";
@@ -34,6 +34,7 @@ class TradierWrapperController extends Controller
                 if($j == 0){
                     $symbolCall .= $item['symbol'];
                 }else{
+
                     $symbolCall .= "," . $item['symbol'];
                 }
                 $j++;
@@ -59,7 +60,7 @@ class TradierWrapperController extends Controller
 
         $symbolCall = TradierWrapperController::getSymbolCall();
 
-       return $sym = TradierWrapperController::getQuotes($symbolCall);
+        return $sym = TradierWrapperController::getQuotes($symbolCall);
 
 
     }
@@ -68,13 +69,21 @@ class TradierWrapperController extends Controller
      * */
 
     public function index(Request $request){
-        $authCode = $_GET['code'];
-        if(empty($authCode)){
-            $loginPage = TradierWrapperController::getAuthCode();
-            header("Location: $loginPage");
+        if(self::apiUrl == "https://api.tradier.com"){
+            $authCode = $_GET['code'];
+            if(session()->get('ACCESSTOKEN') == '9hdR5iv3N4asyPqVkMVylSfxYuir'){
+                session()->put('ACCESSTOKEN', '');
+            }
+            if(empty($authCode)){
+                $loginPage = TradierWrapperController::getAuthCode();
+                header("Location: $loginPage");
+            }else{
+                TradierWrapperController::getTokenAPI($authCode,$request);
+            }
         }else{
-            TradierWrapperController::getTokenAPI($authCode,$request);
+            session()->put('ACCESSTOKEN', '9hdR5iv3N4asyPqVkMVylSfxYuir');
         }
+
         $sym = TradierWrapperController::getWatchlistData($request);
         $typeAccount = TradierWrapperController::getUsersProfile();
         $account = TradierWrapperController::accountNumbers();
@@ -84,49 +93,73 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
+
+
 //_---------------------------------------------------------------------------------------
         //IN PROGRESS
         $positionAccount = array();
-           foreach ($account as $count){
-                $position = TradierWrapperController::getAccountPositions($count);
-                array_push($positionAccount,$position);
-           }
+        $quotes = array();
 
-         $quotes = TradierWrapperController::getQuotes('AAPL');
 
-           var_dump($positionAccount);
-           die();
- //------------------------------------------------------------------------------------------------
-        var_dump($positionAccount);
+        foreach ($account as $count){
+            $position = TradierWrapperController::getAccountPositions($count);
+            array_push($positionAccount,$position);
+        }
 
+       $auxpositionAccount = array();
+       $auxpositionAccount = $positionAccount;
+
+        $j=0;$k=0;
+
+        foreach($positionAccount as $accounp){
+            foreach ($accounp['positions']['position'] as $postionaccount){
+                $quotes = TradierWrapperController::getQuotes($postionaccount['symbol']);
+                array_push($positionAccount,$quotes);
+            }
+        }
+
+         echo "<pre>"; var_dump($positionAccount); echo "</pre>";
+
+          die();
+
+       /* echo "<pre>"; var_dump($positionAccount); echo "</pre>";
+
+               $length = sizeof($positionAccount);
+               $lengthTemp = 0;
+               for($j=0;$j<$length;$j++){
+
+                        $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
+                        for ($k=0;$k<$lengthTemp;$k++){
+
+                            $quotes = TradierWrapperController::getQuotes($positionAccount[$j]['positions']['position'][$k]['symbol']);
+
+                           array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
+                        }
+               }*/
+        echo "<pre>"; var_dump($positionAccount); echo "</pre>";
+
+//------------------------------------------------------------------------------------------------
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
 
     public function account(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
         $account = TradierWrapperController::accountNumbers();
+        $typeAccount = TradierWrapperController::getUsersProfile();
+
 
         $balances = TradierWrapperController::getAccountBalances("6YA00005");
 
-        var_dump($balances);
-
-
-
-        return view ("index", ['spy_price'=>$sym, 'account'=>$account, 'balances'=>$balances]);
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account, 'balances'=>$balances, 'typeAccount'=>$typeAccount]);
     }
 
     public function index_data(){
-        //---------------------------------------------------------
-
         $symbolCall= TradierWrapperController::getSymbolCall();
 
-        //--------------------------------------------------------
-        // die();
         $array = explode(',', $symbolCall); //split string into array seperated by ', '
         $allSymbols = array();
         foreach($array as $value) //loop over values
         {
-            //echo "<pre>"; var_dump(TradierWrapperController::getTimeSales($value)); echo "</pre>";
             $symbol = ['all_data'=> TradierWrapperController::getTimeSales($value)];
             array_push($symbol, ['name' => $value]);
             array_push( $allSymbols, $symbol);
@@ -139,8 +172,8 @@ class TradierWrapperController extends Controller
      * */
     public  function stock(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
-        $account = TradierWrapperController::accountNumbers();
         $typeAccount = TradierWrapperController::getUsersProfile();
+        $account = TradierWrapperController::accountNumbers();
 
         return view ("stockprofile", ['spy_price'=>$sym, 'account'=>$account, 'typeAccount'=>$typeAccount]);
     }
@@ -148,8 +181,8 @@ class TradierWrapperController extends Controller
 
     public function dashboard(Request $request){
         $sym = TradierWrapperController::getWatchlistData($request);
-        $account = TradierWrapperController::accountNumbers();
         $typeAccount = TradierWrapperController::getUsersProfile();
+        $account = TradierWrapperController::accountNumbers();
         $arrayAccountBalances = array();
         foreach ($account as $count){
             $balances = TradierWrapperController::getAccountBalances($count);
@@ -168,6 +201,7 @@ class TradierWrapperController extends Controller
     public static function getAuthCode(){
 
         $url = self::apiUrl . "/v1/oauth/authorize?client_id=" . self::clientId . "&scope=" . self::scopeAuth . "&state=" . self::state;
+        echo "url";
 
         $curl=curl_init($url);
         curl_setopt($curl, CURLOPT_HTTPGET, 1);
@@ -188,31 +222,28 @@ class TradierWrapperController extends Controller
         if(empty($code)){
             echo "Authorization Code Invalid"."<br/>"."Code is empty";
         }else {
-            if(!session()->has('ACCESSTOKEN')){
+            if(session()->get('ACCESSTOKEN') == ""){
 
-            $url = self::apiUrl . "/v1/oauth/accesstoken";
+                $url = self::apiUrl . "/v1/oauth/accesstoken";
 
-            $postParam = [
-                "grant_type" => 'authorization_code',
-                "code" => $code
-            ];
-            $user = self::clientId; $pass = self::consumerKey;
+                $postParam = [
+                    "grant_type" => 'authorization_code',
+                    "code" => $code
+                ];
+                $user = self::clientId; $pass = self::consumerKey;
 
-            $curl = curl_init($url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
-            curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-            curl_setopt($curl, CURLOPT_USERPWD, "$user:$pass");
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $postParam);
-            $success = curl_exec($curl);
-            curl_close($curl);
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+                curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                curl_setopt($curl, CURLOPT_USERPWD, "$user:$pass");
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $postParam);
+                $success = curl_exec($curl);
+                curl_close($curl);
 
-            $json = json_decode($success, true);
-           // var_dump($json);
+                $json = json_decode($success, true);
 
-               session()->put('ACCESSTOKEN', $json["access_token"]);
-                //$_SESSION['ACCESSTOKEN'] = $json["access_token"];
+                session()->put('ACCESSTOKEN', $json["access_token"]);
             }
-            //var_dump(session()->get('ACCESSTOKEN'));
         }
     }
 
@@ -417,7 +448,7 @@ class TradierWrapperController extends Controller
      * @return array
      * */
     public static function getTimeSales($symbol){
-        
+
         $startDate = date('Y-m-d');
 
         $url = self::apiUrl . "/v1/markets/timesales?symbol=" . $symbol . "&interval=5min&session_filter=open&start=" . $startDate;
