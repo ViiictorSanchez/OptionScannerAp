@@ -94,9 +94,6 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
-        var_dump($arrayAccountBalances);
-        die();
-
 //_---------------------------------------------------------------------------------------
         //IN PROGRESS
         $positionAccount = array();
@@ -121,14 +118,7 @@ class TradierWrapperController extends Controller
                            array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
                         }
                }
-
-
-        echo "<pre>"; var_dump($positionAccount); echo "</pre>";
-
-        //echo "<pre>"; var_dump($positionAccount); echo "</pre>";
-
-        
-
+               
 //------------------------------------------------------------------------------------------------
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
