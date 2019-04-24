@@ -107,13 +107,11 @@ class TradierWrapperController extends Controller
             array_push($positionAccount,$position);
         }
 
-       $auxpositionAccount = array();
-       $auxpositionAccount = $positionAccount;
-
                $length = sizeof($positionAccount);
                $lengthTemp = 0;
+
                for($j=0;$j<$length;$j++){
-                   array_push($positionAccount[$j],$account[$j]);
+                   array_splice($positionAccount[$j]['positions'],0,0,$account[$j]);
                         $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
                         for ($k=0;$k<$lengthTemp;$k++){
 
