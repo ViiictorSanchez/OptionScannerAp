@@ -107,89 +107,40 @@
                                         </thead>
 
                                         <tbody>
-                                        <tr>
-                                            <td>
-                                                11/18/2020 AMZN 1,150.0 Call
-                                                <p>$10.50</p>
-                                            </td>
-                                            <td class="green">
-                                                $0.50
-                                                <p class="green">5.00%</p>
-                                            </td>
-                                            <td>
-                                                12
-                                            </td>
-                                            <td>
-                                                $9.00
-                                            </td>
-                                            <td>
-                                                $12,600.00
-                                            </td>
-                                            <td class="green">
-                                                $1,800.00
-                                                <p class="green">16.67%</p>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
-                                                    <strong>Trade</strong></button>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>
-                                                FB
-                                                <p>$165.25</p>
-                                            </td>
-                                            <td class="red">
-                                                $-0.50
-                                                <p class="red">-1.45%</p>
-                                            </td>
-                                            <td>
-                                                12
-                                            </td>
-                                            <td>
-                                                $9.00
-                                            </td>
-                                            <td>
-                                                $12,600.00
-                                            </td>
-                                            <td class="green">
-                                                $1,800.00
-                                                <p class="green">16.67%</p>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
-                                                    <strong>Trade</strong></button>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>
-                                                TSLA
-                                                <p>$280.50</p>
-                                            </td>
-                                            <td class="red">
-                                                $-0.50
-                                                <p class="red">-1.45%</p>
-                                            </td>
-                                            <td>
-                                                12
-                                            </td>
-                                            <td>
-                                                $9.00
-                                            </td>
-                                            <td>
-                                                $12,600.00
-                                            </td>
-                                            <td class="red">
-                                                $-1,800.00
-                                                <p class="red">-16.67%</p>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
-                                                    <strong>Trade</strong></button>
-                                            </td>
-                                        </tr>
+                                        @foreach ($positionAccount as $position)    
+                                            @foreach ($position['positions']['position'] as $symbolPosition )
+                                                <tr data-account="{{ $position['positions'][0] }}"
+                                                    @if ($loop->parent->first) style="display:table-row" @else style="display:none" @endif
+                                                >
+                                                    <td>
+                                                        {{ $symbolPosition['symbol'] }}
+                                                        <p>${{ $symbolPosition[0]['quotes']['quote']['last'] }}</p>
+                                                    </td>
+                                                    <td class="green">
+                                                        {{ $symbolPosition[0]['quotes']['quote']['change'] }}
+                                                        <p class="green">%{{ $symbolPosition[0]['quotes']['quote']['change_percentage'] }}</p>
+                                                    </td>
+                                                    <td>
+                                                        {{ $symbolPosition['quantity'] }}
+                                                    </td>
+                                                    <td>
+                                                        ${{ $symbolPosition['cost_basis'] }}
+                                                    </td>
+                                                    <td>
+                                                        ${{ $symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last'] }}
+                                                    </td>
+                                                    <td class="green">
+                                                        ${{ ($symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last']) - $symbolPosition['cost_basis']  }}
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
+                                                            <strong>Trade</strong></button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endforeach
 
                                         </tbody>
                                     </table>

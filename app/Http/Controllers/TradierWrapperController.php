@@ -121,10 +121,11 @@ class TradierWrapperController extends Controller
                         }
                }
 
-        echo "<pre>"; var_dump($positionAccount); echo "</pre>";
-        die();
+        //echo "<pre>"; var_dump($positionAccount); echo "</pre>";
+
+        
 //------------------------------------------------------------------------------------------------
-        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
+        return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
 
     public function account(Request $request){
