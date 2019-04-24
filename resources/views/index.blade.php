@@ -132,7 +132,7 @@
                                                         ${{ $symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last'] }}
                                                     </td>
                                                     <td class="green">
-                                                        ${{ ($symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last'])  }}
+                                                        ${{ ($symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last']) - $symbolPosition['cost_basis']  }}
                                                     </td>
                                                     <td>
                                                         <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
