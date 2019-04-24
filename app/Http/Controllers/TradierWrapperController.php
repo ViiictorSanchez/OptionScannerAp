@@ -87,6 +87,7 @@ class TradierWrapperController extends Controller
         $sym = TradierWrapperController::getWatchlistData($request);
         $typeAccount = TradierWrapperController::getUsersProfile();
         $account = TradierWrapperController::accountNumbers();
+
         $arrayAccountBalances = array();
         foreach ($account as $count){
             $balances = TradierWrapperController::getAccountBalances($count);
@@ -109,25 +110,10 @@ class TradierWrapperController extends Controller
        $auxpositionAccount = array();
        $auxpositionAccount = $positionAccount;
 
-
-
-        /*
-         $j=0;$k=0;
-         foreach($positionAccount as $accounp){
-            foreach ($accounp['positions']['position'] as $postionaccount){
-                $quotes = TradierWrapperController::getQuotes($postionaccount['symbol']);
-                array_push($positionAccount,$quotes);
-            }
-        }
-
-         echo "<pre>"; var_dump($positionAccount); echo "</pre>";
-
-          die();*/
-
                $length = sizeof($positionAccount);
                $lengthTemp = 0;
                for($j=0;$j<$length;$j++){
-
+                   array_push($positionAccount[$j],$account[$j]);
                         $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
                         for ($k=0;$k<$lengthTemp;$k++){
 
@@ -138,7 +124,7 @@ class TradierWrapperController extends Controller
                }
 
         echo "<pre>"; var_dump($positionAccount); echo "</pre>";
-
+        die();
 //------------------------------------------------------------------------------------------------
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
