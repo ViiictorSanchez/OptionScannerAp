@@ -79,7 +79,6 @@
             url: '/index_data',
             success: function(data){
                 
-                
                 console.log(data)
                 
                 var seriesData = []
@@ -92,9 +91,6 @@
                     }catch(err){
                         return false;
                     }
-                    
-                    
-                    
 
                     data.forEach(function(value){
 
@@ -151,6 +147,7 @@ error:{
 
 }
 });
+
  //-------------------------------------------------------------------------------------------------------
 
          //creating donut chart

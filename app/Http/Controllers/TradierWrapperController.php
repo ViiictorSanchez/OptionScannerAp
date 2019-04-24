@@ -109,9 +109,11 @@ class TradierWrapperController extends Controller
        $auxpositionAccount = array();
        $auxpositionAccount = $positionAccount;
 
-        $j=0;$k=0;
 
-        foreach($positionAccount as $accounp){
+
+        /*
+         $j=0;$k=0;
+         foreach($positionAccount as $accounp){
             foreach ($accounp['positions']['position'] as $postionaccount){
                 $quotes = TradierWrapperController::getQuotes($postionaccount['symbol']);
                 array_push($positionAccount,$quotes);
@@ -120,9 +122,7 @@ class TradierWrapperController extends Controller
 
          echo "<pre>"; var_dump($positionAccount); echo "</pre>";
 
-          die();
-
-       /* echo "<pre>"; var_dump($positionAccount); echo "</pre>";
+          die();*/
 
                $length = sizeof($positionAccount);
                $lengthTemp = 0;
@@ -135,7 +135,8 @@ class TradierWrapperController extends Controller
 
                            array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
                         }
-               }*/
+               }
+
         echo "<pre>"; var_dump($positionAccount); echo "</pre>";
 
 //------------------------------------------------------------------------------------------------
