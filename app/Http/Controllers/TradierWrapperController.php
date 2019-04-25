@@ -94,8 +94,6 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
-//_---------------------------------------------------------------------------------------
-        //IN PROGRESS
         $positionAccount = array();
         $quotes = array();
 
@@ -113,13 +111,12 @@ class TradierWrapperController extends Controller
                         $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
                         for ($k=0;$k<$lengthTemp;$k++){
 
-                            //$quotes = TradierWrapperController::getQuotes($positionAccount[$j]['positions']['position'][$k]['symbol']);
+                            $quotes = TradierWrapperController::getQuotes($positionAccount[$j]['positions']['position'][$k]['symbol']);
 
                            array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
                         }
                }
                
-//------------------------------------------------------------------------------------------------
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
 

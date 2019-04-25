@@ -31,7 +31,7 @@
                     </li>
 
                     <li class="float-right list-unstyled mb-0 has-submenu ">
-                        <a class="menu-color" id="list-header-menu"><strong>{{$typeAccount[0]['classification']}} {{$account[0]}}</strong><i class="fas fa-sort-down"></i></a>
+                        <a class="menu-color" id="list-header-menu" onclick="callajax(this)"><strong>{{$typeAccount[0]['classification']}} {{$account[0]}}</strong><i class="fas fa-sort-down"></i></a>
                         <ul class="submenu">
                             @php $count = sizeof($account) @endphp
                             @for ($i = 0; $i < $count; $i++)
@@ -324,7 +324,10 @@
 </header>
 <!-- End Navigation Bar-->
 @section('script')
+
+
     <!-- switch color Theme -->
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/portfolio.js') }}"></script>
     <script src="{{ URL::asset('assets/pages/dashboard.js')}}"></script>
 @endsection
