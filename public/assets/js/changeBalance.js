@@ -1,3 +1,22 @@
+
+function callajax (){
+console.log("test");
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        method: 'GET',
+        url: '/account',
+		success:function (data) {
+        	console.log(data);
+
+        }
+
+    })
+
+
+}
+
 function changeBalance(element) {
 	$('#list-header-menu>strong').text(element.id)
 	$('li[data-account]').each(function(index, value){
@@ -12,4 +31,6 @@ function changeBalance(element) {
 		}
 		else value.style.display = "none"
 	})
+
+    callajax();
 }

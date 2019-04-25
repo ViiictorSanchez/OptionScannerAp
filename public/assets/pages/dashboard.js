@@ -78,8 +78,7 @@
             method: 'GET',
             url: '/index_data',
             success: function(data){
-                
-                console.log(data)
+
                 
                 var seriesData = []
                 var $areaData = []
