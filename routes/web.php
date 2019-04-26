@@ -29,4 +29,4 @@ Route::name('data')->get('auth.php','TradierWrapperController@index');
 
 Route::get('account','TradierWrapperController@account');
 
-Route::get('portfoliData','TradierWrapperController@portfolioData');
+Route::get('portfolioData','TradierWrapperController@portfolioData');

@@ -124,12 +124,18 @@ class TradierWrapperController extends Controller
         $position = TradierWrapperController::getAccountPositions($request->accountNumber);
         array_push($positionAccount,$request->accountNumber);
         array_push($positionAccount,$position);
+        $k=0;
 
 
 
+        foreach ($positionAccount as $symbol){
+            $quotes = TradierWrapperController::getQuotes($symbol[1]['positions']['position'][$k]['symbol']);
+            array_push($positionAccount['positions']['position'][$k],$quotes);
+            $k++;
+        }
 
         return  $positionAccount;
-
+        
     }
 
 
