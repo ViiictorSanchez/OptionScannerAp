@@ -324,7 +324,10 @@
 </header>
 <!-- End Navigation Bar-->
 @section('script')
+
+
     <!-- switch color Theme -->
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/portfolio.js') }}"></script>
     <script src="{{ URL::asset('assets/pages/dashboard.js')}}"></script>
 @endsection

@@ -19,33 +19,8 @@
             <div class="col-md-7" >
                 <div class="card m-b-0" >
                     <div class="card-body">
-                        <ul class="menu-my-portfolio">
-                            @foreach ($arrayAccountBalances as $accountBalance)
-                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}" 
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="font-size-portfolio">${{ $accountBalance['balances']['total_equity'] }}</a>
-                                </li >
+                        <ul class="menu-my-portfolio" id="balances-1">
                             
-                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}"
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="menu-my-portfolio-color">Unrealized P/L</a>
-                                    <p 
-                                        @if($accountBalance['balances']['open_pl'] < 0) class="red" @elseif($accountBalance['balances']['open_pl'] > 0) class="green" @endif
-                                    >
-                                        <strong>${{ $accountBalance['balances']['open_pl'] }}</strong>
-                                    </p>
-                                </li>
-                                <li class="float-left list-unstyled my-portfolio-menu" data-account="{{ $accountBalance['balances']['account_number']}}"
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="menu-my-portfolio-color" >Realized P/L</a>
-                                    <p
-                                        @if($accountBalance['balances']['close_pl'] < 0) class="red" @elseif($accountBalance['balances']['close_pl'] > 0) class="green" @endif
-                                    ><strong>${{ $accountBalance['balances']['close_pl'] }}</strong></p>
-                                </li>
-                            @endforeach
 
                                 <li class="float-right list-unstyled portfolio-title title-card">
                                     <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
@@ -53,27 +28,8 @@
                         </ul>
 
 
-                        <ul class="float-left line-separate">
-                            @foreach ($arrayAccountBalances as $accountBalance)
-                                <li class="float-left list-unstyled submenu-myportfolio" data-account="{{ $accountBalance['balances']['account_number']}}"
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="menu-my-portfolio-color">  Cash </a>
-                                    <p><strong> ${{ $accountBalance['balances']['total_cash']}} </strong></p>
-                                </li >
-                                <li class="float-left list-unstyled submenu-myportfolio" data-account="{{ $accountBalance['balances']['account_number']}}"
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="menu-my-portfolio-color"> Stocks </a>
-                                    <p><strong> ${{ $accountBalance['balances']['stock_long_value'] }}</strong></p>
-                                </li>
-                                <li class="float-left list-unstyled " data-account="{{ $accountBalance['balances']['account_number']}}"
-                                    @if ($loop->first) style="display:list-item" @else style="display:none" @endif
-                                >
-                                    <a class="menu-my-portfolio-color"> Options</a>
-                                    <p><strong> ${{ $accountBalance['balances']['option_long_value'] + $accountBalance['balances']['option_short_value'] }}</strong></p>
-                                </li>
-                            @endforeach
+                        <ul class="float-left line-separate" id="balances-2">
+                            
                         </ul>
 
                         <div class="table-responsive col-xl-12" >
@@ -106,41 +62,9 @@
                                         </tr>
                                         </thead>
 
-                                        <tbody>
+                                        <tbody id="home2-tbody">
 
 
-                                        @foreach ($positionAccount as $position)    
-                                            @foreach ($position['positions']['position'] as $symbolPosition )
-                                                <tr data-account="{{ $position['positions'][0] }}"
-                                                    @if ($loop->parent->first) style="display:table-row" @else style="display:none" @endif
-                                                >
-                                                    <td>
-                                                        {{ $symbolPosition['symbol'] }}
-                                                        <p>${{ $symbolPosition[0]['quotes']['quote']['last'] }}</p>
-                                                    </td>
-                                                    <td class="green">
-                                                        {{ $symbolPosition[0]['quotes']['quote']['change'] }}
-                                                        <p class="green">%{{ $symbolPosition[0]['quotes']['quote']['change_percentage'] }}</p>
-                                                    </td>
-                                                    <td>
-                                                        {{ $symbolPosition['quantity'] }}
-                                                    </td>
-                                                    <td>
-                                                        ${{ $symbolPosition['cost_basis'] }}
-                                                    </td>
-                                                    <td>
-                                                        ${{ $symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last'] }}
-                                                    </td>
-                                                    <td class="green">
-                                                        ${{ ($symbolPosition['quantity'] * $symbolPosition[0]['quotes']['quote']['last']) - $symbolPosition['cost_basis']  }}
-                                                    </td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
-                                                            <strong>Trade</strong></button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        @endforeach
 
                                         </tbody>
                                     </table>
