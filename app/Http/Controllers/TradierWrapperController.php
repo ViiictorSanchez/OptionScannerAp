@@ -121,40 +121,12 @@ class TradierWrapperController extends Controller
     }
 
     public function account(Request $request){
-        $account = "VA53774774";
-
         $arrayAccountBalances = array();
-            array_push($arrayAccountBalances,$account);
-            $balances = TradierWrapperController::getAccountBalances($account);
+            array_push($arrayAccountBalances,$request->accountNumber);
+            $balances = TradierWrapperController::getAccountBalances($request->accountNumber);
             array_push($arrayAccountBalances,$balances);
 
-
-        /*$positionAccount = array();
-        $quotes = array();
-
-
-        foreach ($account as $count){
-            $position = TradierWrapperController::getAccountPositions($count);
-            array_push($positionAccount,$position);
-        }
-
-        $length = sizeof($positionAccount);
-        $lengthTemp = 0;
-
-        for($j=0;$j<$length;$j++){
-            array_splice($positionAccount[$j]['positions'],0,0,$account[$j]);
-            $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
-            for ($k=0;$k<$lengthTemp;$k++){
-
-                $quotes = TradierWrapperController::getQuotes($positionAccount[$j]['positions']['position'][$k]['symbol']);
-
-                array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
-            }
-        }*/
-
-        return  var_dump($arrayAccountBalances);
-
-
+        return  $arrayAccountBalances;
     }
 
     public function index_data(){

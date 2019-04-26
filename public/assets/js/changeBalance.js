@@ -1,12 +1,17 @@
 
-function callajax (){
-console.log("test");
+
+
+
+
+function callajax (account){
+	console.log("test");
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         method: 'GET',
         url: '/account',
+        data: {accountNumber: account},
 		success:function (data) {
         	console.log(data);
 
@@ -31,6 +36,6 @@ function changeBalance(element) {
 		}
 		else value.style.display = "none"
 	})
-
-    callajax();
+	callajax(element.id)
+    
 }
