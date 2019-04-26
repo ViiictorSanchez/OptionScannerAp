@@ -118,7 +118,7 @@ class TradierWrapperController extends Controller
                            array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
                         }
                }
-               
+
 //------------------------------------------------------------------------------------------------
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
