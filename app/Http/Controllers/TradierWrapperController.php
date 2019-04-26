@@ -119,12 +119,28 @@ class TradierWrapperController extends Controller
 
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
+    public function portfolioData (Request $request){
+        $positionAccount = array();
+        $position = TradierWrapperController::getAccountPositions($request->accountNumber);
+        array_push($positionAccount,$request->accountNumber);
+        array_push($positionAccount,$position);
+
+
+
+
+        return  $positionAccount;
+
+    }
+
 
     public function account(Request $request){
         $arrayAccountBalances = array();
-            array_push($arrayAccountBalances,$request->accountNumber);
-            $balances = TradierWrapperController::getAccountBalances($request->accountNumber);
-            array_push($arrayAccountBalances,$balances);
+        array_push($arrayAccountBalances,$request->accountNumber);
+        $balances = TradierWrapperController::getAccountBalances($request->accountNumber);
+        array_push($arrayAccountBalances,$balances);
+
+        $position = TradierWrapperController::getAccountPositions($request->accountNumber);
+
 
         return  $arrayAccountBalances;
     }

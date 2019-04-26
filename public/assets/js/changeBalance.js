@@ -4,7 +4,6 @@
 
 
 function callajax (account){
-	console.log("test");
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -19,6 +18,19 @@ function callajax (account){
 
     })
 
+	$.ajax({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		},
+		method: 'GET',
+		url: '/portfolioData',
+		data: {accountNumber: account},
+		success:function (data) {
+			console.log(data);
+
+		}
+
+	})
 
 }
 

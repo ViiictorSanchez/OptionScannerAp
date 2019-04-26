@@ -28,3 +28,5 @@ Route::get('stockprofile', 'TradierWrapperController@stock')->name('stockprofile
 Route::name('data')->get('auth.php','TradierWrapperController@index');
 
 Route::get('account','TradierWrapperController@account');
+
+Route::get('portfoliData','TradierWrapperController@portfolioData');
