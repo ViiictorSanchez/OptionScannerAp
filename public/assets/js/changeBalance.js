@@ -30,12 +30,12 @@ function callajax (account){
                             <li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
                                 <a class="menu-my-portfolio-color">Unrealized P/L</a>
                                 <p>
-                                    <strong> ${balances_values.open_pl} </strong>
+                                    <strong class="green">  ${balances_values.open_pl} </strong>
                                 </p>
                             </li>
                             <li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
                                 <a class="menu-my-portfolio-color" >Realized P/L</a>
-                                <p><strong> ${balances_values.close_pl}</strong></p>
+                                <p><strong class="green"> ${balances_values.close_pl}</strong></p>
                             </li>`
 
             var newChild_2 = `<li class="float-left list-unstyled submenu-myportfolio" data-account="${balances_values.account_number}" style="display:list-item">
