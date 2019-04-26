@@ -130,7 +130,7 @@ class TradierWrapperController extends Controller
         foreach($positionAccount[1]['positions']['position'] as $symbol){
             $quotes = TradierWrapperController::getQuotes($symbol['symbol']);
 
-            array_push($positionAccount[1]['positions']['position'][$k]['symbol'],['symbol' => $quotes]);
+            array_push($positionAccount[1]['positions']['position'][$k],['symbol' => $quotes]);
         }
 
 
