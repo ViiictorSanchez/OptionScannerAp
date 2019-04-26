@@ -119,42 +119,37 @@ class TradierWrapperController extends Controller
 
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
-
-    public function account(Request $request){
-        $account = "VA53774774";
-
-        $arrayAccountBalances = array();
-            array_push($arrayAccountBalances,$account);
-            $balances = TradierWrapperController::getAccountBalances($account);
-            array_push($arrayAccountBalances,$balances);
+    public function portfolioData (Request $request){
+        $positionAccount = array();
+        $position = TradierWrapperController::getAccountPositions($request->accountNumber);
+        array_push($positionAccount,$request->accountNumber);
+        array_push($positionAccount,$position);
+        $k=0;
 
 
-        /*$positionAccount = array();
-        $quotes = array();
+        foreach($positionAccount[1]['positions']['position'] as $symbol){
+            $quotes = TradierWrapperController::getQuotes($symbol['symbol']);
 
-
-        foreach ($account as $count){
-            $position = TradierWrapperController::getAccountPositions($count);
-            array_push($positionAccount,$position);
+            array_push($positionAccount[1]['positions']['position'][$k],['symbol' => $quotes]);
+            $k++;
         }
 
-        $length = sizeof($positionAccount);
-        $lengthTemp = 0;
 
-        for($j=0;$j<$length;$j++){
-            array_splice($positionAccount[$j]['positions'],0,0,$account[$j]);
-            $lengthTemp = sizeof($positionAccount[$j]['positions']['position']);
-            for ($k=0;$k<$lengthTemp;$k++){
+        return $positionAccount;
 
-                $quotes = TradierWrapperController::getQuotes($positionAccount[$j]['positions']['position'][$k]['symbol']);
-
-                array_push($positionAccount[$j]['positions']['position'][$k],$quotes);
-            }
-        }*/
-
-        return  var_dump($arrayAccountBalances);
+    }
 
 
+    public function account(Request $request){
+        $arrayAccountBalances = array();
+        array_push($arrayAccountBalances,$request->accountNumber);
+        $balances = TradierWrapperController::getAccountBalances($request->accountNumber);
+        array_push($arrayAccountBalances,$balances);
+
+        $position = TradierWrapperController::getAccountPositions($request->accountNumber);
+
+
+        return  $arrayAccountBalances;
     }
 
     public function index_data(){
