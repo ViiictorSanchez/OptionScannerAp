@@ -21,6 +21,7 @@ class TradierWrapperController extends Controller
     public function __construct(){
 
     }
+
     public static function  getSymbolCall(){
         $watchlistId = TradierWrapperController::getWatchlistId();
 
@@ -117,12 +118,11 @@ class TradierWrapperController extends Controller
                         }
                }
 
-<<<<<<< HEAD
 //------------------------------------------------------------------------------------------------
-=======
->>>>>>> 23add523d28a33e1e7fd8e8635f7e473a8762973
+
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
+
     public function portfolioData (Request $request){
         $positionAccount = array();
         $position = TradierWrapperController::getAccountPositions($request->accountNumber);
@@ -150,7 +150,6 @@ class TradierWrapperController extends Controller
         $balances = TradierWrapperController::getAccountBalances($request->accountNumber);
         array_push($arrayAccountBalances,$balances);
 
-        $position = TradierWrapperController::getAccountPositions($request->accountNumber);
 
 
         return  $arrayAccountBalances;
@@ -291,6 +290,7 @@ class TradierWrapperController extends Controller
      * @param string $user  username
      * @param string $password user's password
      * */
+
     public static function userAuthentication($user, $password){
         $url = self::apiUrl . "/v1/user/profile";
         $token = $_SESSION["ACCESSTOKEN"];

@@ -91,7 +91,7 @@
         <hr id="line-separate">
         <!-- Page-Title -->
         <div class="row" class="align-menu-graph">
-            <!-- problemas al centrar las graficas 1270 px a 1500px -->
+
             <div class="col-md-12">
                 <div class="page-title-box">
                     <div class="row w-100 mx-auto charts-slide">
