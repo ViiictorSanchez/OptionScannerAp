@@ -1,11 +1,12 @@
 
 
-function render() {
-
-}
-
 
 function callajax (account){
+
+	var balances_target_1 = $('#balances-1').empty()
+    var balances_target_2 = $('#balances-2').empty()
+    var table = $("#home2-tbody").empty()
+
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -15,10 +16,6 @@ function callajax (account){
         data: {accountNumber: account},
         cache: true,
 		success:function (data) {
-
-        	
-        	var balances_target_1 = $('#balances-1').empty()
-        	var balances_target_2 = $('#balances-2').empty()
 
         	var balances_values = data[1].balances
 
@@ -30,12 +27,12 @@ function callajax (account){
                             <li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
                                 <a class="menu-my-portfolio-color">Unrealized P/L</a>
                                 <p>
-                                    <strong class="green">  ${balances_values.open_pl} </strong>
+                                    <strong class="${setColor(balances_values.open_pl)}">  ${balances_values.open_pl} </strong>
                                 </p>
                             </li>
                             <li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
                                 <a class="menu-my-portfolio-color" >Realized P/L</a>
-                                <p><strong class="green"> ${balances_values.close_pl}</strong></p>
+                                <p><strong class="${setColor(balances_values.close_pl)}"> ${balances_values.close_pl}</strong></p>
                             </li>`
 
             var newChild_2 = `<li class="float-left list-unstyled submenu-myportfolio" data-account="${balances_values.account_number}" style="display:list-item">
@@ -70,21 +67,20 @@ function callajax (account){
 		cache: true,
 		success:function (data) {
 			
-			var table = $("#home2-tbody").empty()
-		
 			var accountNumber = data[0];
 			var positions_values = data[1].positions.position;
 
 			positions_values.forEach(function(value, index){
-				
+				var market_value = value.quantity * value[0].symbol.quotes.quote.last
+				var total_gain = market_value - value.cost_basis
 				var child = `<tr data-account="${accountNumber}" style="display:table-row">
 				                <td>
 				                    ${value.symbol}
 				                    <p>${value[0].symbol.quotes.quote.last}</p>
 				                </td>
-				                <td class="green">
-				                    ${value[0].symbol.quotes.quote.change}
-				                    <p>%${value[0].symbol.quotes.quote.change_porcentage}</p>
+				                <td class="${setColor(value[0].symbol.quotes.quote.change)}">
+				                   $ ${value[0].symbol.quotes.quote.change}
+				                    <p class="${setColor(value[0].symbol.quotes.quote.change_percentage)}">% ${value[0].symbol.quotes.quote.change_percentage}</p>
 				                </td>
 				                <td>
 				                    ${value.quantity}
@@ -93,16 +89,17 @@ function callajax (account){
 				                    ${value.cost_basis}
 				                </td>
 				                <td>
-				                    ${value.quantity * value[0].symbol.quotes.quote.last}
+				                    ${market_value}
 				                </td>
-				                <td class="green">
-				                    ${value.quantity * value[0].symbol.quotes.quote.last - value.cost_basis}
+				                <td class="${setColor(total_gain)}">
+				                    ${total_gain}
 				                </td>
 				                <td>
 				                    <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
 				                        <strong>Trade</strong></button>
 				                </td>
 				            </tr>`
+
 				table.append(child)
 			})
 			
@@ -113,8 +110,14 @@ function callajax (account){
 
 }
 
+
+function setColor(value){
+	return value > 0 ? 'green' : 'red'
+}
+
+
 function changeBalance(element) {
-	$('#list-header-menu>strong').text(element.id)
+	$('#list-header-menu>strong').text('individual ' + element.id)
 	// $('li[data-account]').each(function(index, value){
 	// 	if(value.dataset.account == element.id) {
 	// 		value.style.display = "list-item"
@@ -132,6 +135,6 @@ function changeBalance(element) {
 }
 
 (function(){
-	var firstElement = {id: $('#list-header-menu>strong').text() }
-	changeBalance(firstElement)
+	var firstElement = {id: $('#list-header-menu>strong').text().slice(11) }
+	changeBalance(firstElement)	
 })()
