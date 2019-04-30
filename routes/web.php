@@ -11,24 +11,21 @@
 |
 */
 
-use Illuminate\Http\Request;
-
 Route::get('/', function () {
     return view('index');
 });
 
-Route::post('/logintradier', function(Request $request){
+Route::get('index','TradierWrapperController@dashboard');
 
-    $user = $request->user;
-    $password = $request->password;
 
-    if($user === 'test' && $password === 'test123'){
-        return view('index');
-    }else{
-        header('Location:' . 'http://192.34.58.80/optionscanner/my-form/');
-        exit();
-    }
+Route::get('index_data','TradierWrapperController@index_data');
 
-});
+Route::get("pagination", 'TradierWrapperController@pagination')->name('pagination');
 
-Route::get('{any}', 'LexaController@index');
+Route::get('stockprofile', 'TradierWrapperController@stock')->name('stockprofile');
+
+Route::get('gains', 'TradierWrapperController@gains')->name('gains');
+
+Route::name('data')->get('auth.php','TradierWrapperController@index');
+
+Route::get('account','TradierWrapperController@account')->name('account');

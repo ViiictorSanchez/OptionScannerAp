@@ -28,7 +28,7 @@
 
 .nav-tabs-custom > li > a::after {
   content: "";
-  background: $primary;
+  background: #102a55;
   height: 2px;
   position: absolute;
   width: 100%;
@@ -43,11 +43,15 @@
 }
 
 .nav-tabs-custom > li > a.active {
-  color: $primary !important;
+  color:  #102a55 !important;
+}
+
+.nav-tabs-custom-dark > li > a.active{
+  color: #fff;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-  background: $primary;
+  background: #102a55;
 }
 
 #accordion {

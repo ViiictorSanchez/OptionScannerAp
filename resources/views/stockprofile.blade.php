@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['spy_price'=>$spy_price, 'account'=>$account, 'typeAccount'=>$typeAccount])
 
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('assets/plugins/morris/morris.css')}}">
@@ -324,286 +324,37 @@
                 <div class="card m-b-20">
                     <div class="card-body">
                         <h4 class="mt-0 header-title float-right">WATCHLIST</h4>
-
                                 <table class="table table-vertical">
+                                    @foreach($spy_price['quotes']['quote'] as $symbol)
                                         <tr>
                                             <td>
                                                 <strong>
-                                                    AAPL
+                                                    {{$symbol['symbol']}}
                                                 </strong>
                                             </td>
-                                            <td>
-                                                2.12%
+                                            <td @if($symbol['change_percentage'] < 0) class="red" @elseif($symbol['change_percentage'] > 0) class="green" @endif>
+                                                @if(!$symbol['change_percentage'])
+                                                    -
+                                                @elseif($symbol['change_percentage'])
+                                                    {{$symbol['change_percentage']}}%
+                                                @endif
                                             </td>
                                             <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
+                                                @if(!$symbol['last'])
+                                                    -
+                                                @elseif($symbol['last'])
+                                                    ${{$symbol['last']}}
+                                                @endif
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <strong>
-                                                    AAPL
-                                                </strong>
-                                            </td>
-                                            <td>
-                                                2.12%
-                                            </td>
-                                            <td>
-                                                178.25
-                                            </td>
-                                        </tr>
+                                    @endforeach
                             </table>
                     </div>
                 </div>
             </div>
             <!-- end right side -->
 
-        </div> 
+        </div>
         <!-- end row -->
     </div> <!-- end container-fluid -->
 @endsection
@@ -616,6 +367,7 @@
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.resize.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.pie.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.selection.js')}}"></script>
+    <script src="{{ URL::asset('assets/pages/dashboard.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.stack.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/curvedLines.js')}}"></script>
     <script src="{{ URL::asset('assets/plugins/flot-chart/jquery.flot.crosshair.js')}}"></script>
@@ -633,7 +385,7 @@
     <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
     <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
     <script src="{{ URL::asset('assets/js/filters.js') }}"></script>
-   
+
 @endsection
 
 @section('script-bottom')

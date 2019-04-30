@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p{
   line-height: 1.7;
+  color: black;
 }
 
 svg {
@@ -42,6 +43,9 @@ a {
   }
 }
 
+tspan{
+  display: none;
+}
 
 .container-alt {
   margin-left: auto;
@@ -65,6 +69,10 @@ a {
   height: $height;
   overflow: hidden;
   width: $width;
+}
+
+#demo{
+    cursor: pointer;
 }
 
 // Slimscroll

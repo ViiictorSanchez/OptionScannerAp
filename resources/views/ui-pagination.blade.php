@@ -1,17 +1,17 @@
-@extends('layouts.master')
+@extends('layouts.master-webpage')
 
-@section('breadcrumb')
+{{--@section('breadcrumb')
                             <h4 class="page-title">Pagination</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Lexa</a></li>
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">UI Elements</a></li>
                                 <li class="breadcrumb-item active">Pagination</li>
                             </ol>
-@endsection
+@endsection--}}
 
 @section('content')
             <div class="container-fluid">
-                  
+
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card m-b-20">
@@ -184,6 +184,6 @@
                         </div>
                     </div> <!-- end col -->
                 </div> <!-- end row -->
-    
+
             </div> <!-- end container-fluid -->
 @endsection

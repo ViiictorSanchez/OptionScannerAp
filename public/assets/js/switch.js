@@ -62,14 +62,16 @@ function switchfunction() {
         $('.button-display-color').toggleClass('button-display-color-dark');
         $('#topnav .has-submenu.active a ').toggleClass('#topnav .has-submenu-dark.active a');
         $('.title-card').toggleClass('title-card-dark');
+        $('.page-link').toggleClass('page-link-dark');
+
         if ($('#demo-dark')){
             $('.nav-tabs-custom > li > a.active').toggleClass('nav-tabs-custom-dark > li > a.active');
             $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');
             $('.fa, .fas').toggleClass('fas-dark');
         }
-        if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
+        if ($('#imagelogo').attr('src') == '/assets/images/logo.png')
             $('#imagelogo').attr('src', '/assets/images/logo-light.png')
-        else 
+        else
             $('#imagelogo').attr('src', '/assets/images/logo.png')
 
 
