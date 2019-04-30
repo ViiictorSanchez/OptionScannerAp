@@ -89,10 +89,10 @@ function callajax (account){
 				                    ${value.cost_basis}
 				                </td>
 				                <td>
-				                    ${market_value}
+				                    ${number_format(market_value)}
 				                </td>
 				                <td class="${setColor(total_gain)}">
-				                    ${total_gain}
+				                    ${number_format(total_gain)}
 				                </td>
 				                <td>
 				                    <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
@@ -113,6 +113,10 @@ function callajax (account){
 
 function setColor(value){
 	return value > 0 ? 'green' : 'red'
+}
+
+function number_format(value){
+    return Number(value).toFixed(2);
 }
 
 
