@@ -24,7 +24,9 @@ Route::get("pagination", 'TradierWrapperController@pagination')->name('paginatio
 
 Route::get('stockprofile', 'TradierWrapperController@stock')->name('stockprofile');
 
-Route::get('gains', 'TradierWrapperController@gains')->name('gains');
+Route::get('gains', 'TradierWrapperController@pagination')->name('gains');
+
+Route::get('gains_data', 'TradierWrapperController@gains');
 
 Route::name('data')->get('auth.php','TradierWrapperController@index');
 

@@ -32,7 +32,7 @@
 
                                         </thead>
 
-                                        <tbody>
+                                        <tbody id="gains-tbody">
                                             <!--tr>
                                                 <td>FB</td>
                                                 <td>100</td>
@@ -169,7 +169,7 @@
                                                     <td>{{$item['open_date']}}</td>
                                                     <td>{{$item['close_date']}}</td>
                                                 </tr>
-                                            @endforeach--}}
+                                            @endforeach
                                             @foreach ($gainsLoss as $item)
                                                 <tr>
                                                     <td>{{$item['symbol']}}</td>
@@ -186,13 +186,13 @@
                                                     <td>{{date('M d, Y', strtotime($item['open_date']))}}</td>
                                                     <td>{{date('M d, Y', strtotime($item['close_date']))}}</td>
                                                 </tr>
-                                            @endforeach
+                                            @endforeach--}}
                                         </tbody>
                                     </table>
                                     <div class="pagination-section justify-content-end">
                                         <nav class="pagination justify-content-end">
                                             <span>{{ $gainsLoss->links() }}</span>
-                                        </nav-->
+                                        </nav>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@
     <script src="{{ URL::asset('assets/js/switch.js') }}"></script>
     <script src="{{ URL::asset('assets/js/darkTheme.js') }}"></script>
     <script src="{{ URL::asset('assets/js/slick.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/changeBalance.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/changeGains.js') }}"></script>
     <script src="{{ URL::asset('assets/js/pagination.js') }}"></script>
 
 @endsection

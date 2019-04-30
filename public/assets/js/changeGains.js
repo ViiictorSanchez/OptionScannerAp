@@ -10,32 +10,43 @@ function ajaxCallGains(gains){
         data: {accountNumber: gains},
         cache: true,
         success:function(data){
-            var gainLossValues = data[0].gainloss.closed_option;
+            console.log(data);
+            var accountNumber = data[0];
+            var gainLossValues = data[1].gainloss.closed_option;
             gainLossValues.forEach(function(value){
-                var child = `<tr>
-                                <td>{{${value.symbol}}}</td>
-                                <td>{{${value.quantity}}}</td>
-                                <td>{{number_format(${value.cost}, 2, '.', ',')}}</td>
-                                <td>{{number_format(${item.proceeds}, 2, '.', ',')}}</td>
-                                <td @if (${item.gain_loss} > 0)
-                                    class = "green";
-                                @else
-                                    class = "red";
-                                @endif
-                                ><strong>{{number_format(${item.gain_loss}, 2, '.', ',')}}  ({{number_format(${item.gain_loss_percent}, 2, '.', ',')}}%)</strong>
+                var child = `<tr data-account="${accountNumber}" style="display:table-row">
+                                <td>${value.symbol}</td>
+                                <td>${value.quantity}</td>
+                                <td>${number_format(value.cost)}</td>
+                                <td>${number_format(value.proceeds)}</td>
+                                <td class="${setColor(value.gain_loss)}"><strong>${number_format(value.gain_loss)}  ${number_format(value.gain_loss_percent)}%)</strong>
                                 </td>
-                                <td>{{date('M d, Y', strtotime(${item.open_date}))}}</td>
-                                <td>{{date('M d, Y', strtotime(${item.close_date}))}}</td>
+                                <td>${date(value.open_date)}</td>
+                                <td>${date(value.close_date)}</td>
                             </tr>`;
                         table.append(child);
             })
 
+        },error:function(){
+            alert("FALLIDO");
         }
     });
 }
 
+function number_format(value){
+    Number(value).toFixed(2);
+}
+
+function setColor(value){
+    return value > 0 ? 'green' : 'red'
+}
+
+function date(value){
+    value.format('MMMM d, Y');
+}
+
 function changeGains(element) {
-    $('#list-header-menu>strong').text(element.id)
+    $('#list-header-menu>strong').text(element.id);
     // $('li[data-account]').each(function(index, value){
     // 	if(value.dataset.account == element.id) {
     // 		value.style.display = "list-item"
@@ -48,12 +59,11 @@ function changeGains(element) {
     // 	}
     // 	else value.style.display = "none"
     // })
-    ajaxCallGains(element.id)
-
+    ajaxCallGains(element.id);
 }
 
 (function(){
-    var firstElement = {id: $('#list-header-menu>strong').text().slice(11) }
-    changeGains(firstElement)
+    var firstElement = {id: $('#list-header-menu>strong').text()};
+    changeGains(firstElement);
 })()
 

@@ -161,7 +161,16 @@ class TradierWrapperController extends Controller
         return view ("stockprofile", ['spy_price'=>$sym, 'account'=>$account, 'typeAccount'=>$typeAccount]);
     }
 
-    public  function gains(Request $request){
+    public function gains(Request $request){
+        $gainsLossOff = array();
+        array_push($gainsLossOff, $request->accountNumber);
+        $gains = TradierWrapperController::getAccountCB($request->accountNumber);
+        $gainLoss = $gains['gainloss']['closed_position'];
+        array_push($gainsLossOff, $gainLoss);
+        return $gainsLossOff;
+    }
+
+    public static function pagination(Request $request){
         $typeAccount = TradierWrapperController::getUsersProfile();
         $account = TradierWrapperController::accountNumbers();
         $gains = TradierWrapperController::getAccountCB('VA53774774');
@@ -173,14 +182,6 @@ class TradierWrapperController extends Controller
         $gainPagination->setPath($request->url());
 
         return view ("gains", ['account'=>$account, 'typeAccount'=>$typeAccount,'gainsLoss'=>$gainPagination]);
-    }
-
-    public static function pagination(){
-        $sym = TradierWrapperController::getWatchlistData();
-        $typeAccount = TradierWrapperController::getUsersProfile();
-        $account = TradierWrapperController::accountNumbers();
-
-        return view ("ui-pagination", ['spy_price'=>$sym, 'account'=>$account, 'typeAccount'=>$typeAccount]);
     }
 
 
