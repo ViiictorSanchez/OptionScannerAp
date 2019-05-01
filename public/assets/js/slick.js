@@ -47,10 +47,10 @@
                 prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
                 autoplay: false,
-                autoplaySpeed: 3000,
+                autoplaySpeed: 280,
                 centerMode: false,
                 centerPadding: '50px',
-                cssEase: 'ease',
+                cssEase: 'linear',
                 customPaging: function(slider, i) {
                     return $('<button type="button" data-role="none" role="button" tabindex="0" />').text(i + 1);
                 },
@@ -76,7 +76,7 @@
                 slidesPerRow: 1,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                speed: 500,
+                speed: 1700,
                 swipe: true,
                 swipeToSlide: false,
                 touchMove: true,
