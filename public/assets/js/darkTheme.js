@@ -37,10 +37,10 @@ function ApplyDark() {
         $('.navigation-menu > li .submenu').toggleClass('nav-tabs-custom-dark > li > a.active');
         $('.fa, .fas').toggleClass('fas-dark');
     }
-    if ($('#imagelogo').attr('src') == '/assets/images/logo.png') 
-        $('#imagelogo').attr('src', '/assets/images/logo-light.png')
+    if ($('#imagelogo').attr('src') == '/assets/images/logo.svg')
+        $('#imagelogo').attr('src', '/assets/images/logo-light.svg')
     else 
-        $('#imagelogo').attr('src', '/assets/images/logo.png')
+        $('#imagelogo').attr('src', '/assets/images/logo.svg')
 
 }
 
