@@ -681,7 +681,8 @@ tspan {
     margin-right: 10px; }
   #topnav .navigation-menu > li.last-elements .submenu {
     left: auto;
-    right: 0; }
+    right: 0;
+    cursor: pointer; }
   #topnav .navigation-menu > li.last-elements .submenu > li.has-submenu .submenu {
     left: auto;
     right: 100%;

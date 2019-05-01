@@ -14,32 +14,50 @@ function ajaxCallGains(gains){
             var gainLossValues = data[1];
             gainLossValues.forEach(function(value){
                 var child = `<tr data-account="${accountNumber}" style="display:table-row" class="itemList">
-                                <td>${value.symbol}</td>
-                                <td>${value.quantity}</td>
-                                <td>${number_format(value.cost)}</td>
-                                <td>${number_format(value.proceeds)}</td>
+                                <td><p>${value.symbol}</p></td>
+                                <td><p>${value.quantity}</p></td>
+                                <td><p>${Number(value.cost).toFixed(2)}</p></td>
+                                <td><p>${Number(value.proceeds).toFixed(2)}</p></td>
                                 <td class="${setColor(value.gain_loss)}"><strong class="${setColor(value.gain_loss)}">${number_format(value.gain_loss)}  (${number_format(value.gain_loss_percent)}%)</strong>
                                 </td>
-                                <td>${value[0]}</td>
-                                <td>${value[1]}</td>
+                                <td><p>${value[0]}</p></td>
+                                <td><p>${value[1]}</p></td>
                             </tr>`;
                         table.append(child);
             })
 
             $(".pagination").html(" ")
+
             let numItems = $("#gains-tbody .itemList").length
             let limitPerPage = 20
+
             $("#gains-tbody .itemList:gt(" + (limitPerPage - 1) + ")").hide()
-            let totalPages = Number((numItems/limitPerPage)).toFixed(0)
 
-            $(".pagination").append("<li id='previous-page'><a class='page-link' href='javascript:void(0)' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>")
+            let totalPages = Number((numItems/limitPerPage)+1).toFixed(0)
 
-            $(".pagination").append("<li class='page-item active'><a class='page-link' href='javascript:void(0)'>"+ 1 + "</a></li>")
+            if($("#topnavlogo").hasClass('top-nav-logo-dark')){
+                console.log("OScuro")
+                $(".pagination").append("<li id='previous-page'><a class='page-link page-link-dark' href='javascript:void(0)' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>")
+                $(".pagination").append("<li class='page-item active'><a class='page-link page-link-dark' href='javascript:void(0)'>"+ 1 + "</a></li>")
 
-            for (let index = 1; index < totalPages; index++) {
-                $(".pagination").append("<li class='page-item'><a class='page-link' href='javascript:void(0)'>"+ (index + 1) + "</a></li>")
+                for (let index = 1; index < totalPages; index++) {
+                    $(".pagination").append("<li class='page-item'><a class='page-link page-link-dark' href='javascript:void(0)'>"+ (index + 1) + "</a></li>")
+                }
+
+                $(".pagination").append("<li id='next-page'><a class='page-link page-link-dark' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'> > </span></a></li>")
+
+            }else{
+                console.log("Claro")
+                $(".pagination").append("<li id='previous-page'><a class='page-link' href='javascript:void(0)' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>")
+                $(".pagination").append("<li class='page-item active'><a class='page-link' href='javascript:void(0)'>"+ 1 + "</a></li>")
+
+                for (let index = 1; index < totalPages; index++) {
+                    $(".pagination").append("<li class='page-item'><a class='page-link' href='javascript:void(0)'>"+ (index + 1) + "</a></li>")
+                }
+
+                $(".pagination").append("<li id='next-page'><a class='page-link' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'> > </span></a></li>")
+
             }
-            $(".pagination").append("<li id='next-page'><a class='page-link' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'> > </span></a></li>")
 
             $(".pagination li.page-item").on("click", function(){
                 if ($(this).hasClass("active")) {
