@@ -110,14 +110,22 @@
                                                         @if(!$test['last'])
                                                             -
                                                         @elseif($test['last'])
-                                                                ${{$test['last']}}
-                                                         @endif
+
+                                                            @php
+                                                              echo "$" . number_format($test['last'], 2, '.', ',');
+                                                            @endphp
+                                                            
+                                                        @endif
 
                                                         <br>
                                                             @if(!$test['change'])
                                                                 -
                                                             @elseif($test['change'])
-                                                                ${{$test['change']}}
+                                                                @if($test['change'] > 0 )
+                                                                    ${{$test['change']}}
+                                                                @else
+                                                                    -${{$test['change'] * -1}}
+                                                                @endif
                                                             @endif
 
                                                             @if(!$test['change_percentage'])
