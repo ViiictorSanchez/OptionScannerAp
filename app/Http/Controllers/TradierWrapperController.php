@@ -166,22 +166,24 @@ class TradierWrapperController extends Controller
         array_push($gainsLossOff, $request->accountNumber);
         $gains = TradierWrapperController::getAccountCB($request->accountNumber);
         $gainLoss = $gains['gainloss']['closed_position'];
+        $i = 0;
+        foreach ($gainLoss as $date) {
+            $open = date('M d, Y', strtotime($date['open_date']));
+            $close = date('M d, Y', strtotime($date['close_date']));
+            array_push($gainLoss[$i], $open);
+            array_push($gainLoss[$i], $close);
+            $i++;
+        }
         array_push($gainsLossOff, $gainLoss);
+
         return $gainsLossOff;
     }
 
     public static function pagination(Request $request){
         $typeAccount = TradierWrapperController::getUsersProfile();
         $account = TradierWrapperController::accountNumbers();
-        $gains = TradierWrapperController::getAccountCB('VA53774774');
-        $gainLoss = $gains['gainloss']['closed_position'];
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $gainCollection = collect($gainLoss); $perPage =  15;
-        $currentPageItems = $gainCollection->slice(($currentPage * $perPage) - $perPage, $perPage)->all();
-        $gainPagination= new LengthAwarePaginator($currentPageItems , count($gainCollection), $perPage);
-        $gainPagination->setPath($request->url());
 
-        return view ("gains", ['account'=>$account, 'typeAccount'=>$typeAccount,'gainsLoss'=>$gainPagination]);
+        return view ("gains", ['account'=>$account, 'typeAccount'=>$typeAccount]);
     }
 
 

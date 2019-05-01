@@ -10,8 +10,7 @@
   .page-item.active .page-link {
     background-color: $blueberry;
   }
-  .page-link:focus, .page-link:hover {
+  .page-link:focus, .page-link:hover, .page-link:active{
     color: $dark;
     background-color: inherit;
-    border: 0;
   }
