@@ -20,7 +20,12 @@ function callajax (account){
         	var balances_values = data[1].balances
 
 
-    		var newChild_1 = `<li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
+    		var newChild_1 = `
+                             <li class="float-right list-unstyled portfolio-title title-card">
+                                    <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
+                             </li>
+
+							<li class="float-left list-unstyled my-portfolio-menu" data-account="${balances_values.account_number}" style="display:list-item">
     							<a class="font-size-portfolio">$ ${balances_values.total_equity} </a>
     						</li >
     						                            

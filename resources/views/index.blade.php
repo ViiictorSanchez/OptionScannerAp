@@ -20,11 +20,7 @@
                 <div class="card m-b-0" >
                     <div class="card-body">
                         <ul class="menu-my-portfolio" id="balances-1">
-                            
 
-                                <li class="float-right list-unstyled portfolio-title title-card">
-                                    <a class="menu-my-portfolio-color"><strong> My Portfolio</strong> </a>
-                                </li>
                         </ul>
 
 
