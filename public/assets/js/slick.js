@@ -76,7 +76,7 @@
                 slidesPerRow: 1,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                speed: 1700,
+                speed: 5000,
                 swipe: true,
                 swipeToSlide: false,
                 touchMove: true,
