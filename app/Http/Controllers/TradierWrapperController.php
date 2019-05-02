@@ -95,35 +95,6 @@ class TradierWrapperController extends Controller
             array_push($arrayAccountBalances,$balances);
         }
 
-        /*$positionAccount = array();
-        $quotes = array();
-        $positionSymbol = array();
-        $optionSymbols = array();  $i=0;
-
-        foreach ($account as $count){
-            $position = TradierWrapperController::getAccountPositions($count);
-            $positionSymbol = $position['positions']['position'];
-            array_push($optionSymbols, "");
-            $j=0;
-            foreach($positionSymbol as $symbolOp){
-                if($j == 0){
-                    $optionSymbols[$i] .= $symbolOp['symbol'];
-                }else{
-                    $optionSymbols[$i] .= "," . $symbolOp['symbol'];
-                }
-                $j++;
-            }
-            $i++;
-            array_push($positionAccount,$position);
-        }
-
-        $length = sizeof($positionAccount);
-        for($j=0;$j<$length;$j++){
-            array_splice($positionAccount[$j]['positions'],0,0,$account[$j]);
-                $quotes = TradierWrapperController::getQuotes($optionSymbols[$j]);
-                array_push($positionAccount[$j]['positions']['position'],$quotes);
-
-        }*/
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
 
@@ -196,7 +167,6 @@ class TradierWrapperController extends Controller
             $balances = TradierWrapperController::getAccountBalances($count);
             array_push($arrayAccountBalances,$balances);
         }
-
         return view ("index", ['spy_price'=>$sym,'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount]);
     }
 
@@ -209,8 +179,6 @@ class TradierWrapperController extends Controller
     public static function getAuthCode(){
 
         $url = self::apiUrl . "/v1/oauth/authorize?client_id=" . self::clientId . "&scope=" . self::scopeAuth . "&state=" . self::state;
-        echo "url";
-
         $curl=curl_init($url);
         curl_setopt($curl, CURLOPT_HTTPGET, 1);
 

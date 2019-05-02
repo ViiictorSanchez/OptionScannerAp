@@ -2441,7 +2441,8 @@ button:focus {
 
 .page-link:focus, .page-link:hover, .page-link:active {
   color: #2a3142;
-  background-color: inherit; }
+  background-color: inherit;
+  box-shadow: none; }
 
 /* ======
 13. Progress

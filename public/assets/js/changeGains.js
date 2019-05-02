@@ -36,7 +36,6 @@ function ajaxCallGains(gains){
             let totalPages = Number((numItems/limitPerPage)+1).toFixed(0)
 
             if($("#topnavlogo").hasClass('top-nav-logo-dark')){
-                console.log("OScuro")
                 $(".pagination").append("<li id='previous-page'><a class='page-link page-link-dark' href='javascript:void(0)' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>")
                 $(".pagination").append("<li class='page-item active'><a class='page-link page-link-dark' href='javascript:void(0)'>"+ 1 + "</a></li>")
 
@@ -47,7 +46,6 @@ function ajaxCallGains(gains){
                 $(".pagination").append("<li id='next-page'><a class='page-link page-link-dark' href='javascript:void(0)' aria-label='Next'><span aria-hidden='true'> > </span></a></li>")
 
             }else{
-                console.log("Claro")
                 $(".pagination").append("<li id='previous-page'><a class='page-link' href='javascript:void(0)' aria-label='Previous'><span aria-hidden='true'> < </span></a></li>")
                 $(".pagination").append("<li class='page-item active'><a class='page-link' href='javascript:void(0)'>"+ 1 + "</a></li>")
 
@@ -113,6 +111,7 @@ function ajaxCallGains(gains){
                 }
             })
         },error:function(){
+            $(".pagination").html(" ")
             alert("There are no gains in your history");
         }
     });
@@ -137,33 +136,17 @@ function setColor(value){
     return value > 0 ? 'green' : 'red'
 }
 
-function dateStr(value){
-    console.log(value)
-    let date = new Date(value);
-    console.log(date.toDateString())
-    return date.toDateString()
-
-}
-
 function changeGains(element) {
-    $('#list-header-menu>strong').text('individual ' + element.id);
-    // $('li[data-account]').each(function(index, value){
-    // 	if(value.dataset.account == element.id) {
-    // 		value.style.display = "list-item"
-    // 	}
-    // 	else value.style.display = "none"
-    // })
-    // $('tr[data-account]').each(function(index, value){
-    // 	if(value.dataset.account == element.id) {
-    // 		value.style.display = "table-row"
-    // 	}
-    // 	else value.style.display = "none"
-    // })
-    ajaxCallGains(element.id);
+    let account = $(element)[0]['id'];
+    let fullAccount = '#' + account + ' strong';
+    $('#list-header-menu>strong').text($(fullAccount).html())
+    ajaxCallGains(element.id)
 }
 
 (function(){
-    var firstElement = {id: $('#list-header-menu>strong').text().slice(11)};
+    let account = $('#list-header-menu>strong').html();
+    let typeAccount = account.split(" ");
+    let firstElement = {id: $('#list-header-menu>strong').text().slice(typeAccount[0].length + 1)};
     changeGains(firstElement);
 })()
 
