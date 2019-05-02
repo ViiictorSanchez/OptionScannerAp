@@ -12,7 +12,7 @@
 
                 <a href="index" class="logo">
                     <img src="/assets/images/logo-sm.ico" alt="" class="logo-small">
-                    <img id="imagelogo" src="/assets/images/logo.png" alt="" class="logo-large">
+                    <img id="imagelogo" src="/assets/images/logo.svg" alt="" class="logo-large">
                 </a>
 
             </div>

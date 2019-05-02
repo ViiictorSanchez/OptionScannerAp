@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="166px" height="25px" viewBox="0 0 166 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>OptionScanner-light</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A8A3F6" offset="0%"></stop>
+            <stop stop-color="#DAD8FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#DAD8FF" offset="0%"></stop>
+            <stop stop-color="#857DF3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Stock-Profile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="OptionScanner-StockProfile" transform="translate(-14.000000, -11.000000)">
+            <g id="Group-26">
+                <g id="OptionScanner-light" transform="translate(9.000000, 6.000000)">
+                    <text id="OptionScanner" font-family="DINAlternate-Bold, DIN Alternate" font-size="22" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="35.1899414" y="25">OptionScanner</tspan>
+                    </text>
+                    <g id="OptionScanner">
+                        <g id="logo-a-link" transform="translate(17.098975, 16.793843) rotate(45.000000) translate(-17.098975, -16.793843) translate(5.098975, 5.293843)" fill="#B0B7BC">
+                            <path d="M15.1995976,0.64433249 L8.44935985,7.28136324 C8.29079478,7.43722131 8.14158602,7.6020194 8.00248996,7.7749221 C6.04146702,10.1455578 6.36409079,13.6221393 8.72907688,15.6045953 C11.094063,17.5870512 14.6360652,17.3500029 16.7060854,15.0707344 L23.3126098,8.5743187 C23.5766759,9.53496465 23.7101109,10.5257861 23.7094303,11.5209073 C23.7094303,17.7339836 18.5879439,22.7701119 12.2695612,22.7701119 C5.95117842,22.7701119 0.829691999,17.7339836 0.829691999,11.5209073 C0.829691999,5.3078309 5.95117842,0.271702585 12.2695612,0.271702585 C13.2819896,0.271702585 14.2643883,0.401068439 15.1995976,0.64433249 Z" id="logo-a"></path>
+                        </g>
+                        <g id="logo-c-link" transform="translate(17.409793, 17.219063) scale(-1, 1) rotate(45.000000) translate(-17.409793, -17.219063) translate(5.909793, 5.719063)" fill="#FFFFFF">
+                            <path d="M14.3699056,0.372629905 L7.61966785,7.00966066 C7.46110278,7.16551873 7.31189402,7.33031682 7.17279796,7.50321951 C5.21177502,9.87385523 5.53439879,13.3504367 7.89938488,15.3328927 C10.264371,17.3153486 13.8063732,17.0783003 15.8763934,14.7990318 L22.4829178,8.30261612 C22.7469839,9.26326206 22.8804189,10.2540835 22.8797383,11.2492047 C22.8797383,17.462281 17.7582519,22.4984093 11.4398692,22.4984093 C5.12148642,22.4984093 0,17.462281 0,11.2492047 C0,5.03612831 5.12148642,0 11.4398692,0 C12.4522976,0 13.4346963,0.129365854 14.3699056,0.372629905 Z" id="logo-c"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
