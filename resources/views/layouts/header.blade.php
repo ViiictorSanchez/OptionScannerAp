@@ -110,31 +110,47 @@
                                                         @if(!$test['last'])
                                                             -
                                                         @elseif($test['last'])
-
-                                                                @if(preg_match('/\.\d{2,}/', $test['last']))
-                                                                        ${{round($test['last'],2,PHP_ROUND_HALF_ODD)}}
-                                                                 @elseif(!preg_match('/\.\d{2,}/', $test['last']))
-                                                                        ${{$test['last']}}0
-                                                                  @endif
-
+                                                            @if(preg_match('/\.\d{2,}/', $test['last']))
+                                                                ${{round($test['last'],2,PHP_ROUND_HALF_ODD)}}
+                                                            @elseif(!preg_match('/\.\d{2,}/', $test['last']))
+                                                                ${{$test['last']}}0
+                                                            @endif
                                                         @endif
 
                                                         <br>
-                                                            @if(!$test['change'])
-                                                                -
-                                                            @elseif($test['change'])
-                                                                @if($test['change'] > 0 )
-                                                                    ${{$test['change']}}
-                                                                @else
-                                                                    -${{$test['change'] * -1}}
+                                                        @if(!$test['change'])
+                                                            -
+                                                        @elseif($test['change'])
+                                                            @if($test['change'] > 0 )
+
+                                                                @if(preg_match('/\.\d{2,}/', $test['change']))
+                                                                    ${{round($test['change'],2,PHP_ROUND_HALF_ODD)}}
+                                                                @elseif(!preg_match('/\.\d{2,}/', $test['change']))
+                                                                    ${{$test['change']}}0
+                                                                @endif
+                                                            @else
+
+                                                                @if(preg_match('/\.\d{2,}/', $test['change']))
+                                                                    - ${{round($test['change'],2,PHP_ROUND_HALF_ODD) * -1}}
+                                                                @elseif(!preg_match('/\.\d{2,}/', $test['change']))
+                                                                    -${{$test['change'] * -1}}0
                                                                 @endif
                                                             @endif
+                                                        @endif
 
-                                                            @if(!$test['change_percentage'])
-                                                                -
-                                                            @elseif($test['change_percentage'])
-                                                               ( {{$test['change_percentage']}}% )
+                                                        @if(!$test['change_percentage'])
+                                                            -
+                                                        @elseif($test['change_percentage'])
+
+                                                            @if(preg_match('/\.\d{2,}/', $test['change_percentage']))
+                                                                ( {{round($test['change_percentage'],2,PHP_ROUND_HALF_ODD)}}% )
+                                                            @elseif(!preg_match('/\.\d{2,}/', $test['change_percentage']))
+                                                                ( {{$test['change_percentage']}}0% )
                                                             @endif
+
+
+
+                                                        @endif
                                                     </p>
                                                 </label>
                                             </div>
