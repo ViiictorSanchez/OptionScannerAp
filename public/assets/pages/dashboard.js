@@ -129,7 +129,10 @@
 
 
         seriesData.forEach(function(value, index){
+            var y = value.time
+            var a = value.close
 
+            if(index < 10) $areaData.push({y: y, a: a})
         })
 
         var color = index % 2 == 0 ? '#ffa1a9' : '#1fa764'
