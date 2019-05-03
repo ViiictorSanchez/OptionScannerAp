@@ -28,6 +28,7 @@
             lineColors: lineColors,
             fillOpacity: .6,
             behaveLikeLine: true,
+            ymin: 'auto',
 
         });
     },
