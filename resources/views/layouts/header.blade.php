@@ -111,10 +111,7 @@
                                                             -
                                                         @elseif($test['last'])
 
-                                                            @php
-                                                              echo "$" . number_format($test['last'], 2, '.', ',');
-                                                            @endphp
-                                                            
+                                                            ${{round($test['last'],2)}}
                                                         @endif
 
                                                         <br>

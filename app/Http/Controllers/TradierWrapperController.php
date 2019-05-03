@@ -119,7 +119,6 @@ class TradierWrapperController extends Controller
                }
 
 //------------------------------------------------------------------------------------------------
-
         return view ("index", ['spy_price'=>$sym, 'account'=>$account,'arrayAccountBalances'=>$arrayAccountBalances, 'typeAccount'=>$typeAccount, 'positionAccount' => $positionAccount ]);
     }
 
