@@ -24,7 +24,7 @@
             labels: labels,
             resize: true,
             gridLineColor: '#white',
-            hideHover: 'auto',
+            hideHover: 'always',
             lineColors: lineColors,
             fillOpacity: .6,
             behaveLikeLine: true,
