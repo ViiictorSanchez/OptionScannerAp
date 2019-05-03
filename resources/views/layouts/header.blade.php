@@ -111,7 +111,12 @@
                                                             -
                                                         @elseif($test['last'])
 
-                                                            ${{round($test['last'],2)}}
+                                                                @if(preg_match('/\.\d{2,}/', $test['last']))
+                                                                        ${{round($test['last'],2,PHP_ROUND_HALF_ODD)}}
+                                                                 @elseif(!preg_match('/\.\d{2,}/', $test['last']))
+                                                                        ${{$test['last']}}0
+                                                                  @endif
+
                                                         @endif
 
                                                         <br>
