@@ -126,7 +126,7 @@ function number_format(value){
 
 
 function changeBalance(element) {
-	$('#list-header-menu>strong').text('individual ' + element.id)
+	$('#list-header-menu>strong').text( element.id)
 	// $('li[data-account]').each(function(index, value){
 	// 	if(value.dataset.account == element.id) {
 	// 		value.style.display = "list-item"
