@@ -40,7 +40,7 @@
                             @endfor
                             <li><a href="#" > <i class="fas fa-question-circle"></i> Help <br></a></li>
                             <li><a href="#"> <i class="fas fa-wrench"></i>Report Bug</a></li>
-                            <li><a href="#"> <i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                            <li><a href="#"> <i class="ion-power"></i>Logout</a></li>
                         </ul>
 
                     </li>
