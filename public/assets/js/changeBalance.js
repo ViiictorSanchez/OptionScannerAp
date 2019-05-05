@@ -1,13 +1,67 @@
 
 
+function loadTable(account){
+	var table = $("#home2-tbody").empty()
 
-function callajax (account){
+	$.ajax({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		},
+		method: 'GET',
+		url: '/portfolioData',
+		data: {accountNumber: account},
+		cache: true,
+		success:function (data) {
+			
+			var accountNumber = data[0];
+			var positions_values = data[1].positions.position;
 
+			positions_values.forEach(function(value, index){
+				var market_value = value.quantity * value[0].symbol.quotes.quote.last
+				var total_gain = market_value - value.cost_basis
+				var child = `<tr data-account="${accountNumber}" style="display:table-row">
+				                <td>
+				                    ${value.symbol}
+				                    <p>${value[0].symbol.quotes.quote.last}</p>
+				                </td>
+				                <td class="${setColor(value[0].symbol.quotes.quote.change)}">
+				                   $ ${value[0].symbol.quotes.quote.change}
+				                    <p class="${setColor(value[0].symbol.quotes.quote.change_percentage)}">% ${value[0].symbol.quotes.quote.change_percentage}</p>
+				                </td>
+				                <td>
+				                    ${value.quantity}
+				                </td>
+				                <td>
+				                    ${value.cost_basis}
+				                </td>
+				                <td>
+				                    ${number_format(market_value)}
+				                </td>
+				                <td class="${setColor(total_gain)}">
+				                    ${number_format(total_gain)}
+				                </td>
+				                <td>
+				                    <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
+				                        <strong>Trade</strong></button>
+				                </td>
+				            </tr>`
+
+				table.append(child)
+			})
+			
+
+		}
+
+	})
+
+   
+}
+
+function loadBalances(account){
 	var balances_target_1 = $('#balances-1').empty()
     var balances_target_2 = $('#balances-2').empty()
-    var table = $("#home2-tbody").empty()
-
-    $.ajax({
+    
+     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
@@ -61,58 +115,14 @@ function callajax (account){
         }
 
     })
+	
+}
 
-	$.ajax({
-		headers: {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		},
-		method: 'GET',
-		url: '/portfolioData',
-		data: {accountNumber: account},
-		cache: true,
-		success:function (data) {
-			
-			var accountNumber = data[0];
-			var positions_values = data[1].positions.position;
+function callajax (account){
 
-			positions_values.forEach(function(value, index){
-				var market_value = value.quantity * value[0].symbol.quotes.quote.last
-				var total_gain = market_value - value.cost_basis
-				var child = `<tr data-account="${accountNumber}" style="display:table-row">
-				                <td>
-				                    ${value.symbol}
-				                    <p>${value[0].symbol.quotes.quote.last}</p>
-				                </td>
-				                <td class="${setColor(value[0].symbol.quotes.quote.change)}">
-				                   $ ${value[0].symbol.quotes.quote.change}
-				                    <p class="${setColor(value[0].symbol.quotes.quote.change_percentage)}">% ${value[0].symbol.quotes.quote.change_percentage}</p>
-				                </td>
-				                <td>
-				                    ${value.quantity}
-				                </td>
-				                <td>
-				                    ${value.cost_basis}
-				                </td>
-				                <td>
-				                    ${number_format(market_value)}
-				                </td>
-				                <td class="${setColor(total_gain)}">
-				                    ${number_format(total_gain)}
-				                </td>
-				                <td>
-				                    <button type="button" class="btn btn-secondary btn-sm waves-effect waves-light button-my-portfolio">
-				                        <strong>Trade</strong></button>
-				                </td>
-				            </tr>`
-
-				table.append(child)
-			})
-			
-
-		}
-
-	})
-
+	loadBalances(account)
+	loadTable(account)
+	
 }
 
 
@@ -144,6 +154,13 @@ function changeBalance(element) {
 }
 
 (function(){
-	var firstElement = {id: $('#list-header-menu>strong').text().slice(11) }
-	changeBalance(firstElement)	
+	var firstElement;
+
+	firstElement = {id: $('#list-header-menu>strong').text().slice(11) }
+	callajax(firstElement.id)	
+
+	// setInterval(function() {
+	// 	firstElement = {id: $('#list-header-menu>strong').text().slice(11) }
+	// 	callajax(firstElement.id)	
+	// },5000)
 })()
